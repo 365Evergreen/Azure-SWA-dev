@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './LatestPosts.module.css';
 import { useLatestPosts } from '../../lib/useLatestPosts';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 interface Post {
   id: string;
@@ -53,12 +53,12 @@ const LatestPosts: React.FC = () => {
           <div className={styles.postsGrid}>
             {sortedPosts.map((post) => {
               const primaryCategory = post.categories?.edges?.[0]?.node?.slug || 'post';
-              const postUrl = `/category/${primaryCategory}/${post.slug}`;
+              const postUrl = `/latest-posts/${primaryCategory}/${post.slug}`;
               return (
-                <div
+                <a
                   key={post.id}
+                  href={postUrl}
                   className={`${styles.postCard} selectable-card`}
-                  onClick={() => navigate(postUrl)}
                 >
                   <span className={`${styles.latestPostsTitleLink} fluent-title3`}>{post.title}</span>
                   {post.featuredImage?.node?.sourceUrl && (
@@ -75,37 +75,29 @@ const LatestPosts: React.FC = () => {
                   {(post.categories?.edges?.length ?? 0) > 0 && (
                     <div className={styles.categoriesWrap}>
                       {(post.categories?.edges ?? []).map((cat: { node: { slug: string; name: string } }) => (
-                        <span
-                          key={cat.node.slug}
-                          className={styles.latestPostsCategoryTag}
-                          onClick={e => {
-                            e.stopPropagation();
-                            navigate(`/category/${cat.node.slug}`);
-                          }}
-                        >
-                          {cat.node.name}
-                        </span>
-                      ))}
+                            <span
+                              key={cat.node.slug}
+                              className={styles.latestPostsCategoryTag}
+                              onClick={e => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                navigate(`/category/${cat.node.slug}`);
+                              }}
+                            >
+                              {cat.node.name}
+                            </span>
+                          ))}
                     </div>
                   )}
                   <div className={styles.latestPostsDate}>{new Date(post.date).toLocaleDateString()}</div>
                   <p className={styles.latestPostsExcerpt}>{getExcerpt(post)}</p>
-                  <a
-                    href={postUrl}
-                    className={styles.readMoreLink}
-                    onClick={e => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      navigate(postUrl);
-                    }}
-                    tabIndex={0}
-                  >
+                  <span className={styles.readMoreLink} tabIndex={0} aria-hidden>
                     Read more
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.readMoreIcon}>
                       <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                  </a>
-                </div>
+                  </span>
+                </a>
               );
             })}
           </div>

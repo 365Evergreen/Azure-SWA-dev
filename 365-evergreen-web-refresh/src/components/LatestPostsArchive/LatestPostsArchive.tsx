@@ -194,6 +194,7 @@ const LatestPostsArchive: React.FC = () => {
 							   onClick={() => setCatDropdownOpen(v => !v)}
 							   aria-haspopup="listbox"
 							   aria-expanded={catDropdownOpen}
+							   aria-label="Filter posts by category"
 						   >
 							   <span className="latest-posts-archive-category-select-label">
 								   {selectedCategories.length === 0
@@ -205,7 +206,7 @@ const LatestPostsArchive: React.FC = () => {
 							   </svg>
 						   </div>
 						{catDropdownOpen && typeof window !== 'undefined' && ReactDOM.createPortal(
-							<div
+							<div aria-labelledby='catDropdownOpen'
 								ref={catDropdownRef}
 								className="latest-posts-archive-category-dropdown"
 								   style={{
@@ -385,14 +386,16 @@ const LatestPostsArchive: React.FC = () => {
 		 <div className={viewMode === 'grid' ? 'latest-posts-archive-grid' : 'latest-posts-archive-list'}>
 				{visiblePosts.map((post: LatestPost) => {
 				 if (viewMode === 'grid') {
+					 const postUrl = `/post/${post.slug}`;
 					 const primaryCategory = post.categories?.edges?.[0]?.node?.slug || 'post';
-					 const postUrl = `/category/${primaryCategory}/${post.slug}`;
+					 const postUrl = `/latest-posts/${primaryCategory}/${post.slug}`;
 					 return (
-						 <div
+						 <a
 							 key={post.id}
+							 href={postUrl}
 							 className="latest-posts-archive-card selectable-card"
-							 style={{ cursor: 'pointer' }}
-							 onClick={() => window.location.href = postUrl}
+							 style={{ cursor: 'pointer', textDecoration: 'none' }}
+							 onClick={e => { e.preventDefault(); window.location.href = postUrl; }}
 						 >
 							 <span className="latest-posts-title-link fluent-title3" style={{ color: '#000', marginBottom: '0.5rem', display: 'block' }}>{post.title}</span>
 							 {post.featuredImage?.node?.sourceUrl && (
@@ -437,23 +440,17 @@ const LatestPostsArchive: React.FC = () => {
 							 )}
 							 <div className="latest-posts-date">{new Date(post.date).toLocaleDateString()}</div>
 							 <p className="latest-posts-excerpt">{post.excerpt ? post.excerpt.replace(/<[^>]+>/g, '').slice(0, 175) + (post.excerpt.length > 175 ? '…' : '') : ''}</p>
-							 <a
-								 href={postUrl}
-								 className="latest-posts-archive-link"
-								 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4em', fontWeight: 600, color: '#111', textDecoration: 'none', marginTop: '0.5em' }}
-								 onClick={e => {
-									 e.stopPropagation();
-									 e.preventDefault();
-									 window.location.href = postUrl;
-								 }}
-								 tabIndex={0}
-							 >
-								 Read more
-								 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '0.1em' }}>
-									 <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-								 </svg>
-							 </a>
-						 </div>
+								 <span
+									 className="latest-posts-archive-link"
+									 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4em', fontWeight: 600, color: '#111', textDecoration: 'none', marginTop: '0.5em' }}
+									 tabIndex={0}
+								 >
+									 Read more
+									 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '0.1em' }}>
+										 <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+									 </svg>
+								 </span>
+						 </a>
 					 );
 				 }
 				 // List view fallback (add excerpt)

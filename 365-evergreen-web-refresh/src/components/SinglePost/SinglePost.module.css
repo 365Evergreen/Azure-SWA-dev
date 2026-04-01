@@ -1,0 +1,25 @@
+.singlePostRoot {
+  padding: 0 4vw 3rem;
+}
+
+.breadcrumbWrap {
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  color: var(--neutralPrimary, #222);
+}
+
+.separator {
+  margin: 0 0.5em;
+  color: #888;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+
+.contentWrap {
+  max-width: 960px;
+}

@@ -5,6 +5,7 @@ import { usePageBySlug } from '../../lib/usePageBySlug';
 import type { PageData } from '../../lib/usePageBySlug';
 import './PageView.module.css';
 import { useCtaPost } from '../../lib/useCtaPost';
+import { useSinglePostBySlug } from '../../lib/useSinglePostBySlug';
 import { useE365Resources } from '../ResourceArchive/useE365Resources';
 import PageRenderer from '../PageRenderer/PageRenderer';
 import ResourceDetail from '../ResourceArchive/ResourceDetail';
@@ -29,6 +30,8 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
   }
   // Fetch page by URI
   const page = usePageBySlug(uri);
+
+  // Fetch post by URI (some content may be posts rather than pages, so we attempt both)
 
   // If a specific page ID prop is provided (e.g., /what-we-do), fetch that page by ID
   useEffect(() => {
@@ -58,6 +61,7 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
   }, [whatWeDoPageId]);
   // If no e365page found, try fetching a regular post by slug (CTA or normal post)
   const ctaPost = useCtaPost(slug);
+  const singlePostBySlug = useSinglePostBySlug(slug);
   // Also attempt to find a Resource (by slug or uri) and render it using a dedicated ResourceDetail view
   const { resources } = useE365Resources();
   const resourceSlug = slug || ((): string => {
@@ -76,8 +80,17 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
   const params = useParams<{ slug?: string; category?: string }>();
   const category = params.category;
   const pageToRender = explicitPage || page;
+  // If there's no page but we have a single post fetched by slug, prefer it for rendering
+  const postPage = !pageToRender && singlePostBySlug ? {
+    id: singlePostBySlug.id,
+    title: singlePostBySlug.title,
+    blocks: singlePostBySlug.blocks,
+    content: singlePostBySlug.content,
+    featuredImage: singlePostBySlug.featuredImage,
+  } : null;
+  const effectivePage = pageToRender || postPage;
   console.debug('PageView - pageToRender', pageToRender);
-  const titleText = pageToRender?.title || ctaPost?.title || resource?.title || (params.slug || 'Page');
+  const titleText = effectivePage?.title || ctaPost?.title || resource?.title || (params.slug || 'Page');
   const breadcrumbItems = [
     { text: 'Home', href: '/' },
     ...(category ? [{ text: category.charAt(0).toUpperCase() + category.slice(1), href: `/${category}` }] : []),
@@ -106,11 +119,11 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
       <ResponsiveContainer>
         {resource ? (
           <ResourceDetail resource={resource} />
-        ) : pageToRender ? (
-          pageToRender.blocks && pageToRender.blocks.length > 0 ? (
-            <PageRenderer blocks={pageToRender.blocks} />
-          ) : pageToRender.content ? (
-            <div dangerouslySetInnerHTML={{ __html: pageToRender.content }} />
+        ) : effectivePage ? (
+          effectivePage.blocks && effectivePage.blocks.length > 0 ? (
+            <PageRenderer blocks={effectivePage.blocks} />
+          ) : effectivePage.content ? (
+            <div dangerouslySetInnerHTML={{ __html: effectivePage.content }} />
           ) : <em>No content found…</em>
         ) : ctaPost ? (
           <div dangerouslySetInnerHTML={{ __html: ctaPost.content || '' }} />

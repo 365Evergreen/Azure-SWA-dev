@@ -39,6 +39,7 @@ const FeatureButtonsTest = lazy(() => import('./components/FeatureButtonsTest/Fe
 const FeatureButtonsLogic = lazy(() => import('./components/FeatureButtonsLogic/FeatureButtonsLogic'));
 const PageView = lazy(() => import('./components/PageView/PageView').then(module => ({ default: module.PageView })));
 const TestPageQuery = lazy(() => import('./components/TestPageQuery/TestPageQuery'));
+const SinglePost = lazy(() => import('./components/SinglePost/SinglePost'));
 
 // Wrapper to allow passing optional props to PageView without changing its
 // original typings. We cast props through any when forwarding.
@@ -141,6 +142,8 @@ function App() {
             <Route path="/test/page-query" element={<TestPageQuery />} />
             <Route path="/latest-posts" element={<LatestPostsArchive />} />
             <Route path="/category/:category" element={<LatestPostsArchive />} />
+            <Route path="/post/:slug" element={<SinglePost />} />
+            <Route path="/latest-posts/:category/:slug" element={<SinglePost />} />
             <Route path="/category/:category/:slug" element={<PageView />} />
             <Route path="/what-we-do" element={<PageViewOptional whatWeDoPageId="cG9zdDo0OTM=" />} />
 

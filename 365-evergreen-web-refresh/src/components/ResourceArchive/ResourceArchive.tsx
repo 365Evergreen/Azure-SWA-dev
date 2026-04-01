@@ -169,7 +169,7 @@ const ResourceArchive: React.FC = () => {
                 </svg>
               </div>
               {dropdownOpen && typeof window !== 'undefined' && ReactDOM.createPortal(
-                <div
+                <div aria-labelledby='dropdownOpen'
                   ref={dropdownRef}
                   className={styles.categoryDropdown}
                   style={{
