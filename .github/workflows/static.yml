@@ -41,7 +41,7 @@ jobs:
           version: latest
       - name: Install dependencies
         working-directory: 365-evergreen-web-refresh
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Build
         working-directory: 365-evergreen-web-refresh
         run: pnpm run build
