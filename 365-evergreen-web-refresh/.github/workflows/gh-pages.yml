@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ deploy/365-evergreen-web-refresh , main ]
+    branches: [ deploy/365-evergreen-web-refresh , main , dev ]
   workflow_dispatch:
 
 jobs:
