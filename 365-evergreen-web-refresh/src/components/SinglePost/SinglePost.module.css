@@ -1,5 +1,6 @@
 .singlePostRoot {
   padding: 0 4vw 3rem;
+  margin-top: var(--header-offset, 3.5rem);
 }
 
 .breadcrumbWrap {

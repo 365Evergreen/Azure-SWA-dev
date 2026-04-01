@@ -1,5 +1,6 @@
 import { useState, lazy, Suspense, useEffect, type ComponentProps, type ComponentType } from 'react';
 import { Header } from './components/Header/Header';
+import { BreadcrumbProvider, BreadcrumbBar } from './components/BreadcrumbContext';
 import { Hero } from './components/Hero/Hero';
 // import { CTA } from './components/CTA';
 import { Features } from './components/Features/Features';
@@ -73,7 +74,9 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <BreadcrumbProvider>
+        <BreadcrumbBar />
+        <main>
         <Suspense fallback={<RouteLoader />}>
           <ScrollToTop />
           <Routes>
@@ -160,7 +163,8 @@ function App() {
           </Routes>
         </Suspense>
         <CopilotChat open={chatOpen} onClose={() => setChatOpen(false)} />
-      </main>
+        </main>
+      </BreadcrumbProvider>
       <CookieConsent />
       {/* Initialize analytics based on saved consent */}
       <script>

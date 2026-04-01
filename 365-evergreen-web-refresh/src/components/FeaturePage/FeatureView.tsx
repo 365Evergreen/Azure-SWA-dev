@@ -1,6 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+import { useParams } from 'react-router-dom';
+import { useBreadcrumb } from '../BreadcrumbContext';
 import { useFeatureBySlug } from './useFeatureBySlug';
 import PageBlocks from '../PageBlocks/PageBlocks';
 import FeatureAccordionButtons from '../FeatureAccordionButtons/FeatureAccordionButtons';
@@ -18,25 +18,15 @@ const FeatureView: React.FC = () => {
     { text: feature?.title || (slug || 'Feature'), href: `/feature/${slug}` },
   ];
 
+  const { setItems } = useBreadcrumb();
+
+  React.useEffect(() => {
+    setItems(breadcrumbItems);
+    return () => setItems([]);
+  }, [setItems, feature?.title, slug]);
+
   return (
     <>
-      <Breadcrumb style={{ padding: '1rem 4vw' }}>
-        {breadcrumbItems.map((item, idx) => (
-          <React.Fragment key={item.href}>
-            <BreadcrumbItem>
-              {idx < breadcrumbItems.length - 1 ? (
-                <Link to={item.href}>{item.text}</Link>
-              ) : (
-                <span>{item.text}</span>
-              )}
-            </BreadcrumbItem>
-            {idx < breadcrumbItems.length - 1 && (
-              <span style={{ margin: '0 0.5em', color: '#888' }}>/</span>
-            )}
-          </React.Fragment>
-        ))}
-      </Breadcrumb>
-
       {/* FeatureView-level hero using explicit class names */}
       <header className={fvStyles['featureview-hero']} role="banner">
         <div className={fvStyles['featureview-heroBg']} aria-hidden="true" />

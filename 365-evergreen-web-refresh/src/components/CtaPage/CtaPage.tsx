@@ -1,6 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+import { useParams } from 'react-router-dom';
+import { useBreadcrumb } from '../BreadcrumbContext';
 import { useCtaPost } from '../../lib/useCtaPost';
 import PageBlocks from '../PageBlocks/PageBlocks';
 import { TenantAuditForm } from '../TenantAuditForm/TenantAuditForm';
@@ -12,25 +12,18 @@ export const CtaPage: React.FC = () => {
   // Build breadcrumb: Home / Post Title
   const breadcrumbItems = [
     { text: 'Home', href: '/' },
-    { text: page?.title || slug, href: `/CTA/${slug}` },
+    { text: (page?.title ?? slug ?? ''), href: `/CTA/${slug}` },
   ];
+
+  const { setItems } = useBreadcrumb();
+
+  React.useEffect(() => {
+    setItems(breadcrumbItems);
+    return () => setItems([]);
+  }, [setItems, page?.title, slug]);
 
   return (
     <section style={{ minHeight: 300, padding: 0, margin: 0 }}>
-      <Breadcrumb>
-        {breadcrumbItems.map((item, idx) => (
-          <BreadcrumbItem key={item.href + '-' + idx}>
-            {idx < breadcrumbItems.length - 1 ? (
-              <>
-                <Link to={item.href}>{item.text}</Link>
-                <span style={{ margin: '0 0.5em', color: '#888' }}>/</span>
-              </>
-            ) : (
-              <span>{item.text}</span>
-            )}
-          </BreadcrumbItem>
-        ))}
-      </Breadcrumb>
       <h2>{page?.title || 'Loading...'}</h2>
       <div style={{ width: '100%', margin: 0, padding: 0 }}>
         {page ? (

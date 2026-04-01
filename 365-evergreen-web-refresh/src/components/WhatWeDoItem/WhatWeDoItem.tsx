@@ -1,6 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+import { useParams } from 'react-router-dom';
+import { useBreadcrumb } from '../BreadcrumbContext';
 import { useAccordionItemBySlug } from '../../lib/useAccordionItemBySlug';
 
 const WhatWeDoItem: React.FC = () => {
@@ -15,25 +15,15 @@ const WhatWeDoItem: React.FC = () => {
     { text: item?.title || (slug || 'Item'), href: `/what-we-do/${slug}` },
   ];
 
+  const { setItems } = useBreadcrumb();
+
+  React.useEffect(() => {
+    setItems(breadcrumbItems);
+    return () => setItems([]);
+  }, [setItems, item?.title, slug]);
+
   return (
     <main style={{ padding: '2rem 4vw' }}>
-      <Breadcrumb>
-        {breadcrumbItems.map((b, idx) => (
-          <React.Fragment key={b.href + '-' + idx}>
-            <BreadcrumbItem>
-              {idx < breadcrumbItems.length - 1 ? (
-                <Link to={b.href}>{b.text}</Link>
-              ) : (
-                <span>{b.text}</span>
-              )}
-            </BreadcrumbItem>
-            {idx < breadcrumbItems.length - 1 && (
-              <span style={{ margin: '0 0.5em', color: '#888' }}>/</span>
-            )}
-          </React.Fragment>
-        ))}
-      </Breadcrumb>
-
       {item ? (
         <article>
           <h1>{item.title}</h1>

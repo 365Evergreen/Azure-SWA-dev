@@ -144,6 +144,8 @@
   transition: background 0.3s, box-shadow 0.3s;
   box-shadow: none;
   --header-height: 44px;
+  /* offset includes header height plus vertical padding so content can sit below */
+  --header-offset: calc(var(--header-height) + 1rem + 1rem);
   height: var(--header-height);
   padding-top: 1rem;
   padding-bottom: 1rem;

@@ -1,6 +1,7 @@
 import React from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+import { useParams, useLocation } from 'react-router-dom';
+
+import { useBreadcrumb } from '../BreadcrumbContext';
 import { usePageBySlug } from '../../lib/usePageBySlug';
 import type { PageData } from '../../lib/usePageBySlug';
 import './PageView.module.css';
@@ -97,24 +98,16 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
     { text: titleText, href: `/${category ? category + '/' : ''}${params.slug || ''}` },
   ];
 
+  const { setItems } = useBreadcrumb();
+
+  // Update global breadcrumb when title or category changes
+  React.useEffect(() => {
+    setItems(breadcrumbItems);
+    return () => setItems([]);
+  }, [setItems, titleText, category]);
+
   return (
     <section className="pageViewRoot">
-      <div className="pageViewBreadcrumbWrap">
-        <Breadcrumb className="pageViewBreadcrumb">
-        {breadcrumbItems.map((item, idx) => (
-          <BreadcrumbItem key={item.href + '-' + idx}>
-            {idx < breadcrumbItems.length - 1 ? (
-              <>
-                <Link to={item.href}>{item.text}</Link>
-                <span className="breadcrumbSeparator">/</span>
-              </>
-            ) : (
-              <span>{item.text}</span>
-            )}
-          </BreadcrumbItem>
-        ))}
-        </Breadcrumb>
-      </div>
       <h2>{titleText}</h2>
       <ResponsiveContainer>
         {resource ? (

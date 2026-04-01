@@ -2,9 +2,10 @@ import React from 'react';
 import styles from './AllFeatures.module.css';
 import { useSiteFeatures } from '../../lib/useSiteFeatures';
 import type { SiteFeature } from '../../lib/useSiteFeatures';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+
+import { useBreadcrumb } from '../BreadcrumbContext';
 import { PeopleTeamToolbox24Regular, ChevronRight24Filled } from '@fluentui/react-icons';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AllFeatures: React.FC = () => {
   const features = useSiteFeatures() as SiteFeature[];
@@ -23,24 +24,15 @@ const AllFeatures: React.FC = () => {
     { text: 'All features', href: '/all-features' },
   ];
 
+  const { setItems } = useBreadcrumb();
+
+  React.useEffect(() => {
+    setItems(breadcrumbItems);
+    return () => setItems([]);
+  }, [setItems]);
+
   return (
     <section className={styles['features-root']}>
-      <Breadcrumb>
-        {breadcrumbItems.map((item, idx) => (
-          <React.Fragment key={item.href}>
-            <BreadcrumbItem>
-              {idx < breadcrumbItems.length - 1 ? (
-                <Link to={item.href}>{item.text}</Link>
-              ) : (
-                <span>{item.text}</span>
-              )}
-            </BreadcrumbItem>
-            {idx < breadcrumbItems.length - 1 && (
-              <span className={styles['breadcrumb-sep']}>/</span>
-            )}
-          </React.Fragment>
-        ))}
-      </Breadcrumb>
       <h2 className="fluent-title2">All features</h2>
       <div className={styles['features-grid']}>
         {sortedFeatures.map(feature => (
