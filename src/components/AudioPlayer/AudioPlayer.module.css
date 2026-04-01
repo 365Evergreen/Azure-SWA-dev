@@ -1,0 +1,47 @@
+.player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.playButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0078d4;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playButton:hover,
+.playButton:focus {
+  background-color: #106ebe;
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+.smallBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f3f2f1;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smallBtn:hover,
+.smallBtn:focus {
+  background-color: #edebe9;
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
