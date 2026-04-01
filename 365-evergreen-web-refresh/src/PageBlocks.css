@@ -1,0 +1,120 @@
+/* Styles for WP block rendering in PageBlocks */
+
+/* === Exact typography from src/index.css (no variances) === */
+.wp-content {
+  /* color and font-family follow app root */
+  color: var(--neutralPrimary, #323130);
+  font-family: inherit;
+}
+
+/* Paragraphs: match global paragraph rule in index.css */
+.wp-content p {
+  font-family: 'Segoe UI', 'SegoeUI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--neutralPrimary, #323130);
+  margin-bottom: 1.1em;
+}
+
+/* Fluent body1 parity for block-level text and list items */
+.wp-content p,
+.wp-content li,
+.wp-content li p,
+.wp-content ul p,
+.wp-content ol p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+/* Lists: exact parity with paragraph metrics (no variance) */
+.wp-content ul,
+.wp-content ol {
+  margin: 0 0 1.1em 1.25rem; /* bottom spacing matches paragraphs */
+  padding-left: 1.25rem;
+}
+
+.wp-content ul li,
+.wp-content ol li,
+.wp-content ul li p,
+.wp-content ol li p {
+  font-family: 'Segoe UI', 'SegoeUI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem; /* same as paragraphs */
+  line-height: 1.7; /* same as paragraphs */
+  font-weight: 400;
+  margin: 0 0 1.1em 0; /* vertical rhythm matches paragraphs */
+}
+
+/* Make list markers match the paragraph font size */
+.wp-content ul li::marker,
+.wp-content ol li::marker {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Headings: mirror Fluent title sizes from index.css */
+.wp-content h1 { font-size: 32px; line-height: 40px; font-weight: 600; }
+.wp-content h2 { font-size: 28px; line-height: 36px; font-weight: 600; }
+.wp-content h3 { font-size: 24px; line-height: 32px; font-weight: 600; }
+.wp-content h4 { font-size: 20px; line-height: 26px; font-weight: 600; }
+.wp-content h5 { font-size: 16px; line-height: 22px; font-weight: 600; }
+.wp-content h6 { font-size: 14px; line-height: 20px; font-weight: 600; }
+
+/* Links: exact parity with index.css */
+.wp-content a {
+  font-weight: 500;
+  color: var(--neutralPrimary);
+  text-decoration: inherit;
+  transition: color 0.2s;
+}
+.wp-content a:hover {
+  color: var(--neutralDark);
+}
+
+.wp-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.wp-column {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+@media (max-width: 900px) {
+  .wp-columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .wp-column {
+    padding: 1rem 0.5rem;
+  }
+}
+.wp-accordion {
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin: 1rem 0;
+  background: #fff;
+  overflow: hidden;
+}
+.wp-accordion-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wp-accordion-content {
+  padding: 1rem 1.5rem;
+  background: #fff;
+}

@@ -1,0 +1,37 @@
+.pageViewRoot {
+  min-height: 300px;
+  padding: 0 4vw;
+  margin: 0;
+  /* Account for header height plus its vertical padding (1rem top + 1rem bottom)
+     so the page content always starts below the fixed header. */
+  padding-top: calc(var(--header-height, 44px) + 2rem + 8px);
+}
+
+.breadcrumbSeparator {
+  margin: 0 0.5em;
+  color: #888;
+}
+
+/* Wrapper that holds the breadcrumb and remains sticky beneath the header.
+   Placing sticky on a simple wrapper avoids Fluent's internal styles preventing
+   sticky positioning on the component root. */
+.pageViewBreadcrumbWrap {
+  position: sticky;
+  top: calc(var(--header-height, 44px) + 8px);
+  z-index: 1200;
+  left: 0;
+  width: 100%;
+  padding: 6px 0 12px 0; /* spacing between header and content */
+  box-sizing: border-box;
+  background: transparent; /* keep visual styling on the Breadcrumb itself */
+}
+
+/* Breadcrumb inner element (Fluent component) — keep minimal styles so we don't
+   fight Fluent's internal structure; wrapper handles sticky behaviour. */
+.pageViewBreadcrumb {
+  width: 100%;
+  padding: 6px 4vw;
+  margin: 0;
+  box-sizing: border-box;
+  background: var(--page-background, #fff);
+}

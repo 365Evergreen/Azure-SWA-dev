@@ -1,0 +1,120 @@
+.featurepage-root {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg, transparent);
+}
+
+.featurepage-hero {
+  position: relative;
+  padding: 0;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.featurepage-heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-16.png');
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+
+.featurepage-heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0) 100%);
+  z-index: 2;
+}
+
+.featurepage-heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  padding: 3.5rem 4vw;
+}
+
+.featurepage-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: var(--neutralPrimary, #213547);
+  font-weight: 700;
+}
+
+.featurepage-subtitle {
+  margin: 0 0 0.5rem 0;
+  color: var(--neutralSecondary, #f1f1f1);
+  font-size: 1rem;
+}
+
+.featurepage-content {
+  display: flex;
+  gap: 2rem;
+ 
+  margin: 2rem auto;
+    padding: 0 4vw 0 4vw;
+  box-sizing: border-box;
+}
+
+.featurepage-heroCta {
+  margin-top: 1.25rem;
+}
+
+.featurepage-heroBtn {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background: #fff;
+  color: var(--themePrimary, #007814);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+.featurepage-aside {
+  flex: 0 0 200px;
+}
+
+.featurepage-asideNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.featurepage-asideNav a {
+  color: var(--themePrimary, #007814);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.featurepage-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .featurepage-hero {
+    min-height: 260px;
+    padding: 0;
+  }
+  .featurepage-content {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem auto;
+    padding: 0 4vw 0 4vw;
+  }
+  .featurepage-aside {
+    order: 2;
+    width: 100%;
+    flex: none;
+  }
+  .featurepage-main {
+    order: 1;
+  }
+}

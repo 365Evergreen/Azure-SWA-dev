@@ -1,0 +1,81 @@
+.how-we-do-it-nav {
+  display: block;
+  padding: 1rem 4vw; /* increased vertical padding, keep left/right */
+}
+
+.how-we-do-it-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.how-we-do-it-nav__item {
+    text-decoration: none;
+}
+
+.how-we-do-it-nav__link {
+  color: var(--neutral-foreground, #0b57a4);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.how-we-do-it-nav__link--active {
+  position: relative;
+  color: var(--neutral-foreground, #0b57a4);
+}
+
+.how-we-do-it-nav__link--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.5rem;
+  height: 3px;
+  background: var(--brand, #0b57a4);
+  border-radius: 2px;
+}
+
+.how-we-do-it-nav__link:hover,
+.how-we-do-it-nav__link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.how-we-do-it-nav--stuck {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background: var(--neutral-layer-1, #fff);
+}
+
+/* On smaller screens make the nav stick below the header. */
+@media (max-width: 900px) {
+  .how-we-do-it-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height, 44px);
+    z-index: 2500;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: transparent;
+  }
+  .how-we-do-it-nav--stuck {
+    /* When JS applies a fixed style, prefer that; this rule ensures
+       the default visual matches expectation if JS doesn't run. */
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height, 44px);
+    z-index: 2500;
+  }
+}
+
+@media (max-width: 600px) {
+  .how-we-do-it-nav__list {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+}

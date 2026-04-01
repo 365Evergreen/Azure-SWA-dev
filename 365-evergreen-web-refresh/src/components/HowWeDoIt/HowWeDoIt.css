@@ -1,0 +1,135 @@
+.howwedoit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.howwedoit-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 1rem;
+  color: #222;
+}
+
+.howwedoit-card--left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background: #e8f5e9;
+}
+.howwedoit-card--center-top {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background: #e3f2fd;
+}
+.howwedoit-card--center-bottom {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: #fce4ec;
+}
+.howwedoit-card--right-top {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background: #fff3e0;
+}
+.howwedoit-card--right-bottom {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  background: #ede7f6;
+}
+
+@media (max-width: 900px) {
+  .howwedoit-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+  }
+  .howwedoit-card {
+    margin-bottom: 1rem;
+    min-width: 0;
+    max-width: 98vw;
+  }
+  .howwedoit-card--left,
+  .howwedoit-card--center-top,
+  .howwedoit-card--center-bottom,
+  .howwedoit-card--right-top,
+  .howwedoit-card--right-bottom {
+    grid-column: 1 / 2 !important;
+    grid-row: auto !important;
+  }
+}
+
+.howwedoit-root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.howwedoit-section {
+  position: relative;
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.howwedoit-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.howwedoit-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 4vw;
+  width: 100%;
+  max-width: 100vw;
+  text-align: left;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-sizing: border-box;
+}
+
+.howwedoit-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.howwedoit-blurb {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .howwedoit-content {
+    padding: 1.5rem 2vw;
+    max-width: 100vw;
+  }
+  .howwedoit-section {
+    min-height: 180px;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "365-evergreen",
+			"uri": "azurestorageblob:/365-evergreen?storageAccountId=/subscriptions/6b311f79-36fa-44d4-8399-27bbd92de579/resourceGroups/pauli2/providers/Microsoft.Storage/storageAccounts/pauli"
+		}
+	],
+	"settings": {}
+}

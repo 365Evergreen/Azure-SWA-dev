@@ -1,0 +1,128 @@
+/* how-we-do-it-hero styles */
+.how-we-do-it-hero-root {
+  background: url('https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-16.png') center/cover no-repeat;
+  min-height: 550px; /* reduced hero height for desktop */
+  height: 550px;
+  padding: 0 0 4rem 4vw;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* header height + header padding-top + header padding-bottom */
+  margin-top: calc(0px - (var(--header-height, 44px) + 2rem));
+  text-align: left;
+  overflow: hidden;
+  background-position: center calc(100% - 0px); /* Adjusted focal point */
+}
+
+.how-we-do-it-hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+}
+
+.how-we-do-it-hero-root > *:not(.how-we-do-it-hero-gradient) {
+  position: relative;
+  z-index: 3;
+}
+.how-we-do-it-hero-title, .how-we-do-it-hero-desc {
+  text-align: left;
+  margin-left: 0;
+}
+@media (max-width: 900px) {
+  html, body, #root, main {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .how-we-do-it-hero-root {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 4.5rem 0 2rem 0 !important; /* top padding = header height */
+    margin-top: 0 !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
+    min-height: 260px !important;
+  }
+  .how-we-do-it-hero-content {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 1.2rem 1rem 0.5rem 1rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+  }
+  .how-we-do-it-hero-title {
+    font-size: 2rem !important;
+    line-height: 2.3rem !important;
+    margin-bottom: 0.5rem !important;
+    word-break: break-word !important;
+    color: #fff !important;
+  }
+  .how-we-do-it-hero-desc {
+    font-size: 1.05rem !important;
+    line-height: 1.5rem !important;
+    margin: 0.5rem 0 0.5rem 0 !important;
+    color: #fff !important;
+    max-width: 100vw !important;
+    word-break: break-word !important;
+  }
+}
+.how-we-do-it-hero-title {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+.how-we-do-it-hero-desc {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  max-width: 90vw;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.how-we-do-it-hero-btn {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  padding: 0.75em 2em;
+  background: #fff !important;
+  color: var(--themeNeutralSecondary) !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.how-we-do-it-hero-btn:hover, .how-we-do-it-hero-btn:focus {
+  background: var(--themeLighter) !important;
+  color: var(--themeDark) !important;
+}
+.how-we-do-it-hero-content {
+  width: 50%;
+  max-width: 700px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  word-break: break-word;
+}

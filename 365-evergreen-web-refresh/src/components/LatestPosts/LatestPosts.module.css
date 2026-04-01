@@ -1,0 +1,122 @@
+.latestPostsOuter,
+.latestPostsRoot {
+  background: var(--themeNeutralLightest, #f5f7fa);
+}
+
+.latestPostsOuter {
+  transition: background 0.3s;
+}
+
+.latestPostsContainer {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.latestPostsTitle {
+  text-align: left;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
+.latestPostsTitleLink {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.latestPostsTitleLink:hover {
+  text-decoration: underline;
+}
+
+.latestPostsImageLink {
+  display: block;
+}
+
+.latestPostsFeaturedImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  display: block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  background: #f6f6f6;
+}
+
+.categoriesWrap {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.latestPostsCategoryTag {
+  background: #e6f2e6;
+  color: #d821ba;
+  font-size: 0.85em;
+  border-radius: 6px;
+  padding: 0.15em 0.7em;
+  cursor: pointer;
+}
+
+.latestPostsDate {
+  color: var(--neutralSecondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.latestPostsExcerpt {
+  color: var(--neutralPrimary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.readMoreLink {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.4em;
+  margin-top: auto;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.readMoreLink:hover {
+  text-decoration: underline;
+}
+
+.readMoreIcon {
+  margin-left: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .postsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .postsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "body": [
+        {
+            "label": "Produce",
+            "accordion": 1,
+            "accordionLabel": "Work from anywhere",
+            "feature": "Modern workplace"
+        },
+        {
+            "label": "Communicate",
+            "accordion": 2,
+            "accordionLabel": "Communicate with ease",
+            "feature": "Modern workplace"
+        },
+        {
+            "label": "Collaborate",
+            "accordion": 3,
+            "accordionLabel": "Collaborate seamlessly",
+            "feature": "Modern workplace"
+        },
+        {
+            "label": "Engage",
+            "accordion": 4,
+            "accordionLabel": "Engage your teams",
+            "feature": "Modern workplace"
+        },
+        {
+            "label": "Streamline",
+            "accordion": 5,
+            "accordionLabel": "Replace the effort",
+            "feature": "\tAutomated processes"
+        },
+        {
+            "label": "Save time",
+            "accordion": 6,
+            "accordionLabel": "Be more efficient",
+            "feature": "\tAutomated processes"
+        },
+        {
+            "label": "Connect",
+            "accordion": 7,
+            "accordionLabel": "Connect your apps",
+            "feature": "\tAutomated processes"
+        },
+        {
+            "label": "Scale",
+            "accordion": 8,
+            "accordionLabel": "Scale",
+            "feature": "\tAutomated processes"
+        }
+    ]
+}

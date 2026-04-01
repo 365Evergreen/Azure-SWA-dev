@@ -1,0 +1,70 @@
+[
+    {
+        "Choice": "More connected and aligned",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "2. “More productive and efficient”",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "More engaged and motivated",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "3. “More confident and empowered”",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "4. “More collaborative and creative”",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "5. “A bit of everything”",
+        "Question": "What kind of team culture are you aiming for?"
+    },
+    {
+        "Choice": "1. “Too many channels, not enough clarity”",
+        "Question": "How does your team currently communicate?"
+    },
+    {
+        "Choice": "2. “Meetings dominate our week”",
+        "Question": "How does your team currently communicate?"
+    },
+    {
+        "Choice": "3. “We rely heavily on email”",
+        "Question": "How does your team currently communicate?"
+    },
+    {
+        "Choice": "4. “We use Teams but not effectively”",
+        "Question": "How does your team currently communicate?"
+    },
+    {
+        "Choice": "5. “Communication is okay but could be better”",
+        "Question": "How does your team currently communicate?"
+    },
+    {
+        "Choice": "1. “People don’t know where to find things”",
+        "Question": "What’s the biggest barrier to great teamwork?"
+    },
+    {
+        "Choice": "2. “We work in silos”",
+        "Question": "What’s the biggest barrier to great teamwork?"
+    },
+    {
+        "Choice": "3. “We lack shared visibility”",
+        "Question": "What’s the biggest barrier to great teamwork?"
+    },
+    {
+        "Choice": "4. “Tools feel disconnected”",
+        "Question": "What’s the biggest barrier to great teamwork?"
+    },
+    {
+        "Choice": "5. “We’re growing faster than our systems”",
+        "Question": "What’s the biggest barrier to great teamwork?"
+    },
+    {
+        "Choice": null,
+        "Question": null
+    }
+]
