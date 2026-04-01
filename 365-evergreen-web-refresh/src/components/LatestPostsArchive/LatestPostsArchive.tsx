@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { useNavigate } from 'react-router-dom';
 import heroConfig from '../../../page-components.json';
 import { useLatestPosts } from './useLatestPosts';
 import { useAllCategories, type WPCategory } from '../../lib/useAllCategories';
@@ -116,6 +117,8 @@ const LatestPostsArchive: React.FC = () => {
 			});
 		});
 	}, [posts, search, selectedCategories, parentSlugByChildSlug]);
+
+	const navigate = useNavigate();
 
 	const visiblePosts = React.useMemo(() => {
 		const limit = viewMode === 'grid' ? 15 : 15;
@@ -386,7 +389,6 @@ const LatestPostsArchive: React.FC = () => {
 		 <div className={viewMode === 'grid' ? 'latest-posts-archive-grid' : 'latest-posts-archive-list'}>
 				{visiblePosts.map((post: LatestPost) => {
 				 if (viewMode === 'grid') {
-					 const postUrl = `/post/${post.slug}`;
 					 const primaryCategory = post.categories?.edges?.[0]?.node?.slug || 'post';
 					 const postUrl = `/latest-posts/${primaryCategory}/${post.slug}`;
 					 return (
@@ -395,7 +397,7 @@ const LatestPostsArchive: React.FC = () => {
 							 href={postUrl}
 							 className="latest-posts-archive-card selectable-card"
 							 style={{ cursor: 'pointer', textDecoration: 'none' }}
-							 onClick={e => { e.preventDefault(); window.location.href = postUrl; }}
+							 onClick={e => { e.preventDefault(); navigate(postUrl); }}
 						 >
 							 <span className="latest-posts-title-link fluent-title3" style={{ color: '#000', marginBottom: '0.5rem', display: 'block' }}>{post.title}</span>
 							 {post.featuredImage?.node?.sourceUrl && (
@@ -429,7 +431,7 @@ const LatestPostsArchive: React.FC = () => {
 											 }}
 											 onClick={e => {
 												 e.stopPropagation();
-									 			window.location.href = `/category/${category.slug}`;
+												 navigate(`/category/${category.slug}`);
 											 }}
 										 >
 									 		 {category.name}

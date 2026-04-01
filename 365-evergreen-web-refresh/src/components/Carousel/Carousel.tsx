@@ -126,7 +126,7 @@ export default function Carousel() {
   key={idx}
   className={`${styles.dot} ${idx === active ? styles.activeDot : ''}`}
   aria-label={`Go to slide ${idx + 1}`}
-  aria-selected={String(idx === active)} // <-- Fixed
+  aria-selected={idx === active}
   role="tab"
   tabIndex={idx === active ? 0 : -1}
   onClick={() => goTo(idx)}

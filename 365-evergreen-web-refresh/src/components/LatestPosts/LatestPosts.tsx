@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './LatestPosts.module.css';
 import { useLatestPosts } from '../../lib/useLatestPosts';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface Post {
   id: string;
@@ -59,6 +59,8 @@ const LatestPosts: React.FC = () => {
                   key={post.id}
                   href={postUrl}
                   className={`${styles.postCard} selectable-card`}
+                  onClick={e => { e.preventDefault(); navigate(postUrl); }}
+                  onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(postUrl); } }}
                 >
                   <span className={`${styles.latestPostsTitleLink} fluent-title3`}>{post.title}</span>
                   {post.featuredImage?.node?.sourceUrl && (
