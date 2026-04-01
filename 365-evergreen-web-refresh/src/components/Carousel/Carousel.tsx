@@ -72,14 +72,14 @@ export default function Carousel() {
       <div className={styles.carouselContainer}>
         {slides.map((slide, idx) => (
           <div
-            key={idx}
-            className={styles.slide + (idx === active ? ' ' + styles.active : '')}
-            aria-hidden={idx !== active}
-            tabIndex={idx === active ? 0 : -1}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`Slide ${idx + 1} of ${slides.length}`}
-          >
+  key={idx}
+  className={styles.slide + (idx === active ? ' ' + styles.active : '')}
+  aria-hidden={idx !== active}        // <-- boolean expression, not a quoted string
+  tabIndex={idx === active ? 0 : -1}
+  role="group"
+  aria-roledescription="slide"
+  aria-label={`Slide ${idx + 1} of ${slides.length}`}
+>
             <img
               src={slide.image}
               alt="SharePoint workspace visual"
