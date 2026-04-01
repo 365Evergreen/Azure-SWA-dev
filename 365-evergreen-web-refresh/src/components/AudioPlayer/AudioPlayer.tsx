@@ -90,7 +90,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = 'Audio', 
         />
 
         <div className={styles.muteRow}>
-          <button type="button"  aria-label={isMuted ? 'Unmute' : 'Mute'} className={styles.smallBtn} aria-pressed={muted ? 'true' : 'false'} onClick={() => setMuted(v => !v)}>
+          <button type="button"  aria-label={muted ? 'Unmute' : 'Mute'} className={styles.smallBtn} aria-pressed={muted} onClick={() => setMuted(v => !v)}>
           {muted ? '🔇' : '🔊'}
           </button>
           <input className={styles.volume} type="range" min={0} max={1} step={0.01} value={muted ? 0 : volume} onChange={onVolume} aria-label="Volume" />
