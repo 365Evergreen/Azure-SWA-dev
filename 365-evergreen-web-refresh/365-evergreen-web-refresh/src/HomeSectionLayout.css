@@ -1,0 +1,31 @@
+.home-section {
+  margin: 0;
+  padding: 2.5rem 4vw;
+  box-sizing: border-box;
+}
+
+.home-section-heading {
+  margin: 0 0 2rem;
+  padding: 0;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .home-section {
+    padding: 2rem 2vw;
+  }
+
+  .home-section-heading {
+    margin: 0 0 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .home-section-heading {
+    margin: 0 0 1.5rem;
+  }
+}

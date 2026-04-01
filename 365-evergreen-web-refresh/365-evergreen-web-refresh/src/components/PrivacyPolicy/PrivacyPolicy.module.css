@@ -1,0 +1,67 @@
+.privacyPolicyRoot {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--neutralPrimary, #1a1a1a);
+}
+
+.updatedAt {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--neutralSecondary, #666);
+}
+
+.content {
+  display: block;
+  color: var(--neutralPrimary, #1a1a1a);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.content :global(h2),
+.content :global(h3) {
+  color: inherit;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.3;
+}
+
+.content :global(p) {
+  margin: 1rem 0;
+}
+
+.content :global(ul),
+.content :global(ol) {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.content :global(li) {
+  margin: 0.5rem 0;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  color: var(--neutralSecondary, #555);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}

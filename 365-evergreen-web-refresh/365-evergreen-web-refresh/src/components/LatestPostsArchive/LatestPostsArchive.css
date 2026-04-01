@@ -1,0 +1,524 @@
+/* Archive options layout */
+.archive-options {  padding: .5rem 4vw .5rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.archive-options-toggle {
+  margin-left: auto;
+}
+
+.archive-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.2em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 8px;
+  transition: background 0.18s;
+  font-family: inherit;
+}
+
+.archive-view-toggle-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Only show on desktop */
+.desktop-only {
+  display: block;
+}
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+/* Searchbox styling */
+.latest-posts-archive-searchbox {
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  border: 1.5px solid #fff;
+  font-size: 18px;
+  min-width: 220px;
+  background: rgba(255,255,255,0.13);
+  color: #ffffff;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.latest-posts-archive-searchbox::placeholder {
+  color: #ffffff;
+}
+.latest-posts-archive-searchbox:focus {
+  border-color: #ffffff;
+  background: rgba(255,255,255,0.22);
+}
+.latest-posts-archive-searchbox:focus::placeholder {
+  color: transparent;
+}
+
+/* Category selector styling */
+.latest-posts-archive-category-select {
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  border: 1.5px solid #fff;
+  font-size: 18px;
+  min-width: 180px;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+  margin-left: 12px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.latest-posts-archive-category-select:focus {
+  border-color: #007814;
+  background: rgba(255,255,255,0.22);
+}
+.latest-posts-archive-category-select-label {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+}
+.latest-posts-archive-category-select-arrow {
+  margin-left: 6px;
+}
+/* Remove fill color from category dropdown checkboxes */
+.latest-posts-archive-category-dropdown input[type="checkbox"] {
+  background: transparent !important;
+  appearance: checkbox;
+  -webkit-appearance: checkbox;
+  box-shadow: none !important;
+}
+.latest-posts-archive-category-dropdown {
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  padding: 0.5em 0;
+  max-height: 320px;
+  overflow-y: auto;
+  min-width: 200px;
+  margin-top: 0;
+  gap: 0;
+}
+.latest-posts-archive-category-option {
+  display: flex;
+  align-items: center;
+  padding: 0.2em 0.2em;
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  transition: background 0.15s;
+}
+.latest-posts-archive-category-option.selected {
+  background: #e6f2e6;
+}
+.latest-posts-archive-category-option:hover {
+  background: #f2f2f2;
+}
+.latest-posts-archive-category-parent-group {
+  padding: 0.2em 0 0.2em 0;
+}
+.latest-posts-archive-category-parent-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #007814;
+  padding: 0.2em 1em 0.2em 1em;
+  background: #f6f6f6;
+}
+/* Archive-specific grid and card styles */
+.latest-posts-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;  padding: 0 4vw 0 4vw;
+}
+@media (max-width: 1200px) {
+  .latest-posts-archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .latest-posts-archive-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.latest-posts-archive-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  word-break: break-word;
+  transition: box-shadow 0.2s;
+}
+.latest-posts-archive-card.selectable-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+.latest-posts-archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+  margin-top: 0.5em;
+}
+.latest-posts-archive-link:hover {
+  text-decoration: underline;
+}
+/* Hero section fallback styles (if Hero.css not loaded) */
+/* Homepage hero */
+.hero-root-home {
+  min-height: 450px;
+  height: 450px;
+  margin-top: -76px;
+  padding: 0 4vw 0 4vw;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+  background-position: center top !important;
+  background-size: cover !important;
+}
+
+/* Archive hero */
+.hero-root-archive {
+  min-height: 160px;
+  height: 450px;
+  margin-top: 0;
+  padding: 0 4vw 0 4vw;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+  background-position: center top !important;
+  background-size: cover !important;
+}
+.hero-gradient-archive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+.hero-content-archive {
+  width: 50%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  word-break: break-word;
+  white-space: normal;
+  position: relative;
+  z-index: 2;
+}
+.hero-title-archive {
+  color: #fff;
+  font-size: 4.5rem;
+  font-weight: 450;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+
+}
+.hero-desc-archive {
+  color: #fff;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  max-width: 90vw;
+  line-height: 1.5;
+  font-weight: 300;
+ 
+}
+/* .hero-btn styles are not orphaned, but ensure block is closed and not duplicated elsewhere */
+.hero-btn-archive {
+  background: #fff !important;
+  color: var(--themeNeutralSecondary) !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.hero-btn-archive:hover, .hero-btn-archive:focus {
+  background: #f6f8fa !important;
+  color: #007814 !important;
+}
+/* Archive card styles */
+.latest-posts-archive-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  word-break: break-word;
+}
+
+/* List mode only: full width and margin */
+.latest-posts-archive-list .latest-posts-archive-card {
+  width: 100%;
+  margin: 2rem auto;
+}
+.hero-gradient-archive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(34,34,34,0.72) 0%, rgba(34,34,34,0.32) 60%, rgba(34,34,34,0.08) 100%);
+
+  min-width: 320px;
+  align-items: center;
+}
+
+.latest-posts-archive-card--grid {
+  /* No width/margin overrides in grid mode */
+  box-sizing: border-box;
+}
+
+
+.latest-posts-featured-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  display: block;
+  background: #f6f6f6;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.latest-posts-excerpt {
+  margin-bottom: 1rem;
+  text-align: left;
+  color: #444;
+}
+
+.latest-posts-meta-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.latest-posts-date {
+  color: #888;
+  font-size: 0.95em;
+}
+
+.latest-posts-category-tag {
+  background: #e6f2e6;
+  color: #2d6a2d;
+  font-size: 0.85em;
+  border-radius: 6px;
+  padding: 0.15em 0.7em;
+  cursor: pointer;
+  margin-left: 0.5em;
+  transition: background 0.2s, color 0.2s;
+}
+.latest-posts-category-tag:hover {
+  /* Hero section fallback styles (if Hero.css not loaded) */
+  .hero-root-archive {
+    min-height: 160px;
+    height: 200px;
+    padding: 0 0 2rem 4vw;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
+    background-position: center top !important;
+    background-size: cover !important;
+  }
+  align-items: center;
+}
+
+/* Grid container: 3 columns, gap, responsive */
+.latest-posts-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+@media (max-width: 1200px) {
+  .latest-posts-archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .latest-posts-archive-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+/* Override Fluent UI Select border color to use themePrimary */
+.fui-Select:focus-within,
+.fui-Select:focus-visible,
+.fui-Select[data-focus-visible],
+.fui-Select:active {
+  --fui-select-borderColor--focus: #007814 !important;
+  border-color: #007814 !important;
+  box-shadow: 0 0 0 2px #00781422 !important;
+}
+
+/* Archive filter row styles (moved from LatestPosts.css) */
+.latest-posts-archive-filters-row {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.latest-posts-archive-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.latest-posts-archive-category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.latest-posts-archive-category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2em 0.75em;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1.6;
+  background: var(--themeLight, #96d6a1);
+  background: color-mix(in srgb, var(--themeLight, #96d6a1) 40%, var(--white, #ffffff) 60%);
+  border: 1px solid var(--themeSecondary, #108824);
+  border-color: color-mix(in srgb, var(--themeSecondary, #108824) 55%, transparent 45%);
+  color: var(--themeDark, #005b0f);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.latest-posts-archive-category-tag:hover,
+.latest-posts-archive-category-tag:focus-visible {
+  background: color-mix(in srgb, var(--themeLight, #96d6a1) 55%, var(--white, #ffffff) 45%);
+  border-color: var(--themeSecondary, #108824);
+  color: var(--themeDarkAlt, #006c12);
+}
+
+.latest-posts-archive-category-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.latest-posts-archive-category-tag-remove:hover,
+.latest-posts-archive-category-tag-remove:focus-visible {
+  opacity: 0.75;
+}
+
+.latest-posts-archive-category-tag-remove svg {
+  display: block;
+}
+
+.latest-posts-archive-clear-filters {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 1.5px solid #fff;
+  font-size: 18px;
+  background: rgba(255,255,255,0.13);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.latest-posts-archive-clear-filters:hover,
+.latest-posts-archive-clear-filters:focus {
+  border-color: #ffffff;
+  background: rgba(255,255,255,0.22);
+}
+
+.latest-posts-archive-filter-label {
+  color: var(--neutralPrimary);
+  font-weight: 500;
+  margin-bottom: 0;
+  min-width: 110px;
+}
+
+/* LatestPostsArchive styles */
+.latest-posts-archive-root {
+  background: #fff;
+  padding: 0;
+
+}
+
+.latest-posts-archive-container {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.latest-posts-archive-title {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Remove duplicate filter row/group/label styles at end of file */

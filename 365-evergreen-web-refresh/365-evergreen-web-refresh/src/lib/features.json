@@ -1,0 +1,80 @@
+{
+  "data": {
+    "features": {
+      "edges": [
+        {
+          "node": {
+            "id": "cG9zdDozNTg=",
+            "title": "Support and training",
+            "uri": "/feature/support-and-training/",
+            "slug": "support-and-training"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNTc=",
+            "title": "Best practice governance",
+            "uri": "/feature/best-practice-governance/",
+            "slug": "best-practice-governance"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNTY=",
+            "title": "Security",
+            "uri": "/feature/security/",
+            "slug": "security"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNTU=",
+            "title": "Tools on the go",
+            "uri": "/feature/tools-on-the-go/",
+            "slug": "tools-on-the-go"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNTI=",
+            "title": "Date analysis and visualisation",
+            "uri": "/feature/date-analysis-and-visualisation/",
+            "slug": "date-analysis-and-visualisation"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNTA=",
+            "title": "Smart agents and copilots",
+            "uri": "/feature/smart-agents-and-copilots/",
+            "slug": "smart-agents-and-copilots"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNDg=",
+            "title": "Business apps",
+            "uri": "/feature/business-apps/",
+            "slug": "business-apps"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozNDM=",
+            "title": "Automated processes",
+            "uri": "/feature/automated-processes/",
+            "slug": "automated-processes"
+          }
+        },
+        {
+          "node": {
+            "id": "cG9zdDozMzg=",
+            "title": "Modern workplace",
+            "uri": "/feature/workplace/",
+            "slug": "workplace"
+          }
+        }
+      ]
+    }
+  }
+}

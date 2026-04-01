@@ -1,0 +1,97 @@
+.what-we-do-nav {
+  display: block;
+  padding: 1rem 4vw; /* increased vertical padding, keep left/right */
+}
+
+.what-we-do-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping by default */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.what-we-do-nav__item {
+  text-decoration: none;
+  flex: 0 0 auto; /* prevent items from shrinking so they wrap instead */
+}
+
+.what-we-do-nav__link {
+ color: var(--neutralPrimary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.what-we-do-nav__link--active {
+  position: relative;
+  color: var(--neutralPrimary);
+}
+
+.what-we-do-nav__link--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.5rem;
+  height: 3px;
+   color: var(--neutralPrimary);
+  border-radius: 2px;
+}
+
+.what-we-do-nav__link:hover,
+.what-we-do-nav__link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.what-we-do-nav--stuck {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background: var(--neutral-layer-1, #fff);
+}
+
+/* When the nav is made sticky/fixed via JS, ensure the inner list keeps
+   the same wrapping behaviour and item sizing as the non-stuck state. */
+.what-we-do-nav--stuck .what-we-do-nav__list {
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+.what-we-do-nav--stuck .what-we-do-nav__item {
+  flex: 0 0 auto;
+}
+
+/* On smaller screens make the nav stick below the header. */
+@media (max-width: 900px) {
+  .what-we-do-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height, 44px);
+    z-index: 500;
+    left: 0;
+    right: 0;
+    width: 100%;
+ background: var(--neutral-layer-1, #fff);
+  }
+  .what-we-do-nav--stuck {
+    /* When JS applies a fixed style, prefer that; this rule ensures
+       the default visual matches expectation if JS doesn't run. */
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height, 44px);
+    z-index: 500;
+  }
+}
+@media (max-width: 600px) {
+  .what-we-do-nav__list {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0.25rem 0;
+  }
+}
