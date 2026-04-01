@@ -21,17 +21,19 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        working-directory: 365-evergreen-web-refresh
         run: |
           corepack enable
           pnpm install --frozen-lockfile
 
       - name: Build
+        working-directory: 365-evergreen-web-refresh
         run: pnpm build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: 365-evergreen-web-refresh/dist
 
   deploy:
     needs: build
@@ -42,4 +44,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
