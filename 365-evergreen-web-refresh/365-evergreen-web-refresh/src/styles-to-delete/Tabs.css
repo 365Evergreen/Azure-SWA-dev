@@ -1,0 +1,26 @@
+.tabs-root {
+  width: 100%;
+}
+.tabs-list {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1em;
+}
+.tabs-tab {
+  background: none;
+  border: none;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #444;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tabs-tab--active {
+  color: #0078d4;
+  border-bottom: 2px solid #0078d4;
+  font-weight: 500;
+}
+.tabs-content {
+  padding: 1em 0;
+}

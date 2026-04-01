@@ -1,0 +1,87 @@
+.chatRoot {
+  background: var(--neutralLighter);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  right: 2vw;
+  bottom: 7vw;
+  z-index: 1001;
+}
+.chatHeader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--themePrimary);
+  margin-bottom: 0.5rem;
+}
+.chatMessages {
+  flex: 1;
+  min-height: 120px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--neutralLighterAlt);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.botMsg {
+  background: var(--themeLighter);
+  color: var(--neutralPrimary);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+  align-self: flex-start;
+}
+.userMsg {
+  background: var(--themePrimary);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+  align-self: flex-end;
+}
+.chatForm {
+  display: flex;
+  gap: 0.5rem;
+}
+.chatInput {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--neutralQuaternary);
+  font-size: 1rem;
+}
+.chatBtn {
+  background: var(--themePrimary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chatBtn:hover {
+  background: var(--themeDarkAlt);
+}
+.chatFooter {
+  text-align: center;
+  color: var(--neutralSecondary);
+  font-size: 0.85rem;
+}
+.chatCloseBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--neutralSecondary);
+  cursor: pointer;
+}

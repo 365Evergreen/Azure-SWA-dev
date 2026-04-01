@@ -1,0 +1,44 @@
+{
+    "body": [
+        {
+            "title": "365 Evergreen insights",
+            "blurb": "Architecting the future of work through SharePoint mastery, bespoke automation, and strategic Microsoft 365 implementation.",
+            "backgroundImage": "https://365evergreen.com/wp-content/uploads/2026/01/Archive-Hero-Image.png",
+            "backgroundColour": "#f3f2f1",
+            "gradient": null,
+            "page": "latest-posts"
+        },
+        {
+            "title": "Our resources",
+            "blurb": "Explore eBooks, templates, and checklists designed to accelerate your evergreen workplace strategy.",
+            "backgroundImage": "https://365evergreen.com/wp-content/uploads/2026/02/learn_hero_background_light.png",
+            "backgroundColour": "#f3f2f1",
+            "gradient": null,
+            "page": "resources"
+        },
+        {
+            "title": "Collaboration and communication",
+            "blurb": "Architecting the future of work through SharePoint mastery, bespoke automation, and strategic Microsoft 365 implementation.",
+            "backgroundImage": "https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-2.png",
+            "backgroundColour": "#f3f2f1",
+            "gradient": null,
+            "page": "what-we-do"
+        },
+        {
+            "title": "Apps and workflows",
+            "blurb": "Architecting the future of work through SharePoint mastery, bespoke automation, and strategic Microsoft 365 implementation.",
+            "backgroundImage": "https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-14.png",
+            "backgroundColour": "#f3f2f1",
+            "gradient": null,
+            "page": "what-we-do"
+        },
+        {
+            "title": "Governance and security",
+            "blurb": "Architecting the future of work through SharePoint mastery, bespoke automation, and strategic Microsoft 365 implementation.",
+            "backgroundImage": "https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-16.png",
+            "backgroundColour": "#f3f2f1",
+            "gradient": null,
+            "page": "what-we-do"
+        }
+    ]
+}

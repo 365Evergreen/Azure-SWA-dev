@@ -1,0 +1,124 @@
+@media (max-width: 768px) {
+  .whatwedo-accordion {
+    gap: 1rem;
+  }
+  .whatwedo-accordion__section {
+    margin-bottom: 1rem;
+  }
+  .whatwedo-accordion__title {
+    font-size: 1.1rem;
+  }
+  .whatwedo-accordion__panel {
+    min-height: 40px;
+  }
+  .whatwedo-accordion__button {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .whatwedo-accordion__arrow {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+  .whatwedo-accordion__content {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+.whatwedo-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.whatwedo-accordion__section {
+  margin-bottom: 2rem;
+}
+
+.whatwedo-accordion__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.whatwedo-accordion__panels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.whatwedo-accordion__panel {
+  border: 1px solid var(--neutralQuaternary);
+  border-radius: 8px;
+  background: var(--neutralLighter);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  min-height: 56px;
+}
+
+.whatwedo-accordion__button {
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.18rem;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--neutralPrimary);
+}
+
+.whatwedo-accordion__arrow {
+  margin-right: 12px;
+  font-size: 20px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.whatwedo-accordion__button.open .whatwedo-accordion__arrow {
+  transform: rotate(90deg);
+}
+
+.whatwedo-accordion__content {
+  padding: 1.1rem 1.5rem;
+  background: #fff;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* CTA button inside the content area - styled like feature links */
+.whatwedo-accordion__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatwedo-accordion__cta:hover,
+.whatwedo-accordion__cta:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+.whatwedo-accordion__cta {
+  display: inline-flex;
+  align-items: center;
+}
+
+.whatwedo-accordion__cta svg {
+  margin-left: 0.1em;
+  font-size: 1.05em;
+}
+
+@media (max-width: 768px) {
+  .whatwedo-accordion__cta { font-size: 0.95rem; }
+}

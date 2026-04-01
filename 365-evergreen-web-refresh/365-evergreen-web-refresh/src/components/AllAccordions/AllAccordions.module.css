@@ -1,0 +1,45 @@
+.root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px;
+}
+.filters {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.featureAccordionBtn {
+  padding: 0.5em 1.2em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #181828;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.18s;
+}
+.featureAccordionBtnActive {
+  border: 2px solid #0078d4;
+  background: #0078d4;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,120,212,0.08);
+}
+.section {
+  margin-bottom: 2.5rem;
+}
+.meta {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.featureName {
+  color: #0078d4;
+}
+.itemLabel {
+  color: #333;
+}
+.metaMuted {
+  color: #888;
+}

@@ -1,0 +1,42 @@
+[
+        {
+            "Title": "Produce",
+            "Accordion": 1,
+            "Display": "true"
+        },
+        {
+            "Title": "Communicate",
+            "Accordion": 2,
+            "Display": "true"
+        },
+        {
+            "Title": "Collaborate",
+            "Accordion": 3,
+            "Display": "true"
+        },
+        {
+            "Title": "Engage",
+            "Accordion": 4,
+            "Display": "true"
+        },
+        {
+            "Title": "Streamline",
+            "Accordion": 5,
+            "Display": "true"
+        },
+        {
+            "Title": "Save time",
+            "Accordion": 6,
+            "Display": "true"
+        },
+        {
+            "Title": "Connect",
+            "Accordion": 7,
+            "Display": "true"
+        },
+        {
+            "Title": "Scale",
+            "Accordion": 8,
+            "Display": "true"
+        }
+    ]

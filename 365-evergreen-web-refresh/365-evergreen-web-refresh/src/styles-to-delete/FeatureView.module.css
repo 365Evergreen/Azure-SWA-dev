@@ -1,0 +1,65 @@
+.featureview-hero {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(11,87,164,0.06), rgba(11,87,164,0.12));
+}
+
+.featureview-heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://365evergreen.com/wp-content/uploads/2026/01/MicrosoftViva-Teams-background-16.png');
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+
+.featureview-heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.28) 50%, rgba(0,0,0,0) 100%);
+  z-index: 2;
+}
+
+.featureview-heroInner {
+  position: relative;
+  z-index: 3;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 4vw;
+}
+
+.featureview-heroTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.featureview-heroBlurb {
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+}
+
+.featureview-heroCta {
+  margin-top: 1rem;
+}
+
+.featureview-heroBtn {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background: #fff;
+  color: var(--themePrimary, #007814);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .featureview-heroInner {
+    padding: 2rem 1rem;
+  }
+}
