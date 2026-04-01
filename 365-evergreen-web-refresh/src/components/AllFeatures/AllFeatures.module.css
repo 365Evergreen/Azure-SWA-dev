@@ -88,3 +88,28 @@
   color: #111;
   text-decoration: underline;
 }
+
+/* helper classes moved from inline styles */
+.breadcrumb-sep {
+  margin: 0 0.5em;
+  color: #888;
+}
+.features-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.feature-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.chevron-icon {
+  font-size: 1.1em;
+  margin-left: 0.1em;
+}

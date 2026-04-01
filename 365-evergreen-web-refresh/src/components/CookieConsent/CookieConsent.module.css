@@ -43,6 +43,19 @@
 .actions button {
   min-width: 88px;
   border-radius: 8px;
+  background-color: var(--themePrimary, #007814);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.12s, transform 0.12s;
+}
+.actions button:hover,
+.actions button:focus {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+  outline: none;
 }
 
 @media (max-width: 900px) {

@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense, type ComponentProps, type ComponentType } from 'react';
+import { useState, lazy, Suspense, useEffect, type ComponentProps, type ComponentType } from 'react';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 // import { CTA } from './components/CTA';
@@ -8,6 +8,8 @@ import { ContactForm } from './components/ContactForm/ContactForm';
 import Pillars from './components/Pillars/Pillars';
 import { Footer } from './components/Footer/Footer';
 import { CookieConsent } from './components/CookieConsent/CookieConsent';
+import { getConsent, subscribe } from './lib/cookieConsent';
+import { initAnalytics, teardownAnalytics } from './lib/analytics';
 import { CopilotChat } from './components/CopilotChat/CopilotChat';
 import { ChatBubble } from './components/ChatBubble/ChatBubble';
 import { FloatingDrawer } from './components/FloatingDrawer/FloatingDrawer';
@@ -54,6 +56,19 @@ const PageViewOptional: ComponentType<PageViewOptionalProps> = (props) => (
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Initialize analytics when consent is present and enabled
+  useEffect(() => {
+    const current = getConsent();
+    if (current && current.prefs.analytics) {
+      initAnalytics();
+    }
+    const unsub = subscribe(rec => {
+      if (rec && rec.prefs.analytics) initAnalytics();
+      else teardownAnalytics();
+    });
+    return () => unsub();
+  }, []);
   return (
     <>
       <Header />
@@ -144,6 +159,10 @@ function App() {
         <CopilotChat open={chatOpen} onClose={() => setChatOpen(false)} />
       </main>
       <CookieConsent />
+      {/* Initialize analytics based on saved consent */}
+      <script>
+        {`/* consent-init placeholder - handled in React lifecycle */`}
+      </script>
       <Footer />
       {!chatOpen && <ChatBubble onClick={() => setChatOpen(true)} />}
       <FloatingDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../FloatingDrawer/FloatingDrawer.module.css';
+import surveyStyles from './JourneySurvey.module.css';
 import { Radio, RadioGroup, Checkbox } from '@fluentui/react-components';
 import { ArrowLeft24Regular } from '@fluentui/react-icons';
 import choicesData from '../../../CTAJourneyChoices.json';
@@ -9,16 +10,7 @@ type ChoiceRecord = {
   Choice?: string | null;
 };
 
-const submittingStyle: React.CSSProperties = { textAlign: 'center', padding: '2rem' };
-const resultCardStyle: React.CSSProperties = { background: '#f6faf6', borderRadius: 12, padding: '1.5rem', marginTop: '1rem' };
-const zeroMarginTopStyle: React.CSSProperties = { marginTop: 0 };
-const spacerSmallStyle: React.CSSProperties = { height: '1.5rem' };
-const questionBlockStyle: React.CSSProperties = { marginBottom: '2rem' };
-const questionTextStyle: React.CSSProperties = { fontWeight: 600, marginBottom: 8, fontSize: '1.35rem' };
-const optionTextStyle: React.CSSProperties = { marginLeft: '1rem' };
-const largeSpacerStyle: React.CSSProperties = { height: '2.5rem' };
-const iconSpacingStyle: React.CSSProperties = { verticalAlign: 'middle', marginRight: 8 };
-const middleAlignStyle: React.CSSProperties = { verticalAlign: 'middle' };
+// Inline styles moved to JourneySurvey.module.css (surveyStyles)
 
 interface Question {
   id: string;
@@ -72,12 +64,12 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
 
   const handleBack = () => setStep(s => (s > 0 ? s - 1 : 0));
 
-  if (submitting) return <div style={submittingStyle}><div className="spinner" />Crafting your Evergreen pathway…</div>;
+  if (submitting) return <div className={surveyStyles.submitting}><div className="spinner" />Crafting your Evergreen pathway…</div>;
   if (showResult) return (
-    <div style={submittingStyle}>
+    <div className={surveyStyles.submitting}>
       <h2 className={styles.drawerTitle}>Your Evergreen Pathway</h2>
       <p className={styles.drawerSubtitle}>Based on what you shared, here's where you'll see the biggest impact.</p>
-      <div style={resultCardStyle}>Recommendation placeholder</div>
+      <div className={surveyStyles.resultCard}>Recommendation placeholder</div>
     </div>
   );
 
@@ -88,11 +80,11 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
 
   return (
     <div>
-      <div className={styles.drawerTitle} style={zeroMarginTopStyle}>Let's shape the team you want to lead</div>
+      <div className={styles.drawerTitle + ' ' + surveyStyles.zeroMarginTop}>Let's shape the team you want to lead</div>
       <div className={styles.drawerSubtitle}>A few quick questions to understand your culture and collaboration goals.</div>
-      <div style={spacerSmallStyle} />
-      <div style={questionBlockStyle}>
-        <div style={questionTextStyle}>{current.question}</div>
+      <div className={surveyStyles.spacerSmall} />
+      <div className={surveyStyles.questionBlock}>
+        <div className={surveyStyles.questionText}>{current.question}</div>
         {current.type === 'radio' && realOptions.length > 0 && (
           <RadioGroup
             value={answers[current.id] ?? ''}
@@ -101,8 +93,8 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
           >
             {realOptions.map(opt => (
               <div key={opt} className={styles.surveyOption + (answers[current.id] === opt ? ' ' + styles.surveyOptionSelected : '') + ' ' + styles.surveyOptionFullWidth}>
-                <Radio value={opt} style={answers[current.id] === opt ? { '--colorChecked': 'var(--fluent-fontColor, #1b1a19)' } as React.CSSProperties : {}} />
-                <span style={optionTextStyle}>{opt}</span>
+                <Radio value={opt} className={answers[current.id] === opt ? surveyStyles.radioChecked : ''} />
+                <span className={surveyStyles.optionText}>{opt}</span>
               </div>
             ))}
           </RadioGroup>
@@ -122,14 +114,14 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
                     );
                   }}
                 />
-                <span style={optionTextStyle}>{opt}</span>
+                <span className={surveyStyles.optionText}>{opt}</span>
               </div>
             ))}
           </div>
         )}
         {current.type === 'text' && (
           <div className={styles.surveyTextAreaWrapper}>
-            <textarea
+            <textarea 
               className={styles.surveyTextArea}
               value={answers[current.id] || ''}
               onChange={e => handleChange(e.target.value)}
@@ -137,7 +129,7 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
           </div>
         )}
       </div>
-      <div style={largeSpacerStyle} />
+      <div className={surveyStyles.largeSpacer} />
       <div className={styles.surveyActions + (!isFirst ? ' ' + styles.surveyActionsRow : '')}>
         {!isFirst && (
           <button
@@ -145,8 +137,8 @@ export const JourneySurvey: React.FC<JourneySurveyProps> = ({ questions, onCompl
             className={styles.surveyBackBtn}
             onClick={handleBack}
           >
-            <ArrowLeft24Regular style={iconSpacingStyle} />
-            <span style={middleAlignStyle}>Back</span>
+            <span className={surveyStyles.iconSpacing}><ArrowLeft24Regular /></span>
+            <span className={surveyStyles.middleAlign}>Back</span>
           </button>
         )}
         <button

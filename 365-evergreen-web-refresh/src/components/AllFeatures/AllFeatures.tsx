@@ -36,7 +36,7 @@ const AllFeatures: React.FC = () => {
               )}
             </BreadcrumbItem>
             {idx < breadcrumbItems.length - 1 && (
-              <span style={{ margin: '0 0.5em', color: '#888' }}>/</span>
+              <span className={styles['breadcrumb-sep']}>/</span>
             )}
           </React.Fragment>
         ))}
@@ -48,7 +48,7 @@ const AllFeatures: React.FC = () => {
             className={`${styles['features-card']} selectable-card`}
             key={feature.id}
             tabIndex={0}
-            role="button"
+            role="group"
             onClick={e => {
               if (e.ctrlKey || e.metaKey || e.button === 1) return;
               navigate(`/feature/${feature.slug}`);
@@ -59,10 +59,10 @@ const AllFeatures: React.FC = () => {
               }
             }}
           >
-            <div className="features-header-row">
+            <div className={styles['features-header-row']}>
               <span className={styles['features-icon']}>
                 {feature.siteFeature.icon ? (
-                  <img src={feature.siteFeature.icon} alt="Feature icon" style={{ width: 32, height: 32, objectFit: 'contain' }} />
+                  <img src={feature.siteFeature.icon} alt="Feature icon" className={styles['feature-icon-img']} />
                 ) : (
                   <PeopleTeamToolbox24Regular />
                 )}
@@ -80,9 +80,9 @@ const AllFeatures: React.FC = () => {
               }}
               tabIndex={-1}
             >
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4em' }}>
+              <span className={styles['link-inline']}>
                 {feature.siteFeature.buttonText || feature.siteFeature.link?.title || 'Learn more'}
-                <ChevronRight24Filled style={{ fontSize: '1.1em', marginLeft: '0.1em' }} />
+                <ChevronRight24Filled className={styles['chevron-icon']} />
               </span>
             </a>
           </div>
