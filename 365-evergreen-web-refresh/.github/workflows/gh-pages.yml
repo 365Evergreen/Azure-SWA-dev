@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - dev
+      - deploy/365-evergreen-web-refresh
   workflow_dispatch:
 
 jobs:
