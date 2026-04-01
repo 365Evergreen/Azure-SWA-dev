@@ -74,7 +74,7 @@ export default function Carousel() {
           <div
             key={idx}
             className={styles.slide + (idx === active ? ' ' + styles.active : '')}
-            aria-hidden={idx !== active ? 'true' : 'false'}
+            aria-hidden={idx !== active}
             tabIndex={idx === active ? 0 : -1}
             role="group"
             aria-roledescription="slide"
@@ -117,19 +117,21 @@ export default function Carousel() {
           aria-label="Previous slide"
           onClick={prev}
         >
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.5 21L11.5 14L17.5 7" stroke="#2d6a2d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.5 21L11.5 14L17.5 7" stroke="#2d6a2d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
         <div className={styles.dots} role="tablist" aria-label="Slide navigation">
           {slides.map((_, idx) => (
-            <button
-              key={idx}
-              className={styles.dot + (idx === active ? ' ' + styles.activeDot : '')}
-              aria-label={`Go to slide ${idx + 1}`}
-              aria-selected={idx === active}
-              role="tab"
-              tabIndex={idx === active ? 0 : -1}
-              onClick={() => goTo(idx)}
-            />
+<button
+  type="button"
+  key={idx}
+  className={`${styles.dot} ${idx === active ? styles.activeDot : ''}`}
+  aria-label={`Go to slide ${idx + 1}`}
+  aria-selected={String(idx === active)} // <-- Fixed
+  role="tab"
+  tabIndex={idx === active ? 0 : -1}
+  onClick={() => goTo(idx)}
+/>
+
           ))}
         </div>
         <button
@@ -137,7 +139,7 @@ export default function Carousel() {
           aria-label="Next slide"
           onClick={next}
         >
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10.5 7L16.5 14L10.5 21" stroke="#2d6a2d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10.5 7L16.5 14L10.5 21" stroke="#2d6a2d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
       </div>
     </section>

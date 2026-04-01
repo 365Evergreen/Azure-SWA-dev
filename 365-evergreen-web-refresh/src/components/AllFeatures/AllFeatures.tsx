@@ -1,5 +1,5 @@
 import React from 'react';
-import './AllFeatures.css';
+import styles from './AllFeatures.module.css';
 import { useSiteFeatures } from '../../lib/useSiteFeatures';
 import type { SiteFeature } from '../../lib/useSiteFeatures';
 import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
@@ -24,7 +24,7 @@ const AllFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="features-root">
+    <section className={styles['features-root']}>
       <Breadcrumb>
         {breadcrumbItems.map((item, idx) => (
           <React.Fragment key={item.href}>
@@ -42,10 +42,10 @@ const AllFeatures: React.FC = () => {
         ))}
       </Breadcrumb>
       <h2 className="fluent-title2">All features</h2>
-      <div className="features-grid">
+      <div className={styles['features-grid']}>
         {sortedFeatures.map(feature => (
           <div
-            className="features-card selectable-card"
+            className={`${styles['features-card']} selectable-card`}
             key={feature.id}
             tabIndex={0}
             role="button"
@@ -60,19 +60,19 @@ const AllFeatures: React.FC = () => {
             }}
           >
             <div className="features-header-row">
-              <span className="features-icon">
+              <span className={styles['features-icon']}>
                 {feature.siteFeature.icon ? (
                   <img src={feature.siteFeature.icon} alt="Feature icon" style={{ width: 32, height: 32, objectFit: 'contain' }} />
                 ) : (
                   <PeopleTeamToolbox24Regular />
                 )}
               </span>
-              <span className="features-title fluent-title3">{feature.siteFeature.title || feature.title}</span>
+              <span className={`${styles['features-title']} fluent-title3`}>{feature.siteFeature.title || feature.title}</span>
             </div>
-            <div className="features-desc fluent-body1">{feature.siteFeature.blurb}</div>
+            <div className={`${styles['features-desc']} fluent-body1`}>{feature.siteFeature.blurb}</div>
             <a
               href={`/feature/${feature.slug}`}
-              className="features-link"
+              className={styles['features-link']}
               onClick={e => {
                 if (e.ctrlKey || e.metaKey || e.button === 1) return;
                 e.preventDefault();

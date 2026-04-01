@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, Textarea, Button } from '@fluentui/react-components';
 import { Send24Regular } from '@fluentui/react-icons';
-import './ContactForm.css';
+import styles from './ContactForm.module.css';
 
 
 export function ContactForm() {
@@ -60,12 +60,12 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="contact-root home-section">
-      <div className="contact-wrapper">
-        <div className="contact-info">
-          <h2 className="fluent-title2 contact-heading home-section-heading">How can we help?</h2>
+    <section id="contact" className={`${styles['contact-root']} home-section`}>
+      <div className={styles['contact-wrapper']}>
+        <div className={styles['contact-info']}>
+          <h2 className={`fluent-title2 ${styles['contact-heading']} home-section-heading`}>How can we help?</h2>
         </div>
-        <div className="contact-container">
+        <div className={styles['contact-container']}>
           {submitted && (
             <div className="contact-success" role="status">
               Thank you for reaching out! We'll get back to you soon. <button type="button" className="contact-dismiss" onClick={() => setSubmitted(false)}>Dismiss</button>
@@ -76,42 +76,42 @@ export function ContactForm() {
               {error} <button type="button" className="contact-dismiss" onClick={() => setError(null)}>Dismiss</button>
             </div>
           )}
-          <form onSubmit={handleSubmit} className="contact-form contact-form-grid">
-            <div className="contact-form-row">
+          <form onSubmit={handleSubmit} className={`${styles['contact-form']} ${styles['contact-form-grid']}`}>
+            <div className={styles['contact-form-row']}>
               <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-name">First name <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-name" className="contact-input" required value={name} onChange={(_, d) => setName(d.value)} placeholder="John" />
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-name">First name <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-name" className={styles['contact-input']} required value={name} onChange={(_, d) => setName(d.value)} placeholder="John" />
               </div>
               <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-surname">Surname <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-surname" className="contact-input" required value={surname} onChange={(_, d) => setSurname(d.value)} placeholder="Doe" />
-              </div>
-            </div>
-            <div className="contact-form-row">
-              <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-organisation">Organisation name <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-organisation" className="contact-input" required value={organisation} onChange={(_, d) => setOrganisation(d.value)} placeholder="Company or organisation" />
-              </div>
-              <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-position">Position title <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-position" className="contact-input" required value={position} onChange={(_, d) => setPosition(d.value)} placeholder="Your role or title" />
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-surname">Surname <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-surname" className={styles['contact-input']} required value={surname} onChange={(_, d) => setSurname(d.value)} placeholder="Doe" />
               </div>
             </div>
-            <div className="contact-form-row">
+            <div className={styles['contact-form-row']}>
               <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-email">Email address <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-email" className="contact-input" type="email" required value={email} onChange={(_, d) => setEmail(d.value)} placeholder="john@example.com" />
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-organisation">Organisation name <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-organisation" className={styles['contact-input']} required value={organisation} onChange={(_, d) => setOrganisation(d.value)} placeholder="Company or organisation" />
               </div>
               <div>
-                <label className="contact-label fluent-body1" htmlFor="contact-phone">Phone number <span aria-hidden="true" className="contact-required">*</span></label>
-                <Input id="contact-phone" className="contact-input" type="tel" inputMode="numeric" pattern="0[0-9]{9}" maxLength={10} required value={phone} onChange={(_, d) => setPhone(d.value.replace(/\D/g, ''))} placeholder="0412345678" />
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-position">Position title <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-position" className={styles['contact-input']} required value={position} onChange={(_, d) => setPosition(d.value)} placeholder="Your role or title" />
+              </div>
+            </div>
+            <div className={styles['contact-form-row']}>
+              <div>
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-email">Email address <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-email" className={styles['contact-input']} type="email" required value={email} onChange={(_, d) => setEmail(d.value)} placeholder="john@example.com" />
+              </div>
+              <div>
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-phone">Phone number <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <Input id="contact-phone" className={styles['contact-input']} type="tel" inputMode="numeric" pattern="0[0-9]{9}" maxLength={10} required value={phone} onChange={(_, d) => setPhone(d.value.replace(/\D/g, ''))} placeholder="0412345678" />
                 {phoneError && <div className="contact-error" role="alert">{phoneError}</div>}
               </div>
             </div>
-            <div className="contact-form-row">
-              <div className="contact-form-row-span">
-                <label className="contact-label fluent-body1" htmlFor="contact-subject">How can we help? <span aria-hidden="true" className="contact-required">*</span></label>
-                <select id="contact-subject" className="contact-input" required value={subject} onChange={e => setSubject(e.target.value)}>
+            <div className={styles['contact-form-row']}>
+              <div className={styles['contact-form-row-span']}>
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-subject">How can we help? <span aria-hidden="true" className={styles['contact-required']}>*</span></label>
+                <select id="contact-subject" className={styles['contact-input']} required value={subject} onChange={e => setSubject(e.target.value)}>
                   <option value="" disabled>Select a subject</option>
                   <option value="Communication">Communication</option>
                   <option value="Collaboration">Collaboration</option>
@@ -121,15 +121,15 @@ export function ContactForm() {
                 </select>
               </div>
             </div>
-            <div className="contact-form-row">
+            <div className={styles['contact-form-row']}>
               <div style={{ gridColumn: '1 / span 2' }}>
-                <label className="contact-label fluent-body1" htmlFor="contact-message">Message <span aria-hidden="true" style={{color: 'red'}}>*</span></label>
-                <Textarea id="contact-message" className="contact-message" required rows={4} value={message} onChange={(_, d) => setMessage(d.value)} placeholder="Tell us more about your inquiry..." />
+                <label className={`${styles['contact-label']} fluent-body1`} htmlFor="contact-message">Message <span aria-hidden="true" style={{color: 'red'}}>*</span></label>
+                <Textarea id="contact-message" className={styles['contact-message']} required rows={4} value={message} onChange={(_, d) => setMessage(d.value)} placeholder="Tell us more about your inquiry..." />
               </div>
             </div>
-            <div className="contact-form-row">
+            <div className={styles['contact-form-row']}>
               <div style={{ gridColumn: '1 / span 2', textAlign: 'center' }}>
-                <Button className="appButton contact-submit" appearance="primary" type="submit">
+                <Button className={`appButton ${styles['contact-submit']}`} appearance="primary" type="submit">
                   Send Message <Send24Regular />
                 </Button>
               </div>
