@@ -43,7 +43,7 @@ const WhatWeDoAccordion: React.FC<WhatWeDoAccordionProps> = ({ items, openPanelI
                 <button
                   type="button"
                   className={styles.button}
-                  aria-expanded={currentOpenIdx === pidx}
+                  aria-expanded={currentOpenIdx === pidx ? "true" : "false"}
                   onClick={() => handlePanelClick(pidx)}
                 >
                   <span className={`${styles.arrow} ${currentOpenIdx === pidx ? styles.arrowOpen : ''}`.trim()}>
@@ -52,8 +52,7 @@ const WhatWeDoAccordion: React.FC<WhatWeDoAccordionProps> = ({ items, openPanelI
                   {panel.title}
                 </button>
                 <div className={styles.contentExpanded}>
-                <div
-                  className={`${styles.content} ${currentOpenIdx === pidx ? '' : styles.contentHidden}`.trim()}
+                <div className={`${styles.content} ${currentOpenIdx === pidx ? '' : styles.contentHidden}`.trim()}
                   aria-hidden={currentOpenIdx !== pidx}
                 >
                   <div dangerouslySetInnerHTML={{ __html: panel.content }} />

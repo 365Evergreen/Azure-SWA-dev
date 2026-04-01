@@ -64,6 +64,9 @@ rules:
   # Select elements must have labels.
   select-name: "error"
 
+  # Form inputs must have labels that describe their purpose. 
+  input-name: "error"
+
   # ── Keyboard & Focus ──────────────────────────────────────────────────────
   # scrollable regions must be keyboard-accessible.
   scrollable-region-focusable: "warn"
