@@ -9,7 +9,7 @@ import styles from './SinglePost.module.css';
 
 export const SinglePost: React.FC = () => {
   const { slug } = Router.useParams<{ slug: string }>();
- 
+
 
   // Fetch post by slug
   const post = useSinglePostBySlug(slug);
@@ -50,12 +50,12 @@ export const SinglePost: React.FC = () => {
 
   return (
     <section className={styles.singlePostRoot}>
-    
+
       <h2 className={styles.title}>{post?.title || 'Loading...'}</h2>
       {audioSrc && <div className={styles.audioWrap}><AudioPlayer src={audioSrc} /></div>}
 
-      <div className={styles.contentWrap}> 
-         <BreadcrumbBar />
+      <div className={styles.contentWrap}>
+        <BreadcrumbBar />
         {post ? (
           post.blocks && post.blocks.length > 0 ? (
             <PageBlocks blocks={post.blocks} />
