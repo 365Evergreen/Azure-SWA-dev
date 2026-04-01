@@ -10,6 +10,8 @@ import Pillars from './components/Pillars/Pillars';
 import { Footer } from './components/Footer/Footer';
 import { CookieConsent } from './components/CookieConsent/CookieConsent';
 import { getConsent, subscribe } from './lib/cookieConsent';
+import { prefetchLatestPosts } from './lib/useLatestPosts';
+import { prefetchPillars } from './lib/usePillars';
 import { initAnalytics, teardownAnalytics } from './lib/analytics';
 import { CopilotChat } from './components/CopilotChat/CopilotChat';
 import { ChatBubble } from './components/ChatBubble/ChatBubble';
@@ -69,6 +71,10 @@ function App() {
       if (rec && rec.prefs.analytics) initAnalytics();
       else teardownAnalytics();
     });
+    // Prefetch data for above-the-fold components to improve perceived load
+    // Fetch a small number of items for preview render
+    prefetchPillars(4).catch(() => {});
+    prefetchLatestPosts(6).catch(() => {});
     return () => unsub();
   }, []);
   return (
