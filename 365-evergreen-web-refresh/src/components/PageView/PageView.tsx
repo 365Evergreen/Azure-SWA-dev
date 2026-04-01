@@ -11,6 +11,7 @@ import { useE365Resources } from '../ResourceArchive/useE365Resources';
 import PageRenderer from '../PageRenderer/PageRenderer';
 import ResourceDetail from '../ResourceArchive/ResourceDetail';
 import ResponsiveContainer from '../ResponsiveContainer/ResponsiveContainer';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
 import { useEffect, useState } from 'react';
 
 export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId }) => {
@@ -109,6 +110,7 @@ export const PageView: React.FC<{ whatWeDoPageId?: string }> = ({ whatWeDoPageId
   return (
     <section className="pageViewRoot">
       <h2>{titleText}</h2>
+      {(effectivePage || singlePostBySlug) && <AudioPlayer src="#" />}
       <ResponsiveContainer>
         {resource ? (
           <ResourceDetail resource={resource} />
