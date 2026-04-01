@@ -20,26 +20,47 @@ export const COMPONENTS_BLOB_URL = 'https://365evergreendev.blob.core.windows.ne
 export function useLatestPosts(limit: number = 100): LatestPost[] {
   const [posts, setPosts] = useState<LatestPost[]>([]);
   useEffect(() => {
-    fetch('https://365evergreendev.com/graphql', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query: `query allPosts {\n  posts(first: ${limit}, where: {orderby: {field: DATE, order: DESC}}) {\n    edges {\n      node {\n        id\n        title\n        date\n        excerpt\n        content(format: RENDERED)\n        featuredImage { node { sourceUrl } }\n        slug\n        categories { edges { node { id name slug } } }\n      }\n    }\n  }\n}`
-      })
-    })
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch posts');
-        return res.json();
-      })
-      .then(data => {
-        setPosts(data?.data?.posts?.edges?.map((e: any) => e.node) || []);
-      })
+    // Use prefetch helper which will use module-level cache when available
+    prefetchLatestPosts(limit)
+      .then(data => setPosts(data))
       .catch(err => {
-         
-        console.error('Failed to fetch posts from WPGraphQL:', err);
+        console.error('Failed to prefetch latest posts:', err);
         setPosts([]);
       });
   }, [limit]);
   return posts;
+}
+
+let latestPostsCache: LatestPost[] | null = null;
+let latestPostsPromise: Promise<LatestPost[]> | null = null;
+
+export function prefetchLatestPosts(limit: number = 100): Promise<LatestPost[]> {
+  if (latestPostsCache) return Promise.resolve(latestPostsCache);
+  if (latestPostsPromise) return latestPostsPromise;
+
+  latestPostsPromise = fetch('https://365evergreendev.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `query allPosts {\n  posts(first: ${limit}, where: {orderby: {field: DATE, order: DESC}}) {\n    edges {\n      node {\n        id\n        title\n        date\n        excerpt\n        content(format: RENDERED)\n        featuredImage { node { sourceUrl } }\n        slug\n        categories { edges { node { id name slug } } }\n      }\n    }\n  }\n}`
+    })
+  })
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      return res.json();
+    })
+    .then(data => {
+      const posts: LatestPost[] = data?.data?.posts?.edges?.map((e: any) => e.node) || [];
+      latestPostsCache = posts;
+      latestPostsPromise = null;
+      return posts;
+    })
+    .catch(err => {
+      latestPostsPromise = null;
+      console.error('Failed to fetch posts from WPGraphQL:', err);
+      throw err;
+    });
+
+  return latestPostsPromise;
 }
 
