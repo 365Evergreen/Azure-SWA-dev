@@ -3,8 +3,9 @@ import react from '@vitejs/plugin-react';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/Azure-SWA-dev/',
+export default defineConfig(({ command }) => ({
+  // Use root base during `vite dev` (serve), and project base for production builds
+  base: command === 'serve' ? '/' : '/Azure-SWA-dev/',
   plugins: [
     react(),
     viteStaticCopy({
@@ -35,4 +36,4 @@ export default defineConfig({
       }
     }
   }
-});
+}));
