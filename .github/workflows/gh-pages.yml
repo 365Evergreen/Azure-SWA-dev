@@ -29,6 +29,8 @@ jobs:
       - name: Build
         working-directory: 365-evergreen-web-refresh
         run: pnpm build
+        env:
+          VITE_BASE_PATH: /Azure-SWA-dev/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

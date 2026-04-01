@@ -4,8 +4,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vite.dev/config/
 export default defineConfig(() => ({
-  // Use root base for both dev and production builds
-  base: '/',
+  base: process.env.VITE_BASE_PATH ?? '/',
   plugins: [
     react(),
     viteStaticCopy({
