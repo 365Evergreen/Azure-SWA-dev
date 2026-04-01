@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Router from 'react-router-dom';
-import { useBreadcrumb } from '../BreadcrumbContext';
+import { useBreadcrumb, BreadcrumbBar } from '../BreadcrumbContext';
 import { useSinglePostBySlug } from '../../lib/useSinglePostBySlug';
 import PageBlocks from '../PageBlocks/PageBlocks';
 import styles from './SinglePost.module.css';
@@ -27,9 +27,11 @@ export const SinglePost: React.FC = () => {
 
   return (
     <section className={styles.singlePostRoot}>
+    
       <h2 className={styles.title}>{post?.title || 'Loading...'}</h2>
 
-      <div className={styles.contentWrap}>
+      <div className={styles.contentWrap}> 
+         <BreadcrumbBar />
         {post ? (
           post.blocks && post.blocks.length > 0 ? (
             <PageBlocks blocks={post.blocks} />
