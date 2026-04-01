@@ -9,13 +9,15 @@ import styles from './SinglePost.module.css';
 
 export const SinglePost: React.FC = () => {
   const { slug } = Router.useParams<{ slug: string }>();
-
+ 
 
   // Fetch post by slug
   const post = useSinglePostBySlug(slug);
 
   const breadcrumbItems = [
     { text: 'Home', href: '/' },
+    { text: 'Latest posts', href: '/latest-posts' },
+    ...(post?.categories && post.categories.length > 0 ? [{ text: post.categories[0].name, href: `/category/${post.categories[0].slug}` }] : []),
     { text: post?.title || slug || 'Post', href: `/post/${slug}` },
   ];
 
@@ -52,10 +54,10 @@ export const SinglePost: React.FC = () => {
     <section className={styles.singlePostRoot}>
 
       <h2 className={styles.title}>{post?.title || 'Loading...'}</h2>
+      <BreadcrumbBar />
       {audioSrc && <div className={styles.audioWrap}><AudioPlayer src={audioSrc} /></div>}
 
       <div className={styles.contentWrap}>
-        <BreadcrumbBar />
         {post ? (
           post.blocks && post.blocks.length > 0 ? (
             <PageBlocks blocks={post.blocks} />
