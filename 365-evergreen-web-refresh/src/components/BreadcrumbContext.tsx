@@ -31,7 +31,7 @@ export const BreadcrumbBar: React.FC = () => {
   const { items } = ctx;
   if (!items || items.length === 0) return null;
   return (
-    <div className="global-breadcrumb-wrap" style={{ padding: '0.5rem 4vw' }}>
+    <div className="global-breadcrumb-wrap" style={{ padding: '1rem' }}>
       <Breadcrumb className="global-breadcrumb">
         {items.map((item, idx) => (
           <BreadcrumbItem key={item.href + '-' + idx}>
