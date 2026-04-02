@@ -1,31 +1,29 @@
 import { useState, lazy, Suspense, useEffect, type ComponentProps, type ComponentType } from 'react';
-import { Header } from './components/Header/Header';
+const Header = lazy(() => import('./components/Header/Header').then(m => ({ default: m.Header })));
 import { BreadcrumbProvider } from './components/BreadcrumbContext';
 import { Hero } from './components/Hero/Hero';
-// import { CTA } from './components/CTA';
-import { Features } from './components/Features/Features';
-import LatestPosts from './components/LatestPosts/LatestPosts';
-import { ContactForm } from './components/ContactForm/ContactForm';
-import Pillars from './components/Pillars/Pillars';
-import { Footer } from './components/Footer/Footer';
-import { CookieConsent } from './components/CookieConsent/CookieConsent';
+// Defer heavy/secondary components until needed
+const Features = lazy(() => import('./components/Features/Features').then(m => ({ default: m.Features })));
+const LatestPosts = lazy(() => import('./components/LatestPosts/LatestPosts').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
+const ContactForm = lazy(() => import('./components/ContactForm/ContactForm').then(m => ({ default: m.ContactForm })));
+const Pillars = lazy(() => import('./components/Pillars/Pillars').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
+const Footer = lazy(() => import('./components/Footer/Footer').then(m => ({ default: (m as any).Footer || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
+const CookieConsent = lazy(() => import('./components/CookieConsent/CookieConsent').then(m => ({ default: (m as any).CookieConsent || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
+const CopilotChat = lazy(() => import('./components/CopilotChat/CopilotChat').then(m => ({ default: (m as any).CopilotChat || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
+const ChatBubble = lazy(() => import('./components/ChatBubble/ChatBubble').then(m => ({ default: (m as any).ChatBubble || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
+const FloatingDrawer = lazy(() => import('./components/FloatingDrawer/FloatingDrawer').then(m => ({ default: (m as any).FloatingDrawer || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
+const JourneySurvey = lazy(() => import('./components/JourneySurvey/JourneySurvey').then(m => ({ default: (m as any).JourneySurvey || (m as any).default })) as Promise<{ default: ComponentType<any> }>);
 import { getConsent, subscribe } from './lib/cookieConsent';
-import { prefetchLatestPosts } from './lib/useLatestPosts';
-import { prefetchPillars } from './lib/usePillars';
 import { initAnalytics, teardownAnalytics } from './lib/analytics';
-import { CopilotChat } from './components/CopilotChat/CopilotChat';
-import { ChatBubble } from './components/ChatBubble/ChatBubble';
-import { FloatingDrawer } from './components/FloatingDrawer/FloatingDrawer';
-import { JourneySurvey } from './components/JourneySurvey/JourneySurvey';
-import questionsData from '../CTAJourneyQuestions.json';
+import questionsData from '../docs/CTAJourneyQuestions.json';
 // import Carousel from './components/Carousel';
 import { AnimatePresence, motion } from 'framer-motion';
 import { fadeVariants } from './components/motionPresets';
 import { Routes, Route } from 'react-router-dom';
 import './HomeSectionLayout.css';
 import RouteLoader from './components/RouteLoader/RouteLoader';
-import HowWeDoItStatic from './components/HowWeDoIt/HowWeDoItStatic';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+const HowWeDoItStatic = lazy(() => import('./components/HowWeDoIt/HowWeDoItStatic').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
+const ScrollToTop = lazy(() => import('./components/ScrollToTop/ScrollToTop').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
 
 const CtaPage = lazy(() => import('./components/CtaPage/CtaPage'));
 const FeatureView = lazy(() => import('./components/FeatureView/FeatureView'));
@@ -71,15 +69,28 @@ function App() {
       if (rec && rec.prefs.analytics) initAnalytics();
       else teardownAnalytics();
     });
-    // Prefetch data for above-the-fold components to improve perceived load
-    // Fetch a small number of items for preview render
-    prefetchPillars(4).catch(() => {});
-    prefetchLatestPosts(6).catch(() => {});
+    // Defer heavy data prefetch until first user interaction to reduce cold load.
+    const onFirstInteraction = () => {
+      // dynamically import prefetch helpers so they don't run on initial load
+      void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => {});
+      void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => {});
+      // Warm some lazy component modules
+      void import('./components/LatestPosts/LatestPosts').catch(() => {});
+      void import('./components/Pillars/Pillars').catch(() => {});
+      void import('./components/Features/Features').catch(() => {});
+      window.removeEventListener('pointerdown', onFirstInteraction);
+      window.removeEventListener('keydown', onFirstInteraction);
+    };
+    window.addEventListener('pointerdown', onFirstInteraction, { once: true });
+    window.addEventListener('keydown', onFirstInteraction, { once: true });
     return () => unsub();
   }, []);
   return (
     <>
-      <Header /><main>
+      <Suspense fallback={<RouteLoader />}>
+        <Header />
+      </Suspense>
+      <main>
         <BreadcrumbProvider>
 
           <Suspense fallback={<RouteLoader />}>
@@ -103,7 +114,9 @@ function App() {
                     animate="visible"
                     exit="exit"
                   >
-                    <Pillars />
+                    <Suspense fallback={<div />}> 
+                      <Pillars />
+                    </Suspense>
                   </motion.div>
                   <div key="bg-default-1" className="bg-default">
                     <motion.div
@@ -114,30 +127,36 @@ function App() {
                       exit="exit"
                     >
                       <div className="features-outer">
-                        <Features />
+                        <Suspense fallback={<div />}>
+                          <Features />
+                        </Suspense>
                       </div>
                     </motion.div>
                   </div>
                   <div key="bg-alt" className="bg-alt">
-                    <motion.div
+                      <motion.div
                       key="latestposts"
                       variants={fadeVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
                     >
-                      <LatestPosts />
+                      <Suspense fallback={<div />}>
+                        <LatestPosts />
+                      </Suspense>
                     </motion.div>
                   </div>
                   <div key="bg-default-2" className="bg-default">
-                    <motion.div
+                      <motion.div
                       key="contactform"
                       variants={fadeVariants}
                       initial="hidden"
                       animate="visible"
                       exit="exit"
                     >
-                      <ContactForm />
+                      <Suspense fallback={<div />}>
+                        <ContactForm />
+                      </Suspense>
                     </motion.div>
                   </div>
                 </AnimatePresence>
@@ -167,18 +186,29 @@ function App() {
               <Route path="/feature-buttons-logic" element={<FeatureButtonsLogic featureId="cG9zdDozMzg=" />} />
             </Routes>
           </Suspense>
-          <CopilotChat open={chatOpen} onClose={() => setChatOpen(false)} />
+          <Suspense fallback={<div />}>
+            <CopilotChat open={chatOpen} onClose={() => setChatOpen(false)} />
+          </Suspense>
 
         </BreadcrumbProvider> </main>
-      <CookieConsent />
+      <Suspense fallback={null}>
+        <CookieConsent />
+      </Suspense>
       {/* Initialize analytics based on saved consent */}
       <script>
         {`/* consent-init placeholder - handled in React lifecycle */`}
       </script>
-      <Footer />
-      {!chatOpen && <ChatBubble onClick={() => setChatOpen(true)} />}
-      <FloatingDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <JourneySurvey
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+      {!chatOpen && (
+        <Suspense fallback={null}>
+          <ChatBubble onClick={() => setChatOpen(true)} />
+        </Suspense>
+      )}
+      <Suspense fallback={null}>
+        <FloatingDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+          <JourneySurvey
           questions={questionsData.map((q, i) => {
             const type = q.type === 'text-area' ? 'text' : q.type;
             let options: string[] | undefined = undefined;
@@ -195,6 +225,7 @@ function App() {
           onComplete={() => { }}
         />
       </FloatingDrawer>
+      </Suspense>
     </>
   );
 }
