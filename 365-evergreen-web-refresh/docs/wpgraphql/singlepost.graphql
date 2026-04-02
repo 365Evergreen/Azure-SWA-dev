@@ -1,0 +1,25 @@
+query singlePost {
+  postBy(
+    uri: "/creating-your-first-plugin-for-power-apps-model-driven-apps-with-c/"
+  ) {
+    id
+    content(format: RENDERED)
+    editorBlocks {
+      apiVersion
+      blockEditorCategoryName
+      clientId
+      name
+      parentClientId
+      renderedHtml
+      type
+    }
+    slug
+    title
+    uri
+    featuredImage {
+      node {
+        sourceUrl
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+query categories {
+  categories {
+    edges {
+      node {
+        uri
+        slug
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+query allContentTypes {
+  contentTypes {
+    nodes {
+      id
+      name
+    }
+  }
+}

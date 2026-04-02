@@ -1,0 +1,21 @@
+query latestPosts {
+  posts {
+    nodes {
+      id
+      slug
+      title(format: RENDERED)
+      categories {
+        nodes {
+          name
+        }
+      }
+      featuredImage {
+        node {
+          sourceUrl(size: THUMBNAIL)
+          title
+        }
+      }
+      excerpt
+    }
+  }
+}
