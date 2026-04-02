@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router-dom';
-import heroConfig from '../../../page-components.json';
+import heroConfig from '../../../docs/page-components.json';
 import { useLatestPosts } from './useLatestPosts';
 import { useAllCategories, type WPCategory } from '../../lib/useAllCategories';
 import type { LatestPost, CategoryEdge } from './useLatestPosts';

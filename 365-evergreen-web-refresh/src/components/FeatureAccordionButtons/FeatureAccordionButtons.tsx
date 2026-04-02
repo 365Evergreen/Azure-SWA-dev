@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
 import { VanillaAccordion } from '../VanillaAccordion/VanillaAccordion';
-import featuresData from '../../lib/features.json';
+import featuresData from '../../../docs/features.json';
 
 interface FeatureAccordionButtonsProps {
   feature: string;

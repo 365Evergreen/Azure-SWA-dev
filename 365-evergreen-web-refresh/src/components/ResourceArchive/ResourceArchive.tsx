@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, ChangeEvent } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import heroConfig from '../../../page-components.json';
+import heroConfig from '../../../docs/page-components.json';
 import { useE365Resources } from './useE365Resources';
 import type { ResourceItem } from './useE365Resources';
 import styles from './ResourceArchive.module.css';

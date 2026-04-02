@@ -3,7 +3,7 @@ import styles from '../FloatingDrawer/FloatingDrawer.module.css';
 import surveyStyles from './JourneySurvey.module.css';
 import { Radio, RadioGroup, Checkbox } from '@fluentui/react-components';
 import { ArrowLeft24Regular } from '@fluentui/react-icons';
-import choicesData from '../../../CTAJourneyChoices.json';
+import choicesData from '../../../docs/CTAJourneyChoices.json';
 
 type ChoiceRecord = {
   Question?: string;

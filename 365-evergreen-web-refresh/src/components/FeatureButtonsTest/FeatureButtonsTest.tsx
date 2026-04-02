@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import featuresData from '../../lib/features.json';
+import featuresData from '../../../docs/features.json';
 
 // Hosted accordions data
 const ACCORDIONS_URL = 'https://365evergreendev.blob.core.windows.net/365evergreen/accordions.json';

@@ -1,5 +1,5 @@
 import carouselStyles from '../Carousel/Carousel.module.css';
-import localCarouselItems from '../../../carousel-items.json';
+import localCarouselItems from '../../../docs/carousel-items.json';
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@fluentui/react-components';
 import { Modal } from '../Modal/Modal';
 import { JourneySurvey } from '../JourneySurvey/JourneySurvey';
-import questionsData from '../../../CTAJourneyQuestions.json';
+import questionsData from '../../../docs/CTAJourneyQuestions.json';
 import styles from './Hero.module.css';
 
 type SourceQuestion = {
