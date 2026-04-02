@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery, QueryClient } from '@tanstack/react-query';
 
 export interface AccordionPanelData {
   title: string;
@@ -16,42 +16,50 @@ export interface AccordionGroupData {
   panels: AccordionPanelData[];
 }
 
+async function fetchAzureAccordions(featureId?: string): Promise<AccordionGroupData[]> {
+  const [accordionMetaRes, accordionItemsRes] = await Promise.all([
+    fetch('https://365evergreendev.blob.core.windows.net/365evergreen/accordions.json'),
+    fetch('https://365evergreendev.blob.core.windows.net/365evergreen/accordion-list.json')
+  ]);
+  const accordionMeta = await accordionMetaRes.json();
+  const accordionItems = await accordionItemsRes.json();
+
+  const accordions = Array.isArray(accordionMeta) ? accordionMeta : [accordionMeta];
+  const items = Array.isArray(accordionItems) ? accordionItems : [accordionItems];
+
+  let filteredAccordions = accordions;
+  if (featureId) {
+    filteredAccordions = accordions.filter((acc: any) => acc.featureId === featureId);
+  }
+
+  const grouped: AccordionGroupData[] = filteredAccordions.map((acc: any) => {
+    const panels = items
+      .filter((item: any) => item.parentId === acc.id)
+      .sort((a: any, b: any) => (a.order || 0) - (b.order || 0))
+      .map((item: any) => ({
+        title: item.label,
+        content: item.blurb
+      }));
+
+    return {
+      id: acc.id,
+      title: acc.label,
+      description: acc.blurb,
+      image: acc.image,
+      feature: acc.feature,
+      featureId: acc.featureId,
+      panels
+    };
+  });
+
+  return grouped;
+}
+
 export function useAzureAccordions(featureId?: string): AccordionGroupData[] {
-  const [data, setData] = useState<AccordionGroupData[]>([]);
+  const { data } = useQuery(['azureAccordions', featureId], () => fetchAzureAccordions(featureId));
+  return data ?? [];
+}
 
-  useEffect(() => {
-    Promise.all([
-      fetch('https://365evergreendev.blob.core.windows.net/365evergreen/accordions.json').then(res => res.json()),
-      fetch('https://365evergreendev.blob.core.windows.net/365evergreen/accordion-list.json').then(res => res.json())
-    ]).then(([accordionMeta, accordionItems]) => {
-      const accordions = Array.isArray(accordionMeta) ? accordionMeta : [accordionMeta];
-      const items = Array.isArray(accordionItems) ? accordionItems : [accordionItems];
-      let filteredAccordions = accordions;
-      if (featureId) {
-        filteredAccordions = accordions.filter(acc => acc.featureId === featureId);
-      }
-      const grouped = filteredAccordions.map(acc => {
-        // Find panels where parentId matches this accordion's id
-        const panels = items
-          .filter(item => item.parentId === acc.id)
-          .sort((a, b) => (a.order || 0) - (b.order || 0))
-          .map(item => ({
-            title: item.label,
-            content: item.blurb
-          }));
-        return {
-          id: acc.id,
-          title: acc.label,
-          description: acc.blurb,
-          image: acc.image,
-          feature: acc.feature,
-          featureId: acc.featureId,
-          panels
-        };
-      });
-      setData(grouped);
-    });
-  }, [featureId]);
-
-  return data;
+export function prefetchAzureAccordions(queryClient: QueryClient, featureId?: string) {
+  return queryClient.prefetchQuery(['azureAccordions', featureId], () => fetchAzureAccordions(featureId));
 }

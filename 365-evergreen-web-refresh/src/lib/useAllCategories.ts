@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery, QueryClient } from '@tanstack/react-query';
 
 const WPGRAPHQL_URL = 'https://365evergreendev.com/graphql';
 
@@ -10,30 +10,23 @@ export interface WPCategory {
   parent?: { node?: { id: string } };
 }
 
+async function fetchAllCategories(): Promise<WPCategory[]> {
+  const res = await fetch(WPGRAPHQL_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `query categories { categories { nodes { id name slug uri parent { node { id } } } } }`,
+    }),
+  });
+  const json = await res.json();
+  return json?.data?.categories?.nodes || [];
+}
+
 export function useAllCategories() {
-  const [categories, setCategories] = useState<WPCategory[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+  const { data, isLoading, error } = useQuery<WPCategory[], Error>(['allCategories'], fetchAllCategories);
+  return { categories: data ?? [], loading: isLoading, error: error ?? null };
+}
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(WPGRAPHQL_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query: `query categories { categories { nodes { id name slug uri parent { node { id } } } } }`,
-      }),
-    })
-      .then(res => res.json())
-      .then(data => {
-        setCategories(data?.data?.categories?.nodes || []);
-        setLoading(false);
-      })
-      .catch(e => {
-        setError(e);
-        setLoading(false);
-      });
-  }, []);
-
-  return { categories, loading, error };
+export function prefetchAllCategories(queryClient: QueryClient) {
+  return queryClient.prefetchQuery(['allCategories'], fetchAllCategories);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 export interface SiteFeature {
   id: string;
@@ -22,19 +22,24 @@ export interface SiteFeature {
 }
 
 export function useSiteFeatures() {
-  const [features, setFeatures] = useState<SiteFeature[]>([]);
-  useEffect(() => {
-    fetch('https://365evergreendev.com/graphql', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query: `query siteFeatures {\n  features {\n    nodes {\n      id\n      title\n      content\n      slug\n      featuredImage { node { sourceUrl } }\n      siteFeature {\n        fieldGroupName\n        blurb\n        icon\n        title\n        sortOrder\n        buttonText\n        link { target title url }\n      }\n    }\n  }\n}`
-      })
+  return useQuery({
+    queryKey: ['siteFeatures'],
+    queryFn: fetchSiteFeatures,
+    staleTime: 5 * 60 * 1000,
+  }).data ?? [];
+}
+
+export function fetchSiteFeatures(): Promise<SiteFeature[]> {
+  return fetch('https://365evergreendev.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `query siteFeatures {\n  features {\n    nodes {\n      id\n      title\n      content\n      slug\n      featuredImage { node { sourceUrl } }\n      siteFeature {\n        fieldGroupName\n        blurb\n        icon\n        title\n        sortOrder\n        buttonText\n        link { target title url }\n      }\n    }\n  }\n}`
+    }),
+  })
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch site features');
+      return res.json();
     })
-      .then(res => res.json())
-      .then(data => {
-        setFeatures(data?.data?.features?.nodes || []);
-      });
-  }, []);
-  return features;
+    .then(data => data?.data?.features?.nodes || []);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery, QueryClient } from '@tanstack/react-query';
 
 export interface ResourceEdgeNode {
   id: string;
@@ -65,75 +65,59 @@ const QUERY = `query e365Resources {
   }
 }`;
 
+async function fetchE365Resources(): Promise<ResourceItem[]> {
+  const response = await fetch(GRAPHQL_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query: QUERY })
+  });
+  if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
+  const json = await response.json();
+  if (json.errors && json.errors.length > 0) {
+    throw new Error(json.errors.map((err: { message?: string }) => err.message).join(', '));
+  }
+
+  const edges: Array<{ node?: unknown }> = json?.data?.e365resources?.edges ?? [];
+  const resources: ResourceItem[] = edges
+    .map(edge => edge?.node)
+    .filter((node): node is Record<string, unknown> => Boolean((node as { id?: unknown })?.id))
+    .map(node => {
+      const rawNode = node as {
+        id?: unknown;
+        title?: unknown;
+        excerpt?: unknown;
+        featuredImage?: { node?: { sourceUrl?: unknown } } | null;
+        resourcefields?: ResourceFieldGroup | null;
+      };
+      const typedFieldGroup = rawNode.resourcefields ?? null;
+      const resourceType = typedFieldGroup?.resourcetype ?? null;
+      const label = typedFieldGroup?.lable ?? null;
+      const relatedPostIds = (typedFieldGroup?.resourcepost?.edges ?? [])
+        .map(edgeItem => edgeItem?.node?.id)
+        .filter((id): id is string => typeof id === 'string');
+
+      return {
+        id: typeof rawNode.id === 'string' ? rawNode.id : String(rawNode.id ?? ''),
+        slug: typeof (rawNode as any).slug === 'string' ? (rawNode as any).slug : null,
+        uri: typeof (rawNode as any).uri === 'string' ? (rawNode as any).uri : null,
+        title: typeof rawNode.title === 'string' ? rawNode.title : '',
+        excerpt: typeof rawNode.excerpt === 'string' ? rawNode.excerpt : '',
+        featuredImageUrl: typeof rawNode.featuredImage?.node?.sourceUrl === 'string' ? rawNode.featuredImage.node.sourceUrl : null,
+        fieldGroup: typedFieldGroup,
+        resourceType,
+        label,
+        relatedPostIds
+      } as ResourceItem;
+    });
+
+  return resources;
+}
+
 export function useE365Resources(): HookState {
-  const [state, setState] = useState<HookState>({ resources: [], loading: true, error: null });
+  const { data, isLoading, error } = useQuery<ResourceItem[], Error>(['e365Resources'], fetchE365Resources);
+  return { resources: data ?? [], loading: isLoading, error: error ? String(error.message) : null };
+}
 
-  useEffect(() => {
-    let isActive = true;
-
-    fetch(GRAPHQL_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: QUERY })
-    })
-      .then(async response => {
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-        const json = await response.json();
-        if (json.errors && json.errors.length > 0) {
-          throw new Error(json.errors.map((err: { message?: string }) => err.message).join(', '));
-        }
-        const edges: Array<{ node?: unknown }> = json?.data?.e365resources?.edges ?? [];
-        const resources: ResourceItem[] = edges
-          .map(edge => edge?.node)
-          .filter((node): node is Record<string, unknown> => Boolean((node as { id?: unknown })?.id))
-          .map(node => {
-            const rawNode = node as {
-              id?: unknown;
-              title?: unknown;
-              excerpt?: unknown;
-              featuredImage?: { node?: { sourceUrl?: unknown } } | null;
-              resourcefields?: ResourceFieldGroup | null;
-            };
-            const typedFieldGroup = rawNode.resourcefields ?? null;
-            const resourceType = typedFieldGroup?.resourcetype ?? null;
-            const label = typedFieldGroup?.lable ?? null;
-            const relatedPostIds = (typedFieldGroup?.resourcepost?.edges ?? [])
-              .map(edgeItem => edgeItem?.node?.id)
-              .filter((id): id is string => typeof id === 'string');
-
-            return {
-              id: typeof rawNode.id === 'string' ? rawNode.id : String(rawNode.id ?? ''),
-              slug: typeof (rawNode as any).slug === 'string' ? (rawNode as any).slug : null,
-              uri: typeof (rawNode as any).uri === 'string' ? (rawNode as any).uri : null,
-              title: typeof rawNode.title === 'string' ? rawNode.title : '',
-              excerpt: typeof rawNode.excerpt === 'string' ? rawNode.excerpt : '',
-              featuredImageUrl: typeof rawNode.featuredImage?.node?.sourceUrl === 'string' ? rawNode.featuredImage.node.sourceUrl : null,
-              fieldGroup: typedFieldGroup,
-              resourceType,
-              label,
-              relatedPostIds
-            } satisfies ResourceItem;
-          });
-
-        if (!isActive) {
-          return;
-        }
-        setState({ resources, loading: false, error: null });
-      })
-      .catch(error => {
-        if (!isActive) {
-          return;
-        }
-        const message = error instanceof Error ? error.message : 'Failed to fetch resources';
-        setState({ resources: [], loading: false, error: message });
-      });
-
-    return () => {
-      isActive = false;
-    };
-  }, []);
-
-  return state;
+export function prefetchE365Resources(queryClient: QueryClient) {
+  return queryClient.prefetchQuery(['e365Resources'], fetchE365Resources);
 }

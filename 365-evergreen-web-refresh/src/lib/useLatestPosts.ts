@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 export interface LatestPost {
   type: string;
@@ -18,17 +18,12 @@ export interface LatestPost {
 export const COMPONENTS_BLOB_URL = 'https://365evergreendev.blob.core.windows.net/365-evergreen/components/page-components.json';
 
 export function useLatestPosts(limit: number = 100): LatestPost[] {
-  const [posts, setPosts] = useState<LatestPost[]>([]);
-  useEffect(() => {
-    // Use prefetch helper which will use module-level cache when available
-    prefetchLatestPosts(limit)
-      .then(data => setPosts(data))
-      .catch(err => {
-        console.error('Failed to prefetch latest posts:', err);
-        setPosts([]);
-      });
-  }, [limit]);
-  return posts;
+  const { data } = useQuery({
+    queryKey: ['latestPosts', limit],
+    queryFn: () => prefetchLatestPosts(limit),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+  return data ?? [];
 }
 
 let latestPostsCache: LatestPost[] | null = null;
@@ -42,7 +37,7 @@ export function prefetchLatestPosts(limit: number = 100): Promise<LatestPost[]> 
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      query: `query allPosts {\n  posts(first: ${limit}, where: {orderby: {field: DATE, order: DESC}}) {\n    edges {\n      node {\n        id\n        title\n        date\n        excerpt\n        content(format: RENDERED)\n        featuredImage { node { sourceUrl } }\n        slug\n        categories { edges { node { id name slug } } }\n      }\n    }\n  }\n}`
+      query: `query allPosts {\n  posts(first: ${limit}, where: {orderby: {field: DATE, order: DESC}}) {\n    edges {\n      node {\n        id\n        title\n        date\n        excerpt\n        featuredImage { node { sourceUrl } }\n        slug\n        categories { edges { node { id name slug } } }\n      }\n    }\n  }\n}`
     })
   })
     .then(res => {

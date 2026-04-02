@@ -19,7 +19,8 @@ import questionsData from '../docs/CTAJourneyQuestions.json';
 // import Carousel from './components/Carousel';
 import { AnimatePresence, motion } from 'framer-motion';
 import { fadeVariants } from './components/motionPresets';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import VisibilitySensor from './components/VisibilitySensor/VisibilitySensor';
 import './HomeSectionLayout.css';
 import RouteLoader from './components/RouteLoader/RouteLoader';
 const HowWeDoItStatic = lazy(() => import('./components/HowWeDoIt/HowWeDoItStatic').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
@@ -58,6 +59,7 @@ const PageViewOptional: ComponentType<PageViewOptionalProps> = (props) => (
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const location = useLocation();
 
   // Initialize analytics when consent is present and enabled
   useEffect(() => {
@@ -69,20 +71,29 @@ function App() {
       if (rec && rec.prefs.analytics) initAnalytics();
       else teardownAnalytics();
     });
-    // Defer heavy data prefetch until first user interaction to reduce cold load.
-    const onFirstInteraction = () => {
-      // dynamically import prefetch helpers so they don't run on initial load
+    // Gate prefetches: if user is on the homepage, prefetch immediately.
+    const path = location?.pathname;
+    if (path === '/') {
       void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => {});
       void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => {});
-      // Warm some lazy component modules
-      void import('./components/LatestPosts/LatestPosts').catch(() => {});
+      // Warm lazy modules used above the fold
       void import('./components/Pillars/Pillars').catch(() => {});
       void import('./components/Features/Features').catch(() => {});
-      window.removeEventListener('pointerdown', onFirstInteraction);
-      window.removeEventListener('keydown', onFirstInteraction);
-    };
-    window.addEventListener('pointerdown', onFirstInteraction, { once: true });
-    window.addEventListener('keydown', onFirstInteraction, { once: true });
+      void import('./components/LatestPosts/LatestPosts').catch(() => {});
+    } else {
+      // Defer heavy data prefetch until first user interaction to reduce cold load on non-home routes.
+      const onFirstInteraction = () => {
+        void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => {});
+        void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => {});
+        void import('./components/Pillars/Pillars').catch(() => {});
+        void import('./components/Features/Features').catch(() => {});
+        void import('./components/LatestPosts/LatestPosts').catch(() => {});
+        window.removeEventListener('pointerdown', onFirstInteraction);
+        window.removeEventListener('keydown', onFirstInteraction);
+      };
+      window.addEventListener('pointerdown', onFirstInteraction, { once: true });
+      window.addEventListener('keydown', onFirstInteraction, { once: true });
+    }
     return () => unsub();
   }, []);
   return (
@@ -114,9 +125,11 @@ function App() {
                     animate="visible"
                     exit="exit"
                   >
-                    <Suspense fallback={<div />}> 
-                      <Pillars />
-                    </Suspense>
+                    <VisibilitySensor>
+                      <Suspense fallback={<div />}> 
+                        <Pillars />
+                      </Suspense>
+                    </VisibilitySensor>
                   </motion.div>
                   <div key="bg-default-1" className="bg-default">
                     <motion.div
@@ -127,9 +140,11 @@ function App() {
                       exit="exit"
                     >
                       <div className="features-outer">
-                        <Suspense fallback={<div />}>
-                          <Features />
-                        </Suspense>
+                        <VisibilitySensor>
+                          <Suspense fallback={<div />}>
+                            <Features />
+                          </Suspense>
+                        </VisibilitySensor>
                       </div>
                     </motion.div>
                   </div>
@@ -141,9 +156,11 @@ function App() {
                       animate="visible"
                       exit="exit"
                     >
-                      <Suspense fallback={<div />}>
-                        <LatestPosts />
-                      </Suspense>
+                      <VisibilitySensor>
+                        <Suspense fallback={<div />}>
+                          <LatestPosts />
+                        </Suspense>
+                      </VisibilitySensor>
                     </motion.div>
                   </div>
                   <div key="bg-default-2" className="bg-default">
@@ -154,9 +171,11 @@ function App() {
                       animate="visible"
                       exit="exit"
                     >
-                      <Suspense fallback={<div />}>
-                        <ContactForm />
-                      </Suspense>
+                      <VisibilitySensor>
+                        <Suspense fallback={<div />}>
+                          <ContactForm />
+                        </Suspense>
+                      </VisibilitySensor>
                     </motion.div>
                   </div>
                 </AnimatePresence>
