@@ -32,3 +32,8 @@ src/lib/useWhatWeDoPage.ts.backup
 localhost.har
 365-evergreen-react-app.code-workspace
 AzureiteConfig
+AzureRiteConfig
+lighthouse-report.html
+robocopy-output.txt
+lighthouse-report-*.html
+axe-linter.md

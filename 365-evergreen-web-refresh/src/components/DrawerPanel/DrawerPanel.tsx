@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DrawerBody, Drawer } from '@fluentui/react-components';
+import { DrawerBody, Drawer } from '../../lib/localFluent';
 import styles from './DrawerPanel.module.css';
 
 interface DrawerPanelProps {
@@ -14,7 +14,7 @@ export function DrawerPanel({ open, onClose, title, children }: DrawerPanelProps
     <Drawer
       open={open}
       position="end"
-      onOpenChange={(_e, data) => {
+      onOpenChange={(_e: any, data: { open: boolean }) => {
         if (!data.open) onClose();
       }}
       modalType="modal"

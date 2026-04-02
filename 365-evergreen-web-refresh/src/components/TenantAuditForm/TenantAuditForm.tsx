@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './TenantAuditForm.module.css';
-import { Button } from '@fluentui/react-components';
+import { Button } from '../../lib/localFluent';
 
 
 

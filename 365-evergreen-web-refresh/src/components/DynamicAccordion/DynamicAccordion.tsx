@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionHeader,
   AccordionPanel,
-} from '@fluentui/react-components';
+} from '../../lib/localFluent';
 
 export interface AccordionItem {
   title: string;

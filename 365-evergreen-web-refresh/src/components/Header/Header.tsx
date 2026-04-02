@@ -1,4 +1,4 @@
-import { ChevronDown24Regular } from '@fluentui/react-icons';
+import { ChevronDown24Regular } from '../Icons';
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useGlobalNav } from '../../lib/useGlobalNav';

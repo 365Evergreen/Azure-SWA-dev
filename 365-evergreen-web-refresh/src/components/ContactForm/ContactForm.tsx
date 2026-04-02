@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Input, Textarea, Button } from '@fluentui/react-components';
-import { Send24Regular } from '@fluentui/react-icons';
+import { Input, Textarea, Button } from '../../lib/localFluent';
+import { Send24Regular } from '../Icons';
 import styles from './ContactForm.module.css';
 
 

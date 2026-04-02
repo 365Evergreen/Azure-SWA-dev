@@ -1,16 +1,18 @@
 import React from 'react';
 import styles from './Pillars.module.css';
 import { usePillars } from '../../lib/usePillars';
+import { useInView } from '../../lib/useInView';
 import { useNavigate } from 'react-router-dom';
 
 const Pillars: React.FC = () => {
-  const pillars = usePillars(3);
+  const [ref, inView] = useInView<HTMLElement>();
+  const pillars = usePillars(3, inView);
   const navigate = useNavigate();
 
   if (!pillars || pillars.length === 0) return null;
 
   return (
-    <section className={styles.pillarsRoot} aria-labelledby="pillars-heading">
+    <section ref={ref} className={styles.pillarsRoot} aria-labelledby="pillars-heading">
       <div className={styles.container}>
         <h2 id="pillars-heading" className={`${styles.heading} fluent-title2`}>Explore our features</h2>
         <div className={styles.grid}>

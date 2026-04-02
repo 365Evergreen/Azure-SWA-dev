@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button } from '@fluentui/react-components';
+import { Button } from '../../lib/localFluent';
 import styles from './CookieConsent.module.css';
 import { acceptAll, rejectAll, getConsent, subscribe } from '../../lib/cookieConsent';
 

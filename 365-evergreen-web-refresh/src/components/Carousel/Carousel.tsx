@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Carousel.module.css';
-import { Button } from '@fluentui/react-components';
+import { Button } from '../../lib/localFluent';
 
 const slides = [
   {

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Breadcrumb, BreadcrumbItem } from '@fluentui/react-components';
+import { Breadcrumb, BreadcrumbItem } from '../lib/localFluent';
 
 export type BreadcrumbEntry = { text: string; href: string };
 

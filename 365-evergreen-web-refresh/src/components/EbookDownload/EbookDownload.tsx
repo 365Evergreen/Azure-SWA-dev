@@ -1,6 +1,6 @@
 import { type FormEvent, useState } from 'react';
-import { Input, Button, Checkbox } from '@fluentui/react-components';
-import { ArrowDownload24Regular } from '@fluentui/react-icons';
+import { Input, Button, Checkbox } from '../../lib/localFluent';
+import { ArrowDownload24Regular } from '../Icons';
 import styles from './EbookDownload.module.css';
 
 const POWER_AUTOMATE_ENDPOINT =

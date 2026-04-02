@@ -1,11 +1,13 @@
 import styles from './Features.module.css';
 import { useSiteFeatures } from '../../lib/useSiteFeatures';
+import { useInView } from '../../lib/useInView';
 import type { SiteFeature } from '../../lib/useSiteFeatures';
-import { PeopleTeamToolbox24Regular, ChevronRight24Filled } from '@fluentui/react-icons';
+import { PeopleTeamToolbox24Regular, ChevronRight24Filled } from '../Icons';
 import { useNavigate } from 'react-router-dom';
 
 export function Features() {
-  const features = useSiteFeatures() as SiteFeature[];
+  const [ref, inView] = useInView<HTMLElement>();
+  const features = useSiteFeatures(inView) as SiteFeature[];
   const navigate = useNavigate();
 
   // Sort features by siteFeature.sortOrder (ascending)
@@ -18,7 +20,7 @@ export function Features() {
   if (!sortedFeatures.length) return null;
 
   return (
-    <section className={`${styles.featuresRoot} home-section`}>
+    <section ref={ref} className={`${styles.featuresRoot} home-section`}>
       <h2 className="fluent-title2 home-section-heading">What we do to help you succeed</h2>
       <div className={styles.featuresGrid}>
         {sortedFeatures.map(feature => (

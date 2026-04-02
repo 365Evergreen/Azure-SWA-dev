@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../FloatingDrawer/FloatingDrawer.module.css';
 import surveyStyles from './JourneySurvey.module.css';
-import { Radio, RadioGroup, Checkbox } from '@fluentui/react-components';
-import { ArrowLeft24Regular } from '@fluentui/react-icons';
+import { Radio, RadioGroup, Checkbox } from '../../lib/localFluent';
+import { ArrowLeft24Regular } from '../Icons';
 import choicesData from '../../../docs/CTAJourneyChoices.json';
 
 type ChoiceRecord = {

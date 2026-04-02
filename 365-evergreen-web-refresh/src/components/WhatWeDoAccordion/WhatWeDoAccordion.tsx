@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from './WhatWeDoAccordion.module.css';
-import { ChevronRight24Filled } from '@fluentui/react-icons';
+import { ChevronRight24Filled } from '../Icons';
 import { useNavigate } from 'react-router-dom';
 
 export interface WhatWeDoAccordionPanel {

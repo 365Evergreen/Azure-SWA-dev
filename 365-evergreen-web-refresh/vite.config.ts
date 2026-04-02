@@ -25,9 +25,7 @@ export default defineConfig(() => ({
             'react-dom',
             'react-router-dom'
           ],
-          fluent: [
-            '@fluentui/react-components'
-          ],
+          // removed fluent chunk (replaced by local shims/icons)
           motion: [
             'framer-motion'
           ]

@@ -19,11 +19,12 @@ export interface RawPillar {
   content?: string;
 }
 
-export function usePillars(limit?: number) {
+export function usePillars(limit?: number, enabled: boolean = true) {
   return useQuery({
     queryKey: ['pillars', limit ?? 'all'],
     queryFn: () => prefetchPillars(limit),
     staleTime: 5 * 60 * 1000,
+    enabled,
   }).data ?? [];
 }
 

@@ -2,13 +2,15 @@ import React from 'react';
 import styles from './AllFeatures.module.css';
 import { useSiteFeatures } from '../../lib/useSiteFeatures';
 import type { SiteFeature } from '../../lib/useSiteFeatures';
+import { useInView } from '../../lib/useInView';
 
 import { useBreadcrumb } from '../BreadcrumbContext';
-import { PeopleTeamToolbox24Regular, ChevronRight24Filled } from '@fluentui/react-icons';
+import { PeopleTeamToolbox24Regular, ChevronRight24Filled } from '../Icons';
 import { useNavigate } from 'react-router-dom';
 
 const AllFeatures: React.FC = () => {
-  const features = useSiteFeatures() as SiteFeature[];
+  const [ref, inView] = useInView<HTMLElement>();
+  const features = useSiteFeatures(inView) as SiteFeature[];
   const navigate = useNavigate();
 
   const sortedFeatures = [...features].sort((a, b) => {
@@ -31,8 +33,10 @@ const AllFeatures: React.FC = () => {
     return () => setItems([]);
   }, [setItems]);
 
+  if (!sortedFeatures.length) return null;
+
   return (
-    <section className={styles['features-root']}>
+    <section ref={ref} className={styles['features-root']}>
       <h2 className="fluent-title2">All features</h2>
       <div className={styles['features-grid']}>
         {sortedFeatures.map(feature => (

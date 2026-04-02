@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@fluentui/react-components';
+import { Button } from '../../lib/localFluent';
 import styles from './WhatWeDoHero.module.css';
 
 const WhatWeDoHero: React.FC = () => (

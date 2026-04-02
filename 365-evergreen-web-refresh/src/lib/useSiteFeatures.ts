@@ -21,11 +21,12 @@ export interface SiteFeature {
   };
 }
 
-export function useSiteFeatures() {
+export function useSiteFeatures(enabled: boolean = true) {
   return useQuery({
     queryKey: ['siteFeatures'],
     queryFn: fetchSiteFeatures,
     staleTime: 5 * 60 * 1000,
+    enabled,
   }).data ?? [];
 }
 

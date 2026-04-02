@@ -14,8 +14,8 @@ import {
   makeStyles,
   tokens,
   typographyStyles,
-} from "@fluentui/react-components";
-import type { CarouselAnnouncerFunction } from "@fluentui/react-components";
+} from '../../lib/localFluent';
+import type { CarouselAnnouncerFunction } from '../../lib/localFluent';
 
 const useClasses = makeStyles({
   bannerCard: {

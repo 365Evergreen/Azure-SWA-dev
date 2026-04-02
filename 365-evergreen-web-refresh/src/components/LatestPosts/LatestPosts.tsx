@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './LatestPosts.module.css';
 import { useLatestPosts } from '../../lib/useLatestPosts';
+import { useInView } from '../../lib/useInView';
 import { useNavigate } from 'react-router-dom';
 
 interface Post {
@@ -27,7 +28,8 @@ interface Post {
 }
 
 const LatestPosts: React.FC = () => {
-  const posts = useLatestPosts(6);
+  const [ref, inView] = useInView<HTMLDivElement>();
+  const posts = useLatestPosts(6, inView);
   const navigate = useNavigate();
 
   // Sort by date descending (should already be, but ensure)
@@ -46,7 +48,7 @@ const LatestPosts: React.FC = () => {
   }
 
   return (
-    <div className={styles.latestPostsOuter}>
+    <div className={styles.latestPostsOuter} ref={ref}>
       <section className={`${styles.latestPostsRoot} home-section`}>
         <div className={styles.latestPostsContainer}>
           <h2 className={`${styles.latestPostsTitle} fluent-title2 home-section-heading`}>Latest by 365 Evergreen</h2>

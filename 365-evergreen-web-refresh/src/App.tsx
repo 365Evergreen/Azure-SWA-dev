@@ -17,7 +17,7 @@ import { getConsent, subscribe } from './lib/cookieConsent';
 import { initAnalytics, teardownAnalytics } from './lib/analytics';
 import questionsData from '../docs/CTAJourneyQuestions.json';
 // import Carousel from './components/Carousel';
-import { AnimatePresence, motion } from 'framer-motion';
+import { LazyAnimatePresence, MotionDiv } from './components/LazyMotion/LazyMotion';
 import { fadeVariants } from './components/motionPresets';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import VisibilitySensor from './components/VisibilitySensor/VisibilitySensor';
@@ -25,13 +25,11 @@ import './HomeSectionLayout.css';
 import RouteLoader from './components/RouteLoader/RouteLoader';
 const HowWeDoItStatic = lazy(() => import('./components/HowWeDoIt/HowWeDoItStatic').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
 const ScrollToTop = lazy(() => import('./components/ScrollToTop/ScrollToTop').then(m => ({ default: (m as any).default || m })) as Promise<{ default: ComponentType<any> }>);
-
 const CtaPage = lazy(() => import('./components/CtaPage/CtaPage'));
 const FeatureView = lazy(() => import('./components/FeatureView/FeatureView'));
 const AllAccordions = lazy(() => import('./components/AllAccordions/AllAccordions'));
 const AllFeatures = lazy(() => import('./components/AllFeatures/AllFeatures'));
 const LatestPostsArchive = lazy(() => import('./components/LatestPostsArchive/LatestPostsArchive'));
-
 const WhatWeDoStatic = lazy(() => import('./components/WhatWeDoStatic/WhatWeDoStatic'));
 const ResourceArchive = lazy(() => import('./components/ResourceArchive/ResourceArchive'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy/PrivacyPolicy'));
@@ -74,20 +72,20 @@ function App() {
     // Gate prefetches: if user is on the homepage, prefetch immediately.
     const path = location?.pathname;
     if (path === '/') {
-      void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => {});
-      void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => {});
+      void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => { });
+      void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => { });
       // Warm lazy modules used above the fold
-      void import('./components/Pillars/Pillars').catch(() => {});
-      void import('./components/Features/Features').catch(() => {});
-      void import('./components/LatestPosts/LatestPosts').catch(() => {});
+      void import('./components/Pillars/Pillars').catch(() => { });
+      void import('./components/Features/Features').catch(() => { });
+      void import('./components/LatestPosts/LatestPosts').catch(() => { });
     } else {
       // Defer heavy data prefetch until first user interaction to reduce cold load on non-home routes.
       const onFirstInteraction = () => {
-        void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => {});
-        void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => {});
-        void import('./components/Pillars/Pillars').catch(() => {});
-        void import('./components/Features/Features').catch(() => {});
-        void import('./components/LatestPosts/LatestPosts').catch(() => {});
+        void import('./lib/usePillars').then(m => m.prefetchPillars?.(4)).catch(() => { });
+        void import('./lib/useLatestPosts').then(m => m.prefetchLatestPosts?.(6)).catch(() => { });
+        void import('./components/Pillars/Pillars').catch(() => { });
+        void import('./components/Features/Features').catch(() => { });
+        void import('./components/LatestPosts/LatestPosts').catch(() => { });
         window.removeEventListener('pointerdown', onFirstInteraction);
         window.removeEventListener('keydown', onFirstInteraction);
       };
@@ -108,8 +106,8 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={
-                <AnimatePresence mode="wait">
-                  <motion.div
+                <LazyAnimatePresence mode="wait">
+                  <MotionDiv
                     key="hero"
                     variants={fadeVariants}
                     initial="hidden"
@@ -117,8 +115,8 @@ function App() {
                     exit="exit"
                   >
                     <Hero onOpenDrawer={() => setDrawerOpen(true)} />
-                  </motion.div>
-                  <motion.div
+                  </MotionDiv>
+                  <MotionDiv
                     key="pillars"
                     variants={fadeVariants}
                     initial="hidden"
@@ -126,13 +124,13 @@ function App() {
                     exit="exit"
                   >
                     <VisibilitySensor>
-                      <Suspense fallback={<div />}> 
+                      <Suspense fallback={<div />}>
                         <Pillars />
                       </Suspense>
                     </VisibilitySensor>
-                  </motion.div>
+                  </MotionDiv>
                   <div key="bg-default-1" className="bg-default">
-                    <motion.div
+                    <MotionDiv
                       key="features"
                       variants={fadeVariants}
                       initial="hidden"
@@ -146,10 +144,10 @@ function App() {
                           </Suspense>
                         </VisibilitySensor>
                       </div>
-                    </motion.div>
+                    </MotionDiv>
                   </div>
                   <div key="bg-alt" className="bg-alt">
-                      <motion.div
+                    <MotionDiv
                       key="latestposts"
                       variants={fadeVariants}
                       initial="hidden"
@@ -161,10 +159,10 @@ function App() {
                           <LatestPosts />
                         </Suspense>
                       </VisibilitySensor>
-                    </motion.div>
+                    </MotionDiv>
                   </div>
                   <div key="bg-default-2" className="bg-default">
-                      <motion.div
+                    <MotionDiv
                       key="contactform"
                       variants={fadeVariants}
                       initial="hidden"
@@ -176,9 +174,9 @@ function App() {
                           <ContactForm />
                         </Suspense>
                       </VisibilitySensor>
-                    </motion.div>
+                    </MotionDiv>
                   </div>
-                </AnimatePresence>
+                </LazyAnimatePresence>
               } />
               <Route path="/CTA/:slug" element={<CtaPage />} />
               <Route path="/feature/:slug" element={<FeatureView />} />
@@ -192,7 +190,6 @@ function App() {
               <Route path="/latest-posts/:category/:slug" element={<SinglePost />} />
               <Route path="/category/:category/:slug" element={<PageView />} />
               <Route path="/what-we-do" element={<PageViewOptional whatWeDoPageId="cG9zdDo0OTM=" />} />
-
               <Route path="/e365-page/what-we-do/" element={<WhatWeDoStatic />} />
               <Route path="/e365-page/how-we-do-it" element={<HowWeDoItStatic />} />
               <Route path="/e365-page/resources/" element={<ResourceArchive />} />
@@ -228,22 +225,22 @@ function App() {
       <Suspense fallback={null}>
         <FloatingDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <JourneySurvey
-          questions={questionsData.map((q, i) => {
-            const type = q.type === 'text-area' ? 'text' : q.type;
-            let options: string[] | undefined = undefined;
-            if (type === 'radio' && i === 0) options = ['Collaborative', 'Innovative', 'Supportive', 'Results-driven'];
-            if (type === 'checkbox' && i === 1) options = ['Email', 'Chat', 'Video Calls', 'In-person'];
-            if (type === 'radio' && i === 2) options = ['Lack of clarity', 'Poor tools', 'Low engagement', 'Siloed work'];
-            return {
-              id: `q${i + 1}`,
-              type: type as 'radio' | 'checkbox' | 'text',
-              question: q.title,
-              ...(options ? { options } : {})
-            };
-          })}
-          onComplete={() => { }}
-        />
-      </FloatingDrawer>
+            questions={questionsData.map((q, i) => {
+              const type = q.type === 'text-area' ? 'text' : q.type;
+              let options: string[] | undefined = undefined;
+              if (type === 'radio' && i === 0) options = ['Collaborative', 'Innovative', 'Supportive', 'Results-driven'];
+              if (type === 'checkbox' && i === 1) options = ['Email', 'Chat', 'Video Calls', 'In-person'];
+              if (type === 'radio' && i === 2) options = ['Lack of clarity', 'Poor tools', 'Low engagement', 'Siloed work'];
+              return {
+                id: `q${i + 1}`,
+                type: type as 'radio' | 'checkbox' | 'text',
+                question: q.title,
+                ...(options ? { options } : {})
+              };
+            })}
+            onComplete={() => { }}
+          />
+        </FloatingDrawer>
       </Suspense>
     </>
   );

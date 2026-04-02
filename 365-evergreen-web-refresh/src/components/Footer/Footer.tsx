@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
-import { Link } from '@fluentui/react-components';
-import { LeafThree24Regular } from '@fluentui/react-icons';
+import { Link } from '../../lib/localFluent';
+import { LeafThree24Regular } from '../Icons';
 
 export function Footer() {
   return (

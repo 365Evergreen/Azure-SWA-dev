@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@fluentui/react-components';
+import { Button } from '../../lib/localFluent';
 import { Modal } from '../Modal/Modal';
 import { JourneySurvey } from '../JourneySurvey/JourneySurvey';
 import questionsData from '../../../docs/CTAJourneyQuestions.json';

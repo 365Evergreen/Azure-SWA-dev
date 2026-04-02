@@ -1,1182 +1,0 @@
-
--------------------------------------------------------------------------------
-   ROBOCOPY     ::     Robust File Copy for Windows                              
--------------------------------------------------------------------------------
-
-  Started : Wednesday, 1 April 2026 23:36:59
-   Source : C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\
-     Dest : C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\
-
-    Files : *.*
-	    
- Exc Dirs : .git
-	    node_modules
-	    dist
-	    .vs
-	    
-  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
-
-------------------------------------------------------------------------------
-
-	                  31	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\
-	    New File  		      33	.eslintignore100%  
-	    New File  		     131	.gitconfig100%  
-	    New File  		     568	.gitignore100%  
-	    New File  		      40	.hintrc100%  
-	    New File  		     293	365-evergreen-react-app.code-workspace100%  
-	    New File  		    5047	axe-linter.md100%  
-	    New File  		      52	AzuriteConfig100%  
-	    New File  		    1849	carousel-items.json100%  
-	    New File  		  211688	contact-form.png100%  
-	    New File  		    2359	CTAJourneyChoices.json100%  
-	    New File  		     509	CTAJourneyQuestions.json100%  
-	    New File  		     639	eslint.config.js100%  
-	    New File  		     945	feature-buttons.json100%  
-	    New File  		     732	index.html100%  
-	    New File  		    1164	list-fluent-icons.cjs100%  
-	    New File  		    2458	localhost-1774368088074.log100%  
-	    New File  		   1.1 m	localhost.har 87%  100%  
-	    New File  		  340920	package-lock.json100%  
-	    New File  		     981	package.json100%  
-	    New File  		    2247	page-components.json100%  
-	    New File  		  184931	pnpm-lock.yaml100%  
-	    New File  		    2628	README.md100%  
-	    New File  		       0	robocopy-output.txt
-	    New File  		     226	staticwebapp.config.json100%  
-	    New File  		     688	theme.json100%  
-	    New File  		  883316	thumbnail_Image.png100%  
-	    New File  		     834	tsconfig.app.json100%  
-	    New File  		     126	tsconfig.json100%  
-	    New File  		     679	tsconfig.node.json100%  
-	    New File  		     908	vite.config.ts100%  
-	    New File  		    1158	wedocommunication-ql.md100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.github\
-	    New File  		    4381	copilot-instructions.md100%  
-	  New Dir          6	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.github\workflows\
-	    New File  		    2080	azure-static-web-apps-ashy-mud-06790981e.yml100%  
-	    New File  		    1828	azure-static-web-apps-blue-glacier-09204bb1e.yml100%  
-	    New File  		    1821	azure-static-web-apps-lemon-water-0a5f9881e.yml100%  
-	    New File  		     898	deploy-gh-pages.yml100%  
-	    New File  		    1465	deploy-ghpages.yaml100%  
-	    New File  		     873	gh-pages.yml100%  
-	  New Dir          7	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\
-	    New File  		     107	COMMIT_EDITMSG100%  
-	    New File  		     371	config100%  
-	    New File  		      73	description100%  
-	    New File  		     235	FETCH_HEAD100%  
-	    New File  		      23	HEAD100%  
-	    New File  		   23849	index100%  
-	    New File  		     269	packed-refs100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\gk\
-	    New File  		     108	config100%  
-	  New Dir         14	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\hooks\
-	    New File  		     478	applypatch-msg.sample100%  
-	    New File  		     896	commit-msg.sample100%  
-	    New File  		    4726	fsmonitor-watchman.sample100%  
-	    New File  		     189	post-update.sample100%  
-	    New File  		     424	pre-applypatch.sample100%  
-	    New File  		    1649	pre-commit.sample100%  
-	    New File  		     416	pre-merge-commit.sample100%  
-	    New File  		    1374	pre-push.sample100%  
-	    New File  		    4898	pre-rebase.sample100%  
-	    New File  		     544	pre-receive.sample100%  
-	    New File  		    1492	prepare-commit-msg.sample100%  
-	    New File  		    2783	push-to-checkout.sample100%  
-	    New File  		    2308	sendemail-validate.sample100%  
-	    New File  		    3650	update.sample100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\info\
-	    New File  		     240	exclude100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\logs\
-	    New File  		    2097	HEAD100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\logs\refs\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\logs\refs\heads\
-	    New File  		    2097	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\logs\refs\remotes\
-	  New Dir          4	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\logs\refs\remotes\origin\
-	    New File  		     303	dev100%  
-	    New File  		     516	HEAD100%  
-	    New File  		     157	main100%  
-	    New File  		     870	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\00\
-	    New File  		     219	f6a47f38bf5d7f8298685403383d18251d56ad100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\01\
-	    New File  		     749	93dfe3e2b6e26ebab797530b6b94682610faa2100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\02\
-	    New File  		     626	3125aa6777913cf7e3f154e6f7d38a0083272d100%  
-	    New File  		    1444	c3a5cbe95bb37089856919181081b75dcd3f12100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\03\
-	    New File  		      60	2db6ee141f284cbc0cd6dacb1ab4e0d7970b5e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\04\
-	    New File  		     812	96fa984428f3f0cc0e46cc16776734cd936c9b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\08\
-	    New File  		    1276	f7947bf985b3e66d93c1ac33c25ac71d3f4201100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\09\
-	    New File  		    1655	a0ea076e1fb8af4a72d41cfc67129aafe6f09a100%  
-	    New File  		      94	b341004ab3ac1b731594dd3a14aa7a6860cdad100%  
-	    New File  		     684	cdcac6256112408581e07e89ca8aa8496e892d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\0a\
-	    New File  		     687	2d657f567440f2cf85a34f385d80019c04e01c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\0c\
-	    New File  		    1849	b0f0a74af1be49db2d90c13122ba4be010c04e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\0d\
-	    New File  		     579	ffd37c8f5b07b125ddae7a24d77105941a62d8100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\11\
-	    New File  		     814	12c1df54e7fbf517fc6d6837a47ad860b48b47100%  
-	    New File  		     850	9ad02df6de315cd4fd9e2075a72f925190478e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\12\
-	    New File  		      72	1b83e75653ff2b8d58646572a137514284daaf100%  
-	    New File  		    1792	51b21e52d2ecfb4d01faa3e899c6fab53b1bf0100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\13\
-	    New File  		     196	3b18bb442ba10b3a61f2ee91eba7dca64e2e53100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\15\
-	    New File  		    1051	0f9f8ce68e7b1c0f3ac8cb4c3474f0f9894ea3100%  
-	    New File  		     212	9e7c1eba6eb0e8a91e989521bfbd1de5951a91100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\18\
-	    New File  		     992	cf3066d474aa2a7ab7c8eb5506f71acf016f92100%  
-	    New File  		     207	dfec689ef8a0b68421e0ed550abc6346c6a86c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\1a\
-	    New File  		     560	0e43b75fb0eb4c47fa0af09ac0fc6b1b1ff577100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\1e\
-	    New File  		      60	0a26e0dcd8aecd5e2dca3e4b14c31b4d137318100%  
-	    New File  		    1180	2be869630aec6cea7d8f780f8efd719429e020100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\1f\
-	    New File  		      60	00c268d16d460c0538e39083738978341632aa100%  
-	    New File  		    2324	0fa08a15316c1e293c475986b04410305181e9100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\22\
-	    New File  		      95	ccac3426ddd35828ef77ea551a1eb43042a910100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\23\
-	    New File  		      87	09eefe1ac5a528fffae69c119a32d041861aff100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\26\
-	    New File  		     718	a240eb8047feed63f5942f5fcb9b329cac8bfb100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\27\
-	    New File  		    2718	0589bd931968e8c45f4687adae572a85cd15b7100%  
-	    New File  		      93	9aec4f5c12a4839f3ac7ffd6512c849509a734100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\28\
-	    New File  		     615	55e59d22392809e276fa63240590f93487279e100%  
-	    New File  		    1796	b2afd71fd6ae51de35c8a6a0dd65b1e8076833100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\29\
-	    New File  		      91	2ab7e1a1f43c306e0b193e6cee09e9b716c650100%  
-	    New File  		      63	c5791bb8365d859ba5a6992115d5a6451206e2100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\2a\
-	    New File  		    2232	617ff6b3aedfdbefb5cf958f25c7e056485b77100%  
-	    New File  		    1355	a529717ca968ed0b7df820b938a8e1861479ce100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\2c\
-	    New File  		    1823	7ac7d3843d34f790155076d80d2381b9f56cb8100%  
-	    New File  		     792	c281e5284a4f4ef11b66ceedc26bd1776f9203100%  
-	    New File  		    1197	e01a18ad454534f4cffaa55e0ff91b3a6918ec100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\2d\
-	    New File  		     624	da72541bf6dad2d75e8305a9953d30d38f60ab100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\2f\
-	    New File  		    1225	06c18316f6763844d6f8f3b6966156f1ee3e82100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\34\
-	    New File  		      87	1fb6d873f0c9275885880532bea5cefde904b4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\35\
-	    New File  		      56	2f92267739cd89eafc54fc92731778f70cafdf100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\36\
-	    New File  		      90	201f30d5cca78991577a70b7f2146c27501bfb100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\37\
-	    New File  		     848	7b4b4e4576e6d47648abada7df76728d1c4b48100%  
-	    New File  		     788	cf29b2565b94b0a08f21514fc3c4ff65534ae6100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\38\
-	    New File  		    1112	3a1f34850934abc2ebc2bbe4b508d13d7f242d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\39\
-	    New File  		      94	76ef5103e3b59c80c8295d76153ed492edc051100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\3b\
-	    New File  		     638	01ec2cf91e4345a4e4fc47cca2551151a4794b100%  
-	    New File  		    1796	5ca33be0d4d1aafa8bd7fc6b3c9c80d7f44d78100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\3d\
-	    New File  		      98	5d4ecac641b1e0717809685b9c94fdb580e254100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\3e\
-	    New File  		     100	c8159aeca55ddc2ae3c943b597804d8713cd58100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\40\
-	    New File  		    2102	419114208eb5125b0ff2f897978eb9ef6edc9f100%  
-	    New File  		     101	e7fe6dc1304d434371eaeac5f14d08c704f958100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\41\
-	    New File  		     754	7aa986226208c8827262f4b222d0815bd551be100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\43\
-	    New File  		      96	4a9c669e7717c2906f28bbd2f1a53087452ecc100%  
-	    New File  		    1223	c5de3cefdfb085ab60c9399c98d9c1fc20bda5100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\44\
-	    New File  		    2199	edb0e9566aef648f0c60921e77c080dd65ae26100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\45\
-	    New File  		     716	731e4a2ae19eeb23d5ed3520300f117e0b66b7100%  
-	    New File  		      96	b393d2e8a74a1bdf5c830bb67751e0e4fdddc6100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\47\
-	    New File  		     637	75b695a408aa5a9cb78d93a6490c386378b586100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\4a\
-	    New File  		    1055	c100af443b984d03a98afc7de839a39c7c701f100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\4b\
-	    New File  		      70	08242f2564e77097398a62299cfed3945062c1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\51\
-	    New File  		     104	856b222a84860b25e559283ed5daeb98f0a9cf100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\52\
-	    New File  		    1166	0874b05880c5053685a7739f5c9eb5d21342c1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\53\
-	    New File  		     128	951b5eb60c3803f0ad8ec0573f3e57908dafa7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\5b\
-	    New File  		      90	f1238373b119cd4adf3acbc6303c9977de8881100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\5c\
-	    New File  		    2512	65a0e8a624bb90210d8b836797cda0abcbb53d100%  
-	    New File  		     855	a26e3b741f6e21c06cd82f8bb4dd473a0dc4ba100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\5e\
-	    New File  		     497	58d6957b0dc9097f56b009f73806cf1a538a16100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\5f\
-	    New File  		      67	57ac068bba590a6d5595dbdc975daef1ff5c0a100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\60\
-	    New File  		    1226	16b18d491fd73b145acd8cea2be607449e90d4100%  
-	    New File  		      91	17f1e8280dfa927de185efb1f83f2353ee78b1100%  
-	    New File  		     196	caefdeca5fbbc39008ea168f35c15003aa95eb100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\62\
-	    New File  		      94	d9c3513e26f97ef9e9bea55d3473b7ff84138b100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\63\
-	    New File  		      67	0b72230e04f5ca8fdb592307b82b6444f13b47100%  
-	    New File  		    1056	3261b2b48b19d6018ba96a4ff3d24923ed019c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\64\
-	    New File  		     129	ff6ad1044454f0155a0c3b1e3342e73e664225100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\65\
-	    New File  		     650	0ec2e12a8ffbb86127e0978062b8c6ae497b3b100%  
-	    New File  		    1255	4dc57fb128112e06837480ad4afd7e7123679b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\69\
-	    New File  		     215	e0b0d090ebd37d7baffb8c1a00c18926eb69c4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\6a\
-	    New File  		     100	7bf7fbba32b79ae3445cf53a9cb6a4a27da288100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\6b\
-	    New File  		     772	717c80de349f45052ab665b259488ea0400913100%  
-	    New File  		      93	78a0ffdcd8467c1aecdf691ffc27ae27da5b60100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\6c\
-	    New File  		    2129	e49ad40aa5416cdf4db05e9d63713639c84633100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\6e\
-	    New File  		     766	e55370c43af659978d340cb409100f480c000f100%  
-	    New File  		     301	ea99770c5ee5e60991364c900ab209d46d49da100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\6f\
-	    New File  		     883	788bbc4c71cda810963d84ce0f7def6f84efc8100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\70\
-	    New File  		     638	1963108d6282eec27e8a96a2a0bf862e2849ac100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\72\
-	    New File  		     105	1ecaa7a9a89c2d707ee67669474acbd165c041100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\73\
-	    New File  		     812	f4b64b2746b6fdf162bd008612faded255ab61100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\75\
-	    New File  		     246	414273df730a74e3de31979738b4d245a8fe94100%  
-	    New File  		    1203	b7629ad691f3b454510c047079c3a1be0bee4b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\76\
-	    New File  		      91	3fea3933bca1670acffeabb4ffd65704722785100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\79\
-	    New File  		    1110	07d2ca4f3a74d2ffda12acd5059a73d328bff7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\7b\
-	    New File  		      88	03057a197c9f34748728044220795d36525cfc100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\7d\
-	    New File  		    1034	39ae2af148bd0a00886d8e6bf336f11fd2f39c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\7e\
-	    New File  		      86	7ccb1e691703c62f42f70fc4ceccb8edcb83cb100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\7f\
-	    New File  		      64	02d58a5a3a3af2eae1744ea5b0767d6b4f4d83100%  
-	    New File  		     174	c99c74afe4cdbfa54d2012239a209b2c52b05c100%  
-	    New File  		     196	de2f0f09ffbe1e5609405cab430db9dbe5b304100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\80\
-	    New File  		      97	ecad75c90c6235b0783e59c9b71e46ac7a6347100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\81\
-	    New File  		    1569	2dba65104ded3fcb77b43cb63993900003dc78100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\82\
-	    New File  		      82	4fdfa2a074938b1f9421b81a6d8a04be95fc5e100%  
-	    New File  		     104	c464128dcfa53d79b8dc50a8e5b1509bad0620100%  
-	    New File  		    2426	dc6905b3c9dbef1514a58416c54be90fbd21f8100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\83\
-	    New File  		     615	1dc67a3f0fd6fc929bcf5bd70bdf946bffa4d5100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\87\
-	    New File  		      62	6d1a098c888dffca3be14185f33de461f5691b100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\88\
-	    New File  		     229	99fe9d1e2240424a16f92d72258f81dee4d453100%  
-	    New File  		      82	ef2acf08e71e044521da0dda3ce7435a108253100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\89\
-	    New File  		    1849	36ad924f9813e87e406d3e10ec57e848c4ec37100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\8b\
-	    New File  		      33	59a2d7edbc102874a96b7c2a96fb73a74f7e34100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\8c\
-	    New File  		    1794	d44aacc27d8d02c5cddac48229c6b5e2119f94100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\8e\
-	    New File  		    1225	320088b90a313fd6e65003f06acbe4056b9cc8100%  
-	    New File  		    1103	9464f8201c8c96f495cae30c07204bd9e91760100%  
-	    New File  		     812	e4456778f08d98093d2bba3fcc812113442af4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\8f\
-	    New File  		     797	583eb6fe3e3187117e509dac95066f5d44ed95100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\90\
-	    New File  		      61	38e9257eeb41881b5d4a9eed041bafce76a09a100%  
-	    New File  		      61	a81d0a3db988ce3b7eba6ddaaa98b0a875fd2c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\92\
-	    New File  		      53	a25552f61752fcae5089a72fec54f351673477100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\93\
-	    New File  		      60	d8a89ce547de05dd47f53e656fc6c3093f5899100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\94\
-	    New File  		      93	3f310e806d3931ed1d3ae7c37d2463545956fc100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\96\
-	    New File  		      94	4fd5df0511871391f925b4a70c8c3c12a760fd100%  
-	    New File  		    2199	d8e8783d6adebca8cca64960b1d5ee8ed1d531100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\97\
-	    New File  		    1223	5c562022245387c6ee9ac7a362d6c439705ceb100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\98\
-	    New File  		    1226	d97cce54eae03eb78ceef6883cd22223276f0e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\9c\
-	    New File  		    1926	0b28522b034caaf22961e5ff6d2042e3e256b8100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\9d\
-	    New File  		      61	5e22e58d7116687cfa73cc171d75d8b8a11e2d100%  
-	    New File  		     180	6c0b469492ad6202c9794ec4f76e438dbfc428100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\9e\
-	    New File  		    2123	7f5f4402d3928f85f9945bb590b2b0ece308b5100%  
-	    New File  		     688	c39957b7616dd5a10aa9bba314c3cb15c0f085100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\9f\
-	    New File  		     568	4c530d5f73b9181a0a9d85c39934af6995668b100%  
-	    New File  		      59	a1ccb8e8c84cd14dad1a15f5e6c011827dd394100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\a1\
-	    New File  		    3066	5f37dcf992df848e18ddb50fdd9a3bb1c68623100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\a2\
-	    New File  		     462	766504c053b479df06d25af06a7c3bc85910be100%  
-	    New File  		      89	7a610c471f5bff950010b4631739fd8cc8538b100%  
-	    New File  		     477	e0f04fd525283fbb987abb564c71c2f87967dc100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\a3\
-	    New File  		     342	040e051149bf744e4cfe51a50d0ddac02a2a21100%  
-	    New File  		      61	34f408c34518e86b7a5ece8927600f39da0144100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\a4\
-	    New File  		    2122	59868bb88bd96ee99627881b248f95aca69073100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\a9\
-	    New File  		    2207	309326e3b500020785bc5d4179340a6e6d7b9a100%  
-	    New File  		    2442	6dbecf2c4e7c2fa5f61b6e91e91669f9d2e835100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\aa\
-	    New File  		      52	8de6b4ec965b487816299acbdc8d8e948b1bb0100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\ab\
-	    New File  		      73	b36d0970ed217614463dd668891608fe90a4f0100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\ac\
-	    New File  		    1084	41582f782b40862bac58ffe8e80a593fd34150100%  
-	    New File  		     345	f53a2100c6c0964a32401477b0a5c65df04798100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\b2\
-	    New File  		     781	b55bdd72c89002fc4adc691cca9278f58a2342100%  
-	    New File  		    2106	e43e774c288cbf77b979f992e621ff9560e3d1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\b5\
-	    New File  		    1592	fc065919b95ac2d2be94552684fcf4df3b1ef3100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\b6\
-	    New File  		     838	320cda78b43cf0b289efa6111406d4a81eea14100%  
-	    New File  		    2141	544a665af55fa634b984d2704c967574d7df64100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\b8\
-	    New File  		    1224	b4860455b227da061efaf709d9305b442f5408100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\b9\
-	    New File  		     757	6578568b15141eebda9f4088f0deb713739110100%  
-	    New File  		    2250	a1756fc2b431f5d6e792781148f8a211ce0d82100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\ba\
-	    New File  		     110	9307e0d72988cab2da67d3e7a846022706092a100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\be\
-	    New File  		     110	3c2833edd8450c1644ee7c07df8a29b9da1bad100%  
-	    New File  		     194	d769910105db09b1a8a4ba742ce1636eeae505100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\bf\
-	    New File  		      61	f382317a60a30fadb76abf486df0e437dca61e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c1\
-	    New File  		      84	25297c94898cb4126ea5f070eca28e621e3566100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c2\
-	    New File  		     136	28ade2e191f04cf68d059a6c0b77caf4a9312e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c4\
-	    New File  		     103	89987c56484537b009e58eadae5eefefc3e140100%  
-	    New File  		    1807	b6f8fb2a4cdb7bbb8089c8134b70abab944979100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c5\
-	    New File  		      92	8c27aeeb58b0da24b3bd98025ccd77b8c0bb3f100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c6\
-	    New File  		     517	46b2d06aed77cc0508a1b0aca664b61d2b30a6100%  
-	    New File  		     665	53d4e8ec17c8571815b9f1c4b48b890c332362100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c8\
-	    New File  		     402	3a466533303cbe8380e886eb9bb7c4b14d5f1f100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\c9\
-	    New File  		    1482	7db8c41f483c6acd64dc9644315673c2f15f4d100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\cb\
-	    New File  		    2152	1295a4582eac6357790880bf2b28e2d35fd3d9100%  
-	    New File  		     103	cfe406e6cd5361f75ffd1f26609ba23b7bf912100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\ce\
-	    New File  		    1254	6d79640dfd59ff2c6cd41950ea085c81913412100%  
-	    New File  		    1143	78cc890b4ddbcf46ce5d6c1371e454aa2aa7f1100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\cf\
-	    New File  		     402	74ade1fe6b95e44df4d5325bf115f14d0b9059100%  
-	    New File  		     949	c0ed7f91190c248ec509acd0db992032e03e10100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d0\
-	    New File  		     814	638230a4cd1538dd14f1ae09007d9999800158100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d1\
-	    New File  		      87	34c3377294269dc3ce06a1a7dc035a96d105e9100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d2\
-	    New File  		    1794	8c852e92c5bde3dd6b69e7cf5760f9477cd0b3100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d4\
-	    New File  		      62	c6949e513ab825aefff8b4f98060cbd4f76c31100%  
-	    New File  		     224	e9588703e798caa22b3c0f4f9b8ecd76b154c3100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d5\
-	    New File  		     100	861b34a10ae3a970c70cee533db83eb18384ed100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d6\
-	    New File  		      91	a60b9039fe853bd07e8eced58cf7a62dc7d83d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d8\
-	    New File  		     950	61bbc09767d966a70debb4a582e0dc4738a9a7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\d9\
-	    New File  		     700	e56ef5de82c22c47cd522bf60dae78ed564e6b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\da\
-	    New File  		      90	f3acd9c5038e13ff8a378946c675085f20e582100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\db\
-	    New File  		      60	3f01c79158ec789c7657be9b99a4b4874f4d17100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\dc\
-	    New File  		    1118	5198397a7ffd0354422c8117b2bca1f8f0389e100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\de\
-	    New File  		     987	2c5d5e905d2c50d54cb3d1d05045afa2a0ed78100%  
-	    New File  		      64	867ee1937b3edf0d8f0bf8cc7b588baeaf3a40100%  
-	    New File  		     606	8e24010c9eee7657659f70a91d23f996731c53100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\df\
-	    New File  		      76	e0770424b2a19faf507a501ebfc23be8f54e7b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\e0\
-	    New File  		     659	97b53b656b10ac8d9d4c02ad73819b55c3845a100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\eb\
-	    New File  		     517	4b1405aca47f1128e79140525549ab7f2d398d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\ef\
-	    New File  		     560	03d002014f483978cc557d0a26fb628d0cac61100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f1\
-	    New File  		     814	caa9f54de291f9bdb99b10d761a36c62a30be1100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f3\
-	    New File  		    2516	60ae05db988c2ef42584ce497909b690f87fbb100%  
-	    New File  		    1833	9c849cf17c2eac48282c84b133e8fef8aa076b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f5\
-	    New File  		     827	38624e1b3578dfb1d49d70f3b2556c57c09ba4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f6\
-	    New File  		     200	48a7af00d6717e92f2f5d47b42f8e79da11b69100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f8\
-	    New File  		      60	81c985853847012fbd33169686da6003012f04100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\f9\
-	    New File  		     813	b2decc1fd80c4b1e04b5ab97df23db1aeb229e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\fb\
-	    New File  		      61	4827b47c870c04d12b6fc379e7ffab8cd2887e100%  
-	    New File  		     504	ccc51525deeb503ee93851ae4afcdb6c5ce990100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\fc\
-	    New File  		     194	e1b8b772b69d66ca3ee15cace185fb37e81edc100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\info\
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\objects\pack\
-	    New File  		   36884	pack-b37908a2126e607baa35cbb703762aa198450e0a.idx100%  
-	    New File  		   8.7 m	pack-b37908a2126e607baa35cbb703762aa198450e0a.pack 11.4% 22.8% 34.2% 45.7% 57.1% 68.5% 80.0% 91.4%100%  
-	    New File  		    5168	pack-b37908a2126e607baa35cbb703762aa198450e0a.rev100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\refs\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\refs\heads\
-	    New File  		      41	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\refs\remotes\
-	  New Dir          4	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\refs\remotes\origin\
-	    New File  		      41	dev100%  
-	    New File  		      32	HEAD100%  
-	    New File  		      41	main100%  
-	    New File  		      41	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\.git_bak\refs\tags\
-	  New Dir         31	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\
-	    New File  		      33	.eslintignore100%  
-	    New File  		     131	.gitconfig100%  
-	    New File  		     568	.gitignore100%  
-	    New File  		      40	.hintrc100%  
-	    New File  		     293	365-evergreen-react-app.code-workspace100%  
-	    New File  		    5047	axe-linter.md100%  
-	    New File  		      52	AzuriteConfig100%  
-	    New File  		    1849	carousel-items.json100%  
-	    New File  		  211688	contact-form.png100%  
-	    New File  		    2359	CTAJourneyChoices.json100%  
-	    New File  		     509	CTAJourneyQuestions.json100%  
-	    New File  		     639	eslint.config.js100%  
-	    New File  		     945	feature-buttons.json100%  
-	    New File  		     732	index.html100%  
-	    New File  		    1164	list-fluent-icons.cjs100%  
-	    New File  		    2458	localhost-1774368088074.log100%  
-	    New File  		   1.1 m	localhost.har 87%  100%  
-	    New File  		  340920	package-lock.json100%  
-	    New File  		     981	package.json100%  
-	    New File  		    2247	page-components.json100%  
-	    New File  		  184931	pnpm-lock.yaml100%  
-	    New File  		    2628	README.md100%  
-	    New File  		       0	robocopy-output.txt
-	    New File  		     226	staticwebapp.config.json100%  
-	    New File  		     688	theme.json100%  
-	    New File  		  883316	thumbnail_Image.png100%  
-	    New File  		     834	tsconfig.app.json100%  
-	    New File  		     126	tsconfig.json100%  
-	    New File  		     679	tsconfig.node.json100%  
-	    New File  		     908	vite.config.ts100%  
-	    New File  		    1158	wedocommunication-ql.md100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.github\
-	    New File  		    4381	copilot-instructions.md100%  
-	  New Dir          6	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.github\workflows\
-	    New File  		    2080	azure-static-web-apps-ashy-mud-06790981e.yml100%  
-	    New File  		    1828	azure-static-web-apps-blue-glacier-09204bb1e.yml100%  
-	    New File  		    1821	azure-static-web-apps-lemon-water-0a5f9881e.yml100%  
-	    New File  		     898	deploy-gh-pages.yml100%  
-	    New File  		    1465	deploy-ghpages.yaml100%  
-	    New File  		     873	gh-pages.yml100%  
-	  New Dir          7	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\
-	    New File  		     107	COMMIT_EDITMSG100%  
-	    New File  		     371	config100%  
-	    New File  		      73	description100%  
-	    New File  		     235	FETCH_HEAD100%  
-	    New File  		      23	HEAD100%  
-	    New File  		   23849	index100%  
-	    New File  		     269	packed-refs100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\gk\
-	    New File  		     108	config100%  
-	  New Dir         14	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\hooks\
-	    New File  		     478	applypatch-msg.sample100%  
-	    New File  		     896	commit-msg.sample100%  
-	    New File  		    4726	fsmonitor-watchman.sample100%  
-	    New File  		     189	post-update.sample100%  
-	    New File  		     424	pre-applypatch.sample100%  
-	    New File  		    1649	pre-commit.sample100%  
-	    New File  		     416	pre-merge-commit.sample100%  
-	    New File  		    1374	pre-push.sample100%  
-	    New File  		    4898	pre-rebase.sample100%  
-	    New File  		     544	pre-receive.sample100%  
-	    New File  		    1492	prepare-commit-msg.sample100%  
-	    New File  		    2783	push-to-checkout.sample100%  
-	    New File  		    2308	sendemail-validate.sample100%  
-	    New File  		    3650	update.sample100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\info\
-	    New File  		     240	exclude100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\logs\
-	    New File  		    2097	HEAD100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\logs\refs\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\logs\refs\heads\
-	    New File  		    2097	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\logs\refs\remotes\
-	  New Dir          4	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\logs\refs\remotes\origin\
-	    New File  		     303	dev100%  
-	    New File  		     516	HEAD100%  
-	    New File  		     157	main100%  
-	    New File  		     870	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\00\
-	    New File  		     219	f6a47f38bf5d7f8298685403383d18251d56ad100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\01\
-	    New File  		     749	93dfe3e2b6e26ebab797530b6b94682610faa2100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\02\
-	    New File  		     626	3125aa6777913cf7e3f154e6f7d38a0083272d100%  
-	    New File  		    1444	c3a5cbe95bb37089856919181081b75dcd3f12100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\03\
-	    New File  		      60	2db6ee141f284cbc0cd6dacb1ab4e0d7970b5e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\04\
-	    New File  		     812	96fa984428f3f0cc0e46cc16776734cd936c9b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\08\
-	    New File  		    1276	f7947bf985b3e66d93c1ac33c25ac71d3f4201100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\09\
-	    New File  		    1655	a0ea076e1fb8af4a72d41cfc67129aafe6f09a100%  
-	    New File  		      94	b341004ab3ac1b731594dd3a14aa7a6860cdad100%  
-	    New File  		     684	cdcac6256112408581e07e89ca8aa8496e892d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\0a\
-	    New File  		     687	2d657f567440f2cf85a34f385d80019c04e01c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\0c\
-	    New File  		    1849	b0f0a74af1be49db2d90c13122ba4be010c04e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\0d\
-	    New File  		     579	ffd37c8f5b07b125ddae7a24d77105941a62d8100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\11\
-	    New File  		     814	12c1df54e7fbf517fc6d6837a47ad860b48b47100%  
-	    New File  		     850	9ad02df6de315cd4fd9e2075a72f925190478e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\12\
-	    New File  		      72	1b83e75653ff2b8d58646572a137514284daaf100%  
-	    New File  		    1792	51b21e52d2ecfb4d01faa3e899c6fab53b1bf0100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\13\
-	    New File  		     196	3b18bb442ba10b3a61f2ee91eba7dca64e2e53100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\15\
-	    New File  		    1051	0f9f8ce68e7b1c0f3ac8cb4c3474f0f9894ea3100%  
-	    New File  		     212	9e7c1eba6eb0e8a91e989521bfbd1de5951a91100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\18\
-	    New File  		     992	cf3066d474aa2a7ab7c8eb5506f71acf016f92100%  
-	    New File  		     207	dfec689ef8a0b68421e0ed550abc6346c6a86c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\1a\
-	    New File  		     560	0e43b75fb0eb4c47fa0af09ac0fc6b1b1ff577100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\1e\
-	    New File  		      60	0a26e0dcd8aecd5e2dca3e4b14c31b4d137318100%  
-	    New File  		    1180	2be869630aec6cea7d8f780f8efd719429e020100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\1f\
-	    New File  		      60	00c268d16d460c0538e39083738978341632aa100%  
-	    New File  		    2324	0fa08a15316c1e293c475986b04410305181e9100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\22\
-	    New File  		      95	ccac3426ddd35828ef77ea551a1eb43042a910100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\23\
-	    New File  		      87	09eefe1ac5a528fffae69c119a32d041861aff100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\26\
-	    New File  		     718	a240eb8047feed63f5942f5fcb9b329cac8bfb100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\27\
-	    New File  		    2718	0589bd931968e8c45f4687adae572a85cd15b7100%  
-	    New File  		      93	9aec4f5c12a4839f3ac7ffd6512c849509a734100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\28\
-	    New File  		     615	55e59d22392809e276fa63240590f93487279e100%  
-	    New File  		    1796	b2afd71fd6ae51de35c8a6a0dd65b1e8076833100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\29\
-	    New File  		      91	2ab7e1a1f43c306e0b193e6cee09e9b716c650100%  
-	    New File  		      63	c5791bb8365d859ba5a6992115d5a6451206e2100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\2a\
-	    New File  		    2232	617ff6b3aedfdbefb5cf958f25c7e056485b77100%  
-	    New File  		    1355	a529717ca968ed0b7df820b938a8e1861479ce100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\2c\
-	    New File  		    1823	7ac7d3843d34f790155076d80d2381b9f56cb8100%  
-	    New File  		     792	c281e5284a4f4ef11b66ceedc26bd1776f9203100%  
-	    New File  		    1197	e01a18ad454534f4cffaa55e0ff91b3a6918ec100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\2d\
-	    New File  		     624	da72541bf6dad2d75e8305a9953d30d38f60ab100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\2f\
-	    New File  		    1225	06c18316f6763844d6f8f3b6966156f1ee3e82100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\34\
-	    New File  		      87	1fb6d873f0c9275885880532bea5cefde904b4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\35\
-	    New File  		      56	2f92267739cd89eafc54fc92731778f70cafdf100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\36\
-	    New File  		      90	201f30d5cca78991577a70b7f2146c27501bfb100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\37\
-	    New File  		     848	7b4b4e4576e6d47648abada7df76728d1c4b48100%  
-	    New File  		     788	cf29b2565b94b0a08f21514fc3c4ff65534ae6100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\38\
-	    New File  		    1112	3a1f34850934abc2ebc2bbe4b508d13d7f242d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\39\
-	    New File  		      94	76ef5103e3b59c80c8295d76153ed492edc051100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\3b\
-	    New File  		     638	01ec2cf91e4345a4e4fc47cca2551151a4794b100%  
-	    New File  		    1796	5ca33be0d4d1aafa8bd7fc6b3c9c80d7f44d78100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\3d\
-	    New File  		      98	5d4ecac641b1e0717809685b9c94fdb580e254100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\3e\
-	    New File  		     100	c8159aeca55ddc2ae3c943b597804d8713cd58100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\40\
-	    New File  		    2102	419114208eb5125b0ff2f897978eb9ef6edc9f100%  
-	    New File  		     101	e7fe6dc1304d434371eaeac5f14d08c704f958100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\41\
-	    New File  		     754	7aa986226208c8827262f4b222d0815bd551be100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\43\
-	    New File  		      96	4a9c669e7717c2906f28bbd2f1a53087452ecc100%  
-	    New File  		    1223	c5de3cefdfb085ab60c9399c98d9c1fc20bda5100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\44\
-	    New File  		    2199	edb0e9566aef648f0c60921e77c080dd65ae26100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\45\
-	    New File  		     716	731e4a2ae19eeb23d5ed3520300f117e0b66b7100%  
-	    New File  		      96	b393d2e8a74a1bdf5c830bb67751e0e4fdddc6100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\47\
-	    New File  		     637	75b695a408aa5a9cb78d93a6490c386378b586100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\4a\
-	    New File  		    1055	c100af443b984d03a98afc7de839a39c7c701f100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\4b\
-	    New File  		      70	08242f2564e77097398a62299cfed3945062c1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\51\
-	    New File  		     104	856b222a84860b25e559283ed5daeb98f0a9cf100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\52\
-	    New File  		    1166	0874b05880c5053685a7739f5c9eb5d21342c1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\53\
-	    New File  		     128	951b5eb60c3803f0ad8ec0573f3e57908dafa7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\5b\
-	    New File  		      90	f1238373b119cd4adf3acbc6303c9977de8881100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\5c\
-	    New File  		    2512	65a0e8a624bb90210d8b836797cda0abcbb53d100%  
-	    New File  		     855	a26e3b741f6e21c06cd82f8bb4dd473a0dc4ba100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\5e\
-	    New File  		     497	58d6957b0dc9097f56b009f73806cf1a538a16100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\5f\
-	    New File  		      67	57ac068bba590a6d5595dbdc975daef1ff5c0a100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\60\
-	    New File  		    1226	16b18d491fd73b145acd8cea2be607449e90d4100%  
-	    New File  		      91	17f1e8280dfa927de185efb1f83f2353ee78b1100%  
-	    New File  		     196	caefdeca5fbbc39008ea168f35c15003aa95eb100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\62\
-	    New File  		      94	d9c3513e26f97ef9e9bea55d3473b7ff84138b100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\63\
-	    New File  		      67	0b72230e04f5ca8fdb592307b82b6444f13b47100%  
-	    New File  		    1056	3261b2b48b19d6018ba96a4ff3d24923ed019c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\64\
-	    New File  		     129	ff6ad1044454f0155a0c3b1e3342e73e664225100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\65\
-	    New File  		     650	0ec2e12a8ffbb86127e0978062b8c6ae497b3b100%  
-	    New File  		    1255	4dc57fb128112e06837480ad4afd7e7123679b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\69\
-	    New File  		     215	e0b0d090ebd37d7baffb8c1a00c18926eb69c4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\6a\
-	    New File  		     100	7bf7fbba32b79ae3445cf53a9cb6a4a27da288100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\6b\
-	    New File  		     772	717c80de349f45052ab665b259488ea0400913100%  
-	    New File  		      93	78a0ffdcd8467c1aecdf691ffc27ae27da5b60100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\6c\
-	    New File  		    2129	e49ad40aa5416cdf4db05e9d63713639c84633100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\6e\
-	    New File  		     766	e55370c43af659978d340cb409100f480c000f100%  
-	    New File  		     301	ea99770c5ee5e60991364c900ab209d46d49da100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\6f\
-	    New File  		     883	788bbc4c71cda810963d84ce0f7def6f84efc8100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\70\
-	    New File  		     638	1963108d6282eec27e8a96a2a0bf862e2849ac100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\72\
-	    New File  		     105	1ecaa7a9a89c2d707ee67669474acbd165c041100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\73\
-	    New File  		     812	f4b64b2746b6fdf162bd008612faded255ab61100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\75\
-	    New File  		     246	414273df730a74e3de31979738b4d245a8fe94100%  
-	    New File  		    1203	b7629ad691f3b454510c047079c3a1be0bee4b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\76\
-	    New File  		      91	3fea3933bca1670acffeabb4ffd65704722785100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\79\
-	    New File  		    1110	07d2ca4f3a74d2ffda12acd5059a73d328bff7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\7b\
-	    New File  		      88	03057a197c9f34748728044220795d36525cfc100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\7d\
-	    New File  		    1034	39ae2af148bd0a00886d8e6bf336f11fd2f39c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\7e\
-	    New File  		      86	7ccb1e691703c62f42f70fc4ceccb8edcb83cb100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\7f\
-	    New File  		      64	02d58a5a3a3af2eae1744ea5b0767d6b4f4d83100%  
-	    New File  		     174	c99c74afe4cdbfa54d2012239a209b2c52b05c100%  
-	    New File  		     196	de2f0f09ffbe1e5609405cab430db9dbe5b304100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\80\
-	    New File  		      97	ecad75c90c6235b0783e59c9b71e46ac7a6347100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\81\
-	    New File  		    1569	2dba65104ded3fcb77b43cb63993900003dc78100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\82\
-	    New File  		      82	4fdfa2a074938b1f9421b81a6d8a04be95fc5e100%  
-	    New File  		     104	c464128dcfa53d79b8dc50a8e5b1509bad0620100%  
-	    New File  		    2426	dc6905b3c9dbef1514a58416c54be90fbd21f8100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\83\
-	    New File  		     615	1dc67a3f0fd6fc929bcf5bd70bdf946bffa4d5100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\87\
-	    New File  		      62	6d1a098c888dffca3be14185f33de461f5691b100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\88\
-	    New File  		     229	99fe9d1e2240424a16f92d72258f81dee4d453100%  
-	    New File  		      82	ef2acf08e71e044521da0dda3ce7435a108253100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\89\
-	    New File  		    1849	36ad924f9813e87e406d3e10ec57e848c4ec37100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\8b\
-	    New File  		      33	59a2d7edbc102874a96b7c2a96fb73a74f7e34100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\8c\
-	    New File  		    1794	d44aacc27d8d02c5cddac48229c6b5e2119f94100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\8e\
-	    New File  		    1225	320088b90a313fd6e65003f06acbe4056b9cc8100%  
-	    New File  		    1103	9464f8201c8c96f495cae30c07204bd9e91760100%  
-	    New File  		     812	e4456778f08d98093d2bba3fcc812113442af4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\8f\
-	    New File  		     797	583eb6fe3e3187117e509dac95066f5d44ed95100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\90\
-	    New File  		      61	38e9257eeb41881b5d4a9eed041bafce76a09a100%  
-	    New File  		      61	a81d0a3db988ce3b7eba6ddaaa98b0a875fd2c100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\92\
-	    New File  		      53	a25552f61752fcae5089a72fec54f351673477100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\93\
-	    New File  		      60	d8a89ce547de05dd47f53e656fc6c3093f5899100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\94\
-	    New File  		      93	3f310e806d3931ed1d3ae7c37d2463545956fc100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\96\
-	    New File  		      94	4fd5df0511871391f925b4a70c8c3c12a760fd100%  
-	    New File  		    2199	d8e8783d6adebca8cca64960b1d5ee8ed1d531100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\97\
-	    New File  		    1223	5c562022245387c6ee9ac7a362d6c439705ceb100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\98\
-	    New File  		    1226	d97cce54eae03eb78ceef6883cd22223276f0e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\9c\
-	    New File  		    1926	0b28522b034caaf22961e5ff6d2042e3e256b8100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\9d\
-	    New File  		      61	5e22e58d7116687cfa73cc171d75d8b8a11e2d100%  
-	    New File  		     180	6c0b469492ad6202c9794ec4f76e438dbfc428100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\9e\
-	    New File  		    2123	7f5f4402d3928f85f9945bb590b2b0ece308b5100%  
-	    New File  		     688	c39957b7616dd5a10aa9bba314c3cb15c0f085100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\9f\
-	    New File  		     568	4c530d5f73b9181a0a9d85c39934af6995668b100%  
-	    New File  		      59	a1ccb8e8c84cd14dad1a15f5e6c011827dd394100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\a1\
-	    New File  		    3066	5f37dcf992df848e18ddb50fdd9a3bb1c68623100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\a2\
-	    New File  		     462	766504c053b479df06d25af06a7c3bc85910be100%  
-	    New File  		      89	7a610c471f5bff950010b4631739fd8cc8538b100%  
-	    New File  		     477	e0f04fd525283fbb987abb564c71c2f87967dc100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\a3\
-	    New File  		     342	040e051149bf744e4cfe51a50d0ddac02a2a21100%  
-	    New File  		      61	34f408c34518e86b7a5ece8927600f39da0144100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\a4\
-	    New File  		    2122	59868bb88bd96ee99627881b248f95aca69073100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\a9\
-	    New File  		    2207	309326e3b500020785bc5d4179340a6e6d7b9a100%  
-	    New File  		    2442	6dbecf2c4e7c2fa5f61b6e91e91669f9d2e835100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\aa\
-	    New File  		      52	8de6b4ec965b487816299acbdc8d8e948b1bb0100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\ab\
-	    New File  		      73	b36d0970ed217614463dd668891608fe90a4f0100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\ac\
-	    New File  		    1084	41582f782b40862bac58ffe8e80a593fd34150100%  
-	    New File  		     345	f53a2100c6c0964a32401477b0a5c65df04798100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\b2\
-	    New File  		     781	b55bdd72c89002fc4adc691cca9278f58a2342100%  
-	    New File  		    2106	e43e774c288cbf77b979f992e621ff9560e3d1100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\b5\
-	    New File  		    1592	fc065919b95ac2d2be94552684fcf4df3b1ef3100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\b6\
-	    New File  		     838	320cda78b43cf0b289efa6111406d4a81eea14100%  
-	    New File  		    2141	544a665af55fa634b984d2704c967574d7df64100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\b8\
-	    New File  		    1224	b4860455b227da061efaf709d9305b442f5408100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\b9\
-	    New File  		     757	6578568b15141eebda9f4088f0deb713739110100%  
-	    New File  		    2250	a1756fc2b431f5d6e792781148f8a211ce0d82100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\ba\
-	    New File  		     110	9307e0d72988cab2da67d3e7a846022706092a100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\be\
-	    New File  		     110	3c2833edd8450c1644ee7c07df8a29b9da1bad100%  
-	    New File  		     194	d769910105db09b1a8a4ba742ce1636eeae505100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\bf\
-	    New File  		      61	f382317a60a30fadb76abf486df0e437dca61e100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c1\
-	    New File  		      84	25297c94898cb4126ea5f070eca28e621e3566100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c2\
-	    New File  		     136	28ade2e191f04cf68d059a6c0b77caf4a9312e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c4\
-	    New File  		     103	89987c56484537b009e58eadae5eefefc3e140100%  
-	    New File  		    1807	b6f8fb2a4cdb7bbb8089c8134b70abab944979100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c5\
-	    New File  		      92	8c27aeeb58b0da24b3bd98025ccd77b8c0bb3f100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c6\
-	    New File  		     517	46b2d06aed77cc0508a1b0aca664b61d2b30a6100%  
-	    New File  		     665	53d4e8ec17c8571815b9f1c4b48b890c332362100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c8\
-	    New File  		     402	3a466533303cbe8380e886eb9bb7c4b14d5f1f100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\c9\
-	    New File  		    1482	7db8c41f483c6acd64dc9644315673c2f15f4d100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\cb\
-	    New File  		    2152	1295a4582eac6357790880bf2b28e2d35fd3d9100%  
-	    New File  		     103	cfe406e6cd5361f75ffd1f26609ba23b7bf912100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\ce\
-	    New File  		    1254	6d79640dfd59ff2c6cd41950ea085c81913412100%  
-	    New File  		    1143	78cc890b4ddbcf46ce5d6c1371e454aa2aa7f1100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\cf\
-	    New File  		     402	74ade1fe6b95e44df4d5325bf115f14d0b9059100%  
-	    New File  		     949	c0ed7f91190c248ec509acd0db992032e03e10100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d0\
-	    New File  		     814	638230a4cd1538dd14f1ae09007d9999800158100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d1\
-	    New File  		      87	34c3377294269dc3ce06a1a7dc035a96d105e9100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d2\
-	    New File  		    1794	8c852e92c5bde3dd6b69e7cf5760f9477cd0b3100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d4\
-	    New File  		      62	c6949e513ab825aefff8b4f98060cbd4f76c31100%  
-	    New File  		     224	e9588703e798caa22b3c0f4f9b8ecd76b154c3100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d5\
-	    New File  		     100	861b34a10ae3a970c70cee533db83eb18384ed100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d6\
-	    New File  		      91	a60b9039fe853bd07e8eced58cf7a62dc7d83d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d8\
-	    New File  		     950	61bbc09767d966a70debb4a582e0dc4738a9a7100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\d9\
-	    New File  		     700	e56ef5de82c22c47cd522bf60dae78ed564e6b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\da\
-	    New File  		      90	f3acd9c5038e13ff8a378946c675085f20e582100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\db\
-	    New File  		      60	3f01c79158ec789c7657be9b99a4b4874f4d17100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\dc\
-	    New File  		    1118	5198397a7ffd0354422c8117b2bca1f8f0389e100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\de\
-	    New File  		     987	2c5d5e905d2c50d54cb3d1d05045afa2a0ed78100%  
-	    New File  		      64	867ee1937b3edf0d8f0bf8cc7b588baeaf3a40100%  
-	    New File  		     606	8e24010c9eee7657659f70a91d23f996731c53100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\df\
-	    New File  		      76	e0770424b2a19faf507a501ebfc23be8f54e7b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\e0\
-	    New File  		     659	97b53b656b10ac8d9d4c02ad73819b55c3845a100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\eb\
-	    New File  		     517	4b1405aca47f1128e79140525549ab7f2d398d100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\ef\
-	    New File  		     560	03d002014f483978cc557d0a26fb628d0cac61100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f1\
-	    New File  		     814	caa9f54de291f9bdb99b10d761a36c62a30be1100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f3\
-	    New File  		    2516	60ae05db988c2ef42584ce497909b690f87fbb100%  
-	    New File  		    1833	9c849cf17c2eac48282c84b133e8fef8aa076b100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f5\
-	    New File  		     827	38624e1b3578dfb1d49d70f3b2556c57c09ba4100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f6\
-	    New File  		     200	48a7af00d6717e92f2f5d47b42f8e79da11b69100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f8\
-	    New File  		      60	81c985853847012fbd33169686da6003012f04100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\f9\
-	    New File  		     813	b2decc1fd80c4b1e04b5ab97df23db1aeb229e100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\fb\
-	    New File  		      61	4827b47c870c04d12b6fc379e7ffab8cd2887e100%  
-	    New File  		     504	ccc51525deeb503ee93851ae4afcdb6c5ce990100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\fc\
-	    New File  		     194	e1b8b772b69d66ca3ee15cace185fb37e81edc100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\info\
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\objects\pack\
-	    New File  		   36884	pack-b37908a2126e607baa35cbb703762aa198450e0a.idx100%  
-	    New File  		   8.7 m	pack-b37908a2126e607baa35cbb703762aa198450e0a.pack 11.4% 22.8% 34.2% 45.7% 57.1% 68.5% 80.0% 91.4%100%  
-	    New File  		    5168	pack-b37908a2126e607baa35cbb703762aa198450e0a.rev100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\refs\
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\refs\heads\
-	    New File  		      41	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\refs\remotes\
-	  New Dir          4	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\refs\remotes\origin\
-	    New File  		      41	dev100%  
-	    New File  		      32	HEAD100%  
-	    New File  		      41	main100%  
-	    New File  		      41	master100%  
-	  New Dir          0	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\365-evergreen-web-refresh\.git_bak\refs\tags\
-	  New Dir         17	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\docs\
-	    New File  		    1029	cmpHeader.md100%  
-	    New File  		      32	contact-form.md100%  
-	    New File  		       0	fluentui-icons-table.md
-	    New File  		       0	fluentui-icons.md
-	    New File  		    2479	FSE-Menu-Integration.md100%  
-	    New File  		     936	graphql.md100%  
-	    New File  		       0	landing-page.md
-	    New File  		     683	launch-plan.md100%  
-	    New File  		  780086	mobile01.png100%  
-	    New File  		     418	ONBOARDING.md100%  
-	    New File  		   39286	page-content.md100%  
-	    New File  		     393	prd.md100%  
-	    New File  		     351	QA.md100%  
-	    New File  		    1142	typography.md100%  
-	    New File  		    1303	UI.md100%  
-	    New File  		      17	User-flow.md100%  
-	    New File  		    1788	workflows.md100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\public\
-	    New File  		     226	routes.json100%  
-	    New File  		    1497	vite.svg100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\scripts\
-	    New File  		     627	testCtaQuery.js100%  
-	  New Dir          7	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\
-	    New File  		     661	App.css100%  
-	    New File  		    9363	App.tsx100%  
-	    New File  		    1494	feature-buttons.json100%  
-	    New File  		      92	fluent-theme.ts100%  
-	    New File  		     456	HomeSectionLayout.css100%  
-	    New File  		    4679	index.css100%  
-	    New File  		     490	main.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\assets\
-	    New File  		    4126	react.svg100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\
-	    New File  		    1780	BreadcrumbContext.tsx100%  
-	    New File  		     312	motionPresets.ts100%  
-	    New File  		    2007	PageRenderer.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\AllAccordions\
-	    New File  		     769	AllAccordions.module.css100%  
-	    New File  		    2170	AllAccordions.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\AllFeatures\
-	    New File  		    2329	AllFeatures.module.css100%  
-	    New File  		    3206	AllFeatures.tsx100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\AudioPlayer\
-	    New File  		    1039	AudioPlayer.module.css100%  
-	    New File  		    1327	AudioPlayer.tsx100%  
-	    New File  		      42	index.ts100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Carousel\
-	    New File  		    6211	Carousel.module.css100%  
-	    New File  		    5116	Carousel.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ChatBubble\
-	    New File  		     469	ChatBubble.css100%  
-	    New File  		     287	ChatBubble.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ContactForm\
-	    New File  		    4942	ContactForm.module.css100%  
-	    New File  		    8338	ContactForm.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\CookieConsent\
-	    New File  		    1779	CookieConsent.module.css100%  
-	    New File  		    1122	CookieConsent.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\CopilotChat\
-	    New File  		    1772	CopilotChat.css100%  
-	    New File  		    1809	CopilotChat.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\CTA\
-	    New File  		    3844	CTA.module.css100%  
-	    New File  		    3522	CTA.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\CtaPage\
-	    New File  		    1433	CtaPage.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\DrawerPanel\
-	    New File  		    2373	DrawerPanel.module.css100%  
-	    New File  		    1117	DrawerPanel.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\DynamicAccordion\
-	    New File  		    4748	DynamicAccordion.module.css100%  
-	    New File  		    2634	DynamicAccordion.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\EbookDownload\
-	    New File  		    1680	EbookDownload.module.css100%  
-	    New File  		    8676	EbookDownload.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FeatureAccordionButtons\
-	    New File  		    4911	FeatureAccordionButtons.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FeatureButtonsLogic\
-	    New File  		    2875	FeatureButtonsLogic.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FeatureButtonsTest\
-	    New File  		    3585	FeatureButtonsTest.tsx100%  
-	  New Dir          5	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FeaturePage\
-	    New File  		    2244	FeaturePage.module.css100%  
-	    New File  		    1524	FeaturePage.tsx100%  
-	    New File  		    2648	FeatureView.tsx100%  
-	    New File  		    1366	useFeatureBySlug.ts100%  
-	    New File  		    1167	usePageBlocks.ts100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Features\
-	    New File  		    1981	Features.module.css100%  
-	    New File  		    2882	Features.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FeatureView\
-	    New File  		    1373	FeatureView.module.css100%  
-	    New File  		    2674	FeatureView.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FloatingDrawer\
-	    New File  		    6762	FloatingDrawer.module.css100%  
-	    New File  		     645	FloatingDrawer.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\FluentCarousel\
-	    New File  		    7086	FluentCarousel.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Footer\
-	    New File  		    1811	Footer.module.css100%  
-	    New File  		    2873	Footer.tsx100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Header\
-	    New File  		    7284	Header.css100%  
-	    New File  		    7432	Header.module.css100%  
-	    New File  		    5337	Header.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Hero\
-	    New File  		    3197	Hero.module.css100%  
-	    New File  		    2471	Hero.tsx100%  
-	  New Dir          9	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\HowWeDoIt\
-	    New File  		    2622	HowWeDoIt.css100%  
-	    New File  		    1095	HowWeDoIt.tsx100%  
-	    New File  		    2434	HowWeDoItAccordion.css100%  
-	    New File  		    3694	HowWeDoItHero.css100%  
-	    New File  		    1099	HowWeDoItHero.tsx100%  
-	    New File  		    6326	HowWeDoItNav.tsx100%  
-	    New File  		    1213	HowWeDoItStatic.css100%  
-	    New File  		    1228	HowWeDoItStatic.tsx100%  
-	    New File  		    1755	WhatWeDoNav.module.css100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\JourneySurvey\
-	    New File  		     681	JourneySurvey.module.css100%  
-	    New File  		    6595	JourneySurvey.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\LatestPosts\
-	    New File  		    2101	LatestPosts.module.css100%  
-	    New File  		    4556	LatestPosts.tsx100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\LatestPostsArchive\
-	    New File  		   12184	LatestPostsArchive.css100%  
-	    New File  		   16798	LatestPostsArchive.tsx100%  
-	    New File  		    4166	useLatestPosts.ts100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Modal\
-	    New File  		     709	Modal.module.css100%  
-	    New File  		     523	Modal.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\PageBlocks\
-	    New File  		    3080	PageBlocks.module.css100%  
-	    New File  		   10832	PageBlocks.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\PageRenderer\
-	    New File  		    2005	PageRenderer.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\PageView\
-	    New File  		    1192	PageView.module.css100%  
-	    New File  		    5942	PageView.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Pillars\
-	    New File  		    1705	Pillars.module.css100%  
-	    New File  		    1690	Pillars.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\PrivacyPolicy\
-	    New File  		    1121	PrivacyPolicy.module.css100%  
-	    New File  		    1577	PrivacyPolicy.tsx100%  
-	  New Dir          5	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ResourceArchive\
-	    New File  		    8590	ResourceArchive.module.css100%  
-	    New File  		   13345	ResourceArchive.tsx100%  
-	    New File  		     283	ResourceDetail.module.css100%  
-	    New File  		     723	ResourceDetail.tsx100%  
-	    New File  		    4320	useE365Resources.ts100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ResponsiveContainer\
-	    New File  		     267	ResponsiveContainer.module.css100%  
-	    New File  		     307	ResponsiveContainer.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ResponsiveImage\
-	    New File  		     377	ResponsiveImage.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ResponsiveVideoPlayer\
-	    New File  		     299	ResponsiveVideoPlayer.module.css100%  
-	    New File  		    1538	ResponsiveVideoPlayer.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\RouteLoader\
-	    New File  		     350	RouteLoader.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\ScrollToTop\
-	    New File  		     386	ScrollToTop.tsx100%  
-	  New Dir          3	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\SinglePost\
-	    New File  		      96	index.ts100%  
-	    New File  		     353	SinglePost.module.css100%  
-	    New File  		    1404	SinglePost.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\Tabs\
-	    New File  		     808	Tabs.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\TenantAuditForm\
-	    New File  		     660	TenantAuditForm.module.css100%  
-	    New File  		    3278	TenantAuditForm.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\TestCtaQuery\
-	    New File  		    1797	TestCtaQuery.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\TestPageQuery\
-	    New File  		    3258	TestPageQuery.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\VanillaAccordion\
-	    New File  		    1619	VanillaAccordion.module.css100%  
-	    New File  		    2942	VanillaAccordion.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\VanillaAccordionDemoPage\
-	    New File  		     960	VanillaAccordionDemoPage.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoApps\
-	    New File  		    4452	WeDoApps.css100%  
-	    New File  		    5705	WeDoApps.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoAutomation\
-	    New File  		    4656	WeDoAutomation.css100%  
-	    New File  		    5287	WeDoAutomation.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoCollaboration\
-	    New File  		    4758	WeDoCollaboration.css100%  
-	    New File  		    5720	WeDoCollaboration.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoCommunication\
-	    New File  		    4758	WeDoCommunication.css100%  
-	    New File  		    5867	WeDoCommunication.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoGovernance\
-	    New File  		    4656	WeDoGovernance.css100%  
-	    New File  		    5807	WeDoGovernance.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WeDoSupport\
-	    New File  		    4554	WeDoSupport.css100%  
-	    New File  		    5747	WeDoSupport.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDoAccordion\
-	    New File  		    2050	WhatWeDoAccordion.module.css100%  
-	    New File  		    3459	WhatWeDoAccordion.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDoHero\
-	    New File  		    3628	WhatWeDoHero.module.css100%  
-	    New File  		    1125	WhatWeDoHero.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDoItem\
-	    New File  		    1101	WhatWeDoItem.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDoNav\
-	    New File  		    2202	WhatWeDoNav.module.css100%  
-	    New File  		    6184	WhatWeDoNav.tsx100%  
-	  New Dir          2	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDoStatic\
-	    New File  		    1422	WhatWeDoStatic.module.css100%  
-	    New File  		    1455	WhatWeDoStatic.tsx100%  
-	  New Dir          1	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\components\WhatWeDo_Old\
-	    New File  		    1387	WhatWeDo_Old.tsx100%  
-	  New Dir         22	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\lib\
-	    New File  		     810	analytics.ts100%  
-	    New File  		    1842	cookieConsent.ts100%  
-	    New File  		    2157	features.json100%  
-	    New File  		    1425	useAccordionItemBySlug.ts100%  
-	    New File  		    6732	useAccordionsByComponent.ts100%  
-	    New File  		     779	useAllAzureAccordions.ts100%  
-	    New File  		    1064	useAllCategories.ts100%  
-	    New File  		    1366	useAllPagesWithBlocks.ts100%  
-	    New File  		    1853	useAzureAccordions.ts100%  
-	    New File  		    2176	useCtaPost.ts100%  
-	    New File  		     515	useFeatureButtons.ts100%  
-	    New File  		    1366	useFeatureBySlug.ts100%  
-	    New File  		    1573	useGlobalNav.ts100%  
-	    New File  		    1636	useLatestPosts.ts100%  
-	    New File  		    1167	usePageBlocks.ts100%  
-	    New File  		    8023	usePageBySlug.ts100%  
-	    New File  		    1205	usePages.ts100%  
-	    New File  		    1781	usePillars.ts100%  
-	    New File  		    3107	usePrivacyPolicy.ts100%  
-	    New File  		    3026	useSinglePost.ts100%  
-	    New File  		    2476	useSinglePostBySlug.ts100%  
-	    New File  		    1265	useSiteFeatures.ts100%  
-	  New Dir         15	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\src\styles-to-delete\
-	    New File  		    3297	CTA.css100%  
-	    New File  		    1893	Features.css100%  
-	    New File  		    1373	FeatureView.module.css100%  
-	    New File  		    2422	Footer.css100%  
-	    New File  		    3492	Hero.css100%  
-	    New File  		    2016	LatestPosts.css100%  
-	    New File  		    3098	PageBlocks.css100%  
-	    New File  		     307	ResponsiveVideoPlayer.css100%  
-	    New File  		     491	Tabs.css100%  
-	    New File  		     660	TenantAuditForm.css100%  
-	    New File  		    1511	VanillaAccordion.css100%  
-	    New File  		    2600	WhatWeDo.css100%  
-	    New File  		    2411	WhatWeDoAccordion.css100%  
-	    New File  		    3660	WhatWeDoHero.css100%  
-	    New File  		    2271	WhatWeDoNav.module.css100%  
-	  New Dir          4	C:\Users\Pauli\Azure-SWA-dev\365-evergreen-web-refresh\__blobstorage__\
-	    New File  		      52	AzuriteConfig100%  
-	    New File  		    1878	__azurite_db_blob_extent__.json100%  
-	    New File  		    5974	__azurite_db_blob__.json100%  
-	    New File  		    3071	__azurite_db_table__.json100%  
-
-------------------------------------------------------------------------------
-
-               Total    Copied   Skipped  Mismatch    FAILED    Extras
-    Dirs :       400       397         3         0         0         0
-   Files :       750       750         0         0         0         0
-   Bytes :   24.69 m   24.69 m         0         0         0         0
-   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-
-
-   Speed :           48,486,814 Bytes/sec.
-   Speed :            2,774.438 MegaBytes/min.
-   Ended : Wednesday, 1 April 2026 23:37:00
-

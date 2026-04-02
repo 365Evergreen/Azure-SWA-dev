@@ -17,11 +17,12 @@ export interface LatestPost {
 // Hardcoded blob URL for hero and future components
 export const COMPONENTS_BLOB_URL = 'https://365evergreendev.blob.core.windows.net/365-evergreen/components/page-components.json';
 
-export function useLatestPosts(limit: number = 100): LatestPost[] {
+export function useLatestPosts(limit: number = 100, enabled: boolean = true): LatestPost[] {
   const { data } = useQuery({
     queryKey: ['latestPosts', limit],
     queryFn: () => prefetchLatestPosts(limit),
     staleTime: 5 * 60 * 1000, // 5 minutes
+    enabled,
   });
   return data ?? [];
 }
